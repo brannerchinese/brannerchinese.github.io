@@ -14,7 +14,7 @@
 
     <p>We are here.</p>
     
-    <a href="../?https://github.com/brannerchinese/notes/blob/master/Scrapers.md" target="_blank">Try this for Scrapers.md.</a>
+    <a href="../?https://github.com/brannerchinese/notes/blob/master/Scrapers.md" target="_blank">Try this for a link to another site: Scrapers.md.</a>
     
     <p>This is after moving to the Master.</p>
 
@@ -53,6 +53,7 @@
     <script>
       var theDiv = document.createElement("div");
       theDiv.id = "linkdiv";
+      theDiv.setAttribute("style", "min-height:100%; width:100%;")
       object = document.createElement('object');
       object.data = "CONTENT/" + pageName + ".md";
       theDiv.appendChild(object);
