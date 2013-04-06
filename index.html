@@ -25,7 +25,8 @@
     leftDiv.setAttribute("style", "float:left; width:66.5%; line-height: 26px; text-align:left; font-size:12pt; padding-left:8px; height:26px;"); //Set div attributes
     leftDiv.style.background =  "#FF0000";
     a = document.createElement('a');
-    a.href =  pageName; // Insted of calling setAttribute 
+    a.href =  pageName + '.md'; // Instead of calling setAttribute 
+    a.target = '_blank'
     a.innerHTML = "Link" // <a>INNER_TEXT</a>
     leftDiv.appendChild(a); // Append the link to the div
     document.body.appendChild(leftDiv); // And append the div to the document body
