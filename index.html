@@ -35,8 +35,17 @@
     document.body.appendChild(leftDiv); // And append the div to the document body
     </script>
 
+    <button onclick="myFunction('Bob','Builder')">Try it</button>
+
     <hr>
-    <object data=Tmux.md width="100%" height="7000" /> 
+    <script>
+      function myFunction()
+      {
+        var x="Tmux.md";
+        return x;
+    </script>
+
+    <object data=myFunction('Tmux.md') width="100%" height="7000" /> 
       <!--      <embed src=http://www.web-source.net width="100%" height="7000"> </embed> Test of embedded object. -->
 
   <script src="http://htmlpreview.github.io/htmlpreview.min.js"></script><script>HTMLPreview.replaceAssets();</script></body>
