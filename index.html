@@ -57,6 +57,11 @@
       object.data = "CONTENT/" + pageName + ".md";
       theDiv.appendChild(object);
       document.body.appendChild(theDiv);
+
+      var text = "Markdown *rocks*.";
+      var converter = new Showdown.converter();
+      var html = converter.makeHtml(text);
+      alert(html);
     </script>
 
   <script src="http://htmlpreview.github.io/htmlpreview.min.js"></script><script>HTMLPreview.replaceAssets();</script></body>
