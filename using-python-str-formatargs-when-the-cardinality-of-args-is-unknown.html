@@ -26,7 +26,7 @@
 		<div class="container-fluid">
 		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
 			<ul class="nav">
-					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+					<li class="active"><a href="http://brannerchinese.github.io/category/.html"></a></li>
 			</ul>
 			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
 		</div>
@@ -53,7 +53,7 @@
 		<div class="page-header"><h1>Using python str.format(*args) when the cardinality of *args is unknown</h1></div>
 		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/using-python-str-formatargs-when-the-cardinality-of-args-is-unknown.html">2013-07-15 23:19:00</a>
 by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
- in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+ in <a href="http://brannerchinese.github.io/category/.html"></a>
 </div>
 		<div><p>Python 3's <code>str.format()</code> function inserts its arguments into
 replacement fields delimited by braces <code>{}</code> in the string <code>str</code>. The
@@ -65,18 +65,21 @@ that the bracket-delimited replacement fields in <code>str</code> are normally n
 Only if the string is constructed by concatenation in response to the
 number of arguments of <code>format</code> is it possible for each of those
 arguments to be assured a corresponding replacement field:</p>
-<p><code style="font-style:NORMAL;font-size:SMALL;">In [1]: user_input = input('What did R. Crumb say? ')</code></p>
-<p>Out[1]: What did R. Crumb say? Are the lumpen proletariat a lost
-cause?</p>
-<p>In [2]: variable_length_args = user_input.split()</p>
-<p>In [3]: the_string = [str(i) for i in
-range(len(variable_length_args))]</p>
-<p>In [4]: the_string = '"{' + '}" and "{'.join(the_string) + '}"'</p>
-<p>In [5]: the_string.format(*variable_length_args)</p>
-<p>Out[5]: '"Are" and "the" and "lumpen" and "proletariat" and "a" and
-"lost" and "cause?"'</code></p>
+<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;What did R. Crumb say? &#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">What</span> <span class="n">did</span> <span class="n">R</span><span class="o">.</span> <span class="n">Crumb</span> <span class="n">say</span><span class="err">?</span> <span class="n">Are</span> <span class="n">the</span> <span class="n">lumpen</span> <span class="n">proletariat</span> <span class="n">a</span> <span class="n">lost</span> <span class="n">cause</span><span class="err">?</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">variable_length_args</span> <span class="o">=</span> <span class="n">user_input</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">the_string</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">variable_length_args</span><span class="p">))]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">the_string</span> <span class="o">=</span> <span class="s">&#39;&quot;{&#39;</span> <span class="o">+</span> <span class="s">&#39;}&quot; and &quot;{&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">the_string</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;}&quot;&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">the_string</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>\<span class="o">*</span><span class="n">variable_length_args</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="s">&#39;&quot;Are&quot; and &quot;the&quot; and &quot;lumpen&quot; and &quot;proletariat&quot; and &quot;a&quot; and &quot;lost&quot; and &quot;cause?&quot;&#39;</span>
+</pre></div>
+
+
 <p>Or is there some other special syntax for ensuring the right number of
-replacement fields, if that number is not known until runtime?</p></div>
+replacement fields, if that number is not known until runtime?</p>
+<p>[end]</p></div>
 		<div>
 			<h2>Comments</h2>
 		<div>

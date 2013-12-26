@@ -26,7 +26,7 @@
 		<div class="container-fluid">
 		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
 			<ul class="nav">
-					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+					<li class="active"><a href="http://brannerchinese.github.io/category/.html"></a></li>
 			</ul>
 			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
 		</div>
@@ -53,7 +53,7 @@
 		<div class="page-header"><h1>Finding and returning zero or one of a marked sub-expression in Python regex</h1></div>
 		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/finding-and-returning-zero-or-one-of-a-sub-expression-in-python-regex.html">2013-08-01 12:48:00</a>
 by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
- in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+ in <a href="http://brannerchinese.github.io/category/.html"></a>
 </div>
 		<div><p>One feature of Perl-style regular expressions that is not implemented in
 Python is the use of the zero-or-one operator (metacharacter "question
@@ -61,41 +61,56 @@ mark", <code>?</code>) with a parenthesis-delimited "group" or marked
 sub-expression. In Python, if such a group is found (below, <code>(ghi)?</code>),
 it can be referred back to with a back-reference (below, <code>\2</code>; code
 below is Python 3.3 in Ipython 0.13.2):</p>
-<p>~~~~ {style="font-style:NORMAL;font-size:SMALL;"}</p>
-<p>In [1]: re.sub('(abc)\t(ghi)', r'\2', 'abc\tghi')</p>
-<p>Out[1]: 'ghi'
-~~~~</p>
+<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&#39;(abc)</span><span class="se">\t</span><span class="s">(ghi)&#39;</span><span class="p">,</span> <span class="s">r&#39;\2&#39;</span><span class="p">,</span> <span class="s">&#39;abc</span><span class="se">\t</span><span class="s">ghi&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="s">&#39;ghi&#39;</span>
+</pre></div>
+
+
 <p>but if it is not found an error is raised instead of an empty string
 being returned (which is the norm):</p>
-<p>In [2]: re.sub('(abc)\t(ghi)?', r'\2', 'abc\t')</p>
-<p>...</p>
-<p>error: unmatched group</code></p>
+<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&#39;(abc)</span><span class="se">\\</span><span class="s">t(ghi)?&#39;</span><span class="p">,</span> <span class="s">r&#39;</span><span class="se">\\</span><span class="s">2&#39;</span><span class="p">,</span> <span class="s">&#39;abc</span><span class="se">\\</span><span class="s">t&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">error</span><span class="p">:</span> <span class="n">unmatched</span> <span class="n">group</span>
+</pre></div>
+
+
 <p>I'm aware of two work-arounds for this curious situation.</p>
 <p>First, rewrite the optional sub-expression as an optional look-ahead
 marked sub-expression: <code>((?:ghi)?)</code>. There are two pairs of parentheses:
 one for the look-ahead syntax <code>(?:...)</code> and one for the optional
 matching group <code>(...?)</code>:</p>
-<p>In [3]: re.sub('(abc)\t((?:ghi)?)', r'\2', 'abc\tghi')</p>
-<p>Out[3]: 'ghi'</p>
-<p>In [4]: re.sub('(abc)\t((?:ghi)?)', r'\2', 'abc\t')</p>
-<p>Out[4]: ''</code></p>
+<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&#39;(abc)</span><span class="se">\\</span><span class="s">t((?:ghi)?)&#39;</span><span class="p">,</span> <span class="s">r&#39;</span><span class="se">\\</span><span class="s">2&#39;</span><span class="p">,</span> <span class="s">&#39;abc</span><span class="se">\\</span><span class="s">tghi&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="s">&#39;ghi&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&#39;(abc)</span><span class="se">\\</span><span class="s">t((?:ghi)?)&#39;</span><span class="p">,</span> <span class="s">r&#39;</span><span class="se">\\</span><span class="s">2&#39;</span><span class="p">,</span> <span class="s">&#39;abc</span><span class="se">\\</span><span class="s">t&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="s">&#39;&#39;</span>
+</pre></div>
+
+
 <p>Second, discard the zero-or-one operator and put a set-union operator
 (metacharacter "pipe", <code>|</code>) inside the parentheses so that the
 sub-expression now means "either nothing or else the target in question"
 (below, <code>(|ghi)</code>):</p>
-<p>In [5]: re.sub('(abc)\t(|ghi)', r'\2', 'abc\tghi')</p>
-<p>Out[5]: 'ghi'</p>
-<p>In [6]: re.sub('(abc)\t(|ghi)', r'\2', 'abc\t')</p>
-<p>Out[6]: ''</code></p>
+<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&#39;(abc)</span><span class="se">\\</span><span class="s">t(|ghi)&#39;</span><span class="p">,</span> <span class="s">r&#39;</span><span class="se">\\</span><span class="s">2&#39;</span><span class="p">,</span> <span class="s">&#39;abc</span><span class="se">\\</span><span class="s">tghi&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="s">&#39;ghi&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&#39;(abc)</span><span class="se">\\</span><span class="s">t(|ghi)&#39;</span><span class="p">,</span> <span class="s">r&#39;</span><span class="se">\\</span><span class="s">2&#39;</span><span class="p">,</span> <span class="s">&#39;abc</span><span class="se">\\</span><span class="s">t&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="s">&#39;&#39;</span>
+</pre></div>
+
+
 <p>The first work-around is marginally faster than the second:</p>
-<p>\$ python -m timeit -n 1000000 -s "from re import sub"
-"sub('(abc)\t((?:ghi)?)', r'\2', 'abc\tghi')"</p>
-<p>1000000 loops, best of 3: 6.48 usec per loop</p>
-<p>\$</p>
-<p>\$ python -m timeit -n 1000000 -s "from re import sub"
-"sub('(abc)\t(|ghi)', r'\2', 'abc\tghi')"</p>
-<p>1000000 loops, best of 3: 6.97 usec per loop</p>
-<p>\$</code></p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1000000</span> <span class="o">-</span><span class="n">s</span> <span class="s">&quot;from re import sub&quot;</span>
+<span class="s">&quot;sub(&#39;(abc)</span><span class="se">\\</span><span class="s">t((?:ghi)?)&#39;, r&#39;</span><span class="se">\\</span><span class="s">2&#39;, &#39;abc</span><span class="se">\\</span><span class="s">tghi&#39;)&quot;</span>
+<span class="mi">1000000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">6.48</span> <span class="n">usec</span> <span class="n">per</span> <span class="n">loop</span>
+<span class="err">$</span>
+<span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1000000</span> <span class="o">-</span><span class="n">s</span> <span class="s">&quot;from re import sub&quot;</span>
+<span class="s">&quot;sub(&#39;(abc)</span><span class="se">\\</span><span class="s">t(|ghi)&#39;, r&#39;</span><span class="se">\\</span><span class="s">2&#39;, &#39;abc</span><span class="se">\\</span><span class="s">tghi&#39;)&quot;</span>
+<span class="mi">1000000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">6.97</span> <span class="n">usec</span> <span class="n">per</span> <span class="n">loop</span>
+<span class="err">$</span>
+</pre></div>
+
+
 <p>though it's longer to type and more complex to understand and remember.</p>
 <p>I vote for the second work-around.</p>
 <hr />
@@ -104,7 +119,8 @@ addresses this issue ("<a href="https://pypi.python.org/pypi/regex">regex 2013-0
 <blockquote>
 <p>Unmatched group in replacement: An unmatched group is treated as an
 empty string in a replacement template.</p>
-</blockquote></div>
+</blockquote>
+<p>[end]</p></div>
 		<div>
 			<h2>Comments</h2>
 		<div>

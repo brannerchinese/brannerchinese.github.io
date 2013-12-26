@@ -26,7 +26,7 @@
 		<div class="container-fluid">
 		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
 			<ul class="nav">
-					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+					<li class="active"><a href="http://brannerchinese.github.io/category/.html"></a></li>
 			</ul>
 			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
 		</div>
@@ -53,37 +53,41 @@
 		<div class="page-header"><h1>Rendering a matrix as a linear array</h1></div>
 		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/rendering-a-matrix-as-a-linear-array.html">2013-07-22 15:17:00</a>
 by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
- in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+ in <a href="http://brannerchinese.github.io/category/.html"></a>
 </div>
 		<div><p>Rendering a matrix as a linear array is a procedure common in
 generations of programming languages predating Python. How do I convert
 between the index of the linear array and the coordinates <code>row</code> and
 <code>column</code> of the corresponding matrix?</p>
-<p><code style="font-style:NORMAL;font-size:SMALL;">Matrix showing linear array-indices of matrix-cells:</code></p>
-<p>row_number: +—————————————————+</p>
-<p>2       | 8 | 9 | 10 | 11 |</p>
-<p>+———+———+————+————+</p>
-<p>1       | 4 | 5 |  6 |  7 |</p>
-<p>+———+———+————+————+</p>
-<p>0       | 0 | 1 |  2 |  3 |</p>
-<p>+—————————————————+</p>
-<p>0 | 1 |  2 |  3    \&lt;= column_number</p>
-<p>total_rows  = 3</p>
-<p>total_columns = 4</p>
-<p></code></p>
+<p><strong>Matrix showing linear array-indices of matrix-cells</strong>:</p>
+<div class="highlight"><pre><span class="n">row_number</span><span class="p">:</span> <span class="o">+</span><span class="err">—————————————————</span><span class="o">+</span>
+    <span class="mi">2</span>       <span class="o">|</span> <span class="mi">8</span> <span class="o">|</span> <span class="mi">9</span> <span class="o">|</span> <span class="mi">10</span> <span class="o">|</span> <span class="mi">11</span> <span class="o">|</span>
+            <span class="o">+</span><span class="err">———</span><span class="o">+</span><span class="err">———</span><span class="o">+</span><span class="err">————</span><span class="o">+</span><span class="err">————</span><span class="o">+</span>
+    <span class="mi">1</span>       <span class="o">|</span> <span class="mi">4</span> <span class="o">|</span> <span class="mi">5</span> <span class="o">|</span>  <span class="mi">6</span> <span class="o">|</span>  <span class="mi">7</span> <span class="o">|</span>
+            <span class="o">+</span><span class="err">———</span><span class="o">+</span><span class="err">———</span><span class="o">+</span><span class="err">————</span><span class="o">+</span><span class="err">————</span><span class="o">+</span>
+    <span class="mi">0</span>       <span class="o">|</span> <span class="mi">0</span> <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>  <span class="mi">2</span> <span class="o">|</span>  <span class="mi">3</span> <span class="o">|</span>
+            <span class="o">+</span><span class="err">—————————————————</span><span class="o">+</span>
+              <span class="mi">0</span> <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>  <span class="mi">2</span> <span class="o">|</span>  <span class="mi">3</span>    \<span class="o">&lt;=</span> <span class="n">column_number</span>
+
+  <span class="n">total_rows</span>    <span class="o">=</span> <span class="mi">3</span>
+  <span class="n">total_columns</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+
+
 <p>Three small calculations are needed to convert between an index and the
 corresponding row_number and column_number:</p>
-<p>index = row_number * total_columns + column_number</p>
-<p>column_number = index % total_columns</p>
-<p># Python 3, non-integer division</p>
-<p>row_number = (index - column_number) / total_columns</p>
-<p># Alternately, by integer division</p>
-<p>row_number = index // total_columns</code></p>
+<div class="highlight"><pre>    <span class="n">index</span> <span class="o">=</span> <span class="n">row_number</span> <span class="o">*</span> <span class="n">total_columns</span> <span class="o">+</span> <span class="n">column_number</span>
+    <span class="n">column_number</span> <span class="o">=</span> <span class="n">index</span> <span class="o">%</span> <span class="n">total_columns</span>
+    <span class="c"># Python 3, non-integer division</span>
+    <span class="n">row_number</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span> <span class="o">-</span> <span class="n">column_number</span><span class="p">)</span> <span class="o">/</span> <span class="n">total_columns</span>
+    <span class="c"># Alternately, by integer division</span>
+    <span class="n">row_number</span> <span class="o">=</span> <span class="n">index</span> <span class="o">//</span> <span class="n">total_columns</span>
+</pre></div>
+
+
 <hr />
-<p>As for "non-integer division", Guido van Rossum proposed "float
-division" for this
-(http://mail.python.org/pipermail/python-dev/2001-March/013444.html,
-20010311, accessed 20130722)</p></div>
+<p>As for "non-integer division", Guido van Rossum proposed "float division" for this: ([http://mail.python.org/pipermail/python-dev/2001-March/013444.html], 20010311, accessed 20130722)</p>
+<p>[end]</p></div>
 		<div>
 			<h2>Comments</h2>
 		<div>

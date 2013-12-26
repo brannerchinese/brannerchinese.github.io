@@ -26,7 +26,7 @@
 		<div class="container-fluid">
 		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
 			<ul class="nav">
-					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+					<li class="active"><a href="http://brannerchinese.github.io/category/.html"></a></li>
 			</ul>
 			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
 		</div>
@@ -53,7 +53,7 @@
 		<div class="page-header"><h1>Two complaints and one word of praise about GitHub Flavored Markdown</h1></div>
 		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/two-complaints-and-one-word-of-praise-about-github-flavored-markdown.html">2013-10-08 11:35:00</a>
 by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
- in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+ in <a href="http://brannerchinese.github.io/category/.html"></a>
 </div>
 		<div><p>GitHub Flavored Markdown (GFM), GitHub's proprietary version of the
 Markdown standard, has a couple of unsatisfactory features.</p>
@@ -79,87 +79,57 @@ merged cells or more than one hyphen-delimited line of header cells. Why
 is that important? Because it is very useful to be able to show a single
 merged header-cell representing two subordinate columns, each of which
 has its own subheader cell. For instance:</p>
-<p><code style="font-style:NORMAL;font-size:SMALL;">&lt;table border="1" cellpadding="5" cellspacing="0"&gt;</code></p>
-<p>\&lt;tr></p>
-<p>\&lt;th rowspan="2">(empty)\&lt;/th></p>
-<p>\&lt;th rowspan="2">merged rows\&lt;/th></p>
-<p>\&lt;th colspan="2">merged columns\&lt;/th></p>
-<p>\&lt;/tr></p>
-<p>\&lt;tr></p>
-<p>\&lt;th>unmerged\&lt;/th></p>
-<p>\&lt;th>unmerged\&lt;/th></p>
-<p>\&lt;/tr></p>
-<p>\&lt;tr></p>
-<p>\&lt;th rowspan="2">merged rows\&lt;/th></p>
-<p>\&lt;td>row 1\&lt;/td></p>
-<p>\&lt;td>content 1\&lt;/td></p>
-<p>\&lt;td>content 2\&lt;/td></p>
-<p>\&lt;/tr></p>
-<p>\&lt;tr></p>
-<p>\&lt;td>row 2\&lt;/td></p>
-<p>\&lt;td>content 1\&lt;/td></p>
-<p>\&lt;td>content 2\&lt;/td></p>
-<p>\&lt;/tr></p>
-<p>\&lt;/table></p>
-<p></code></p>
+<div class="highlight"><pre><span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">&quot;2&quot;</span> <span class="na">cellpadding=</span><span class="s">&quot;5&quot;</span> <span class="na">cellspacing=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">rowspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>(empty)<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">rowspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>merged rows<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>merged columns<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+
+<span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;th&gt;</span>unmerged<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;th&gt;</span>unmerged<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+
+<span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">rowspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>merged rows<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;td&gt;</span>row 1<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>content 1<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>content 2<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+
+<span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;td&gt;</span>row 2<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>content 1<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>content 2<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</pre></div>
+
+
+<p>~~~</p>
 <p>In HTML it produces:</p>
-<table border="1" cellspacing="0" cellpadding="5">
+<table border="2" cellspacing="0" cellpadding="5">
 <tbody>
 <tr>
-<th rowspan="2">
-(empty)
-
-</th>
-<th rowspan="2">
-merged rows
-
-</th>
-<th colspan="2">
-merged columns
-
-</th>
+<th rowspan="2">(empty)</th>
+<th rowspan="2">merged rows</th>
+<th colspan="2">merged columns</th>
 </tr>
 <tr>
-<th>
-unmerged
-
-</th>
-<th>
-unmerged
-
-</th>
+<th>unmerged</th>
+<th>unmerged</th>
 </tr>
 <tr>
-<th rowspan="2">
-merged rows
-
-</th>
-<td>
-row 1
-
-</td>
-<td>
-content 1
-
-</td>
-<td>
-content 2
-
-</td>
+<th rowspan="2">merged rows</th>
+<td>row 1</td>
+<td>content 1</td>
+<td>content 2</td>
 </tr>
 <tr>
-<td>
-row 2
-
-</td>
-<td>
-content 1
-
-</td>
-<td>
-content 2
-
-</td>
+<td>row 2</td>
+<td>content 1</td>
+<td>content 2</td>
 </tr>
 </tbody>
 </table>
@@ -167,8 +137,8 @@ content 2
 <p>But as I say, the good news is that HTML tables are now supported in
 GFM.</p>
 <hr />
-<p>Since posting this, I've been told about <a href="https://github.com/gollum/gollum">Gollum</a>, a Git-based wiki
-system that apparently supports GFM.</p></div>
+<p>Since posting this, I've been told about <a href="https://github.com/gollum/gollum">Gollum</a>, a Git-based wiki system that apparently supports GFM.</p>
+<p>[end]</p></div>
 		<div>
 			<h2>Comments</h2>
 		<div>

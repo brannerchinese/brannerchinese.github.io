@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>&amp;</title><link href="http://brannerchinese.github.io/" rel="alternate"></link><link href="http://brannerchinese.github.io/feeds/misc.atom.xml" rel="self"></link><id>http://brannerchinese.github.io/</id><updated>2013-12-17T12:50:00Z</updated><entry><title>Reflecting on Bernard Baruch, on the need for character and thinking</title><link href="http://brannerchinese.github.io/reflecting-on-bernard-baruch-on-the-need-for-character-and-thinking.html" rel="alternate"></link><updated>2013-12-17T12:50:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-12-17:reflecting-on-bernard-baruch-on-the-need-for-character-and-thinking.html</id><summary type="html">&lt;p&gt;During the late Spring of 2012 I was asked to comment on a remark of
+<feed xmlns="http://www.w3.org/2005/Atom"><title>&amp;</title><link href="http://brannerchinese.github.io/" rel="alternate"></link><link href="http://brannerchinese.github.io/feeds/.atom.xml" rel="self"></link><id>http://brannerchinese.github.io/</id><updated>2013-12-17T12:50:00Z</updated><entry><title>Reflecting on Bernard Baruch, on the need for character and thinking</title><link href="http://brannerchinese.github.io/reflecting-on-bernard-baruch-on-the-need-for-character-and-thinking.html" rel="alternate"></link><updated>2013-12-17T12:50:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-12-17:reflecting-on-bernard-baruch-on-the-need-for-character-and-thinking.html</id><summary type="html">&lt;p&gt;During the late Spring of 2012 I was asked to comment on a remark of
 Bernard Baruch (1870–1965):&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;"During my eighty-seven years I have witnessed a whole succession of
@@ -195,14 +195,16 @@ answer is that running time is affected to a disastrous degree, a cost
 of something like a thirteen-fold slowdown. The project now lives in a
 directory named &lt;code&gt;abandoned_but_do_not_discard&lt;/code&gt;.)&lt;/p&gt;
 &lt;p&gt;She also commented on my style of naming imported modules, for instance:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;import struct&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;import sys&lt;/p&gt;
-&lt;p&gt;import os&lt;/p&gt;
-&lt;p&gt;import time as T&lt;/p&gt;
-&lt;p&gt;import random as R&lt;/p&gt;
-&lt;p&gt;import multiprocessing as M&lt;/p&gt;
-&lt;p&gt;import ctypes as C&lt;/p&gt;
-&lt;p&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;struct&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;T&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;R&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;multiprocessing&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;M&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;ctypes&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;C&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Any module with a long name or that I refer to often I name with one or
 at most two capital letters. That saves typing and makes it easy to see
 quickly and unambiguously when a module is in use. The interviewer
@@ -234,7 +236,8 @@ helpful brother- and sister-coders.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;There are things I would like to say about what I see as the long-term
 effects of the presence of this group of "pleasant, helpful brother- and
-sister-coders" in the field. But I will save that for another day.&lt;/p&gt;</summary></entry><entry><title>Thirty political parties fielding candidates in New York City this election</title><link href="http://brannerchinese.github.io/thirty-political-parties-fielding-candidates-in-new-york-city-this-election.html" rel="alternate"></link><updated>2013-11-02T17:58:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-11-02:thirty-political-parties-fielding-candidates-in-new-york-city-this-election.html</id><summary type="html">&lt;p&gt;We have elections in a few days in New York. The Voter Guide published
+sister-coders" in the field. But I will save that for another day.&lt;/p&gt;
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>Thirty political parties fielding candidates in New York City this election</title><link href="http://brannerchinese.github.io/thirty-political-parties-fielding-candidates-in-new-york-city-this-election.html" rel="alternate"></link><updated>2013-11-02T17:58:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-11-02:thirty-political-parties-fielding-candidates-in-new-york-city-this-election.html</id><summary type="html">&lt;p&gt;We have elections in a few days in New York. The Voter Guide published
 by the New York City Campaign Finance Board lists thirty parties
 supporting at least one candidate in the election:&lt;/p&gt;
 &lt;ol&gt;
@@ -574,87 +577,57 @@ merged cells or more than one hyphen-delimited line of header cells. Why
 is that important? Because it is very useful to be able to show a single
 merged header-cell representing two subordinate columns, each of which
 has its own subheader cell. For instance:&lt;/p&gt;
-&lt;p&gt;&lt;code style="font-style:NORMAL;font-size:SMALL;"&gt;&amp;lt;table border="1" cellpadding="5" cellspacing="0"&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;tr&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;th rowspan="2"&gt;(empty)\&amp;lt;/th&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;th rowspan="2"&gt;merged rows\&amp;lt;/th&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;th colspan="2"&gt;merged columns\&amp;lt;/th&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;/tr&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;tr&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;th&gt;unmerged\&amp;lt;/th&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;th&gt;unmerged\&amp;lt;/th&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;/tr&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;tr&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;th rowspan="2"&gt;merged rows\&amp;lt;/th&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;td&gt;row 1\&amp;lt;/td&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;td&gt;content 1\&amp;lt;/td&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;td&gt;content 2\&amp;lt;/td&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;/tr&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;tr&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;td&gt;row 2\&amp;lt;/td&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;td&gt;content 1\&amp;lt;/td&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;td&gt;content 2\&amp;lt;/td&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;/tr&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;/table&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;table&lt;/span&gt; &lt;span class="na"&gt;border=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;2&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;cellpadding=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;5&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;cellspacing=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;th&lt;/span&gt; &lt;span class="na"&gt;rowspan=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;2&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;(empty)&lt;span class="nt"&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;th&lt;/span&gt; &lt;span class="na"&gt;rowspan=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;2&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;merged rows&lt;span class="nt"&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;th&lt;/span&gt; &lt;span class="na"&gt;colspan=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;2&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;merged columns&lt;span class="nt"&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;th&amp;gt;&lt;/span&gt;unmerged&lt;span class="nt"&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;th&amp;gt;&lt;/span&gt;unmerged&lt;span class="nt"&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;th&lt;/span&gt; &lt;span class="na"&gt;rowspan=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;2&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;merged rows&lt;span class="nt"&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;td&amp;gt;&lt;/span&gt;row 1&lt;span class="nt"&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;td&amp;gt;&lt;/span&gt;content 1&lt;span class="nt"&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;td&amp;gt;&lt;/span&gt;content 2&lt;span class="nt"&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;td&amp;gt;&lt;/span&gt;row 2&lt;span class="nt"&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;td&amp;gt;&lt;/span&gt;content 1&lt;span class="nt"&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;td&amp;gt;&lt;/span&gt;content 2&lt;span class="nt"&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;~~~&lt;/p&gt;
 &lt;p&gt;In HTML it produces:&lt;/p&gt;
-&lt;table border="1" cellspacing="0" cellpadding="5"&gt;
+&lt;table border="2" cellspacing="0" cellpadding="5"&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;th rowspan="2"&gt;
-(empty)
-
-&lt;/th&gt;
-&lt;th rowspan="2"&gt;
-merged rows
-
-&lt;/th&gt;
-&lt;th colspan="2"&gt;
-merged columns
-
-&lt;/th&gt;
+&lt;th rowspan="2"&gt;(empty)&lt;/th&gt;
+&lt;th rowspan="2"&gt;merged rows&lt;/th&gt;
+&lt;th colspan="2"&gt;merged columns&lt;/th&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;th&gt;
-unmerged
-
-&lt;/th&gt;
-&lt;th&gt;
-unmerged
-
-&lt;/th&gt;
+&lt;th&gt;unmerged&lt;/th&gt;
+&lt;th&gt;unmerged&lt;/th&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;th rowspan="2"&gt;
-merged rows
-
-&lt;/th&gt;
-&lt;td&gt;
-row 1
-
-&lt;/td&gt;
-&lt;td&gt;
-content 1
-
-&lt;/td&gt;
-&lt;td&gt;
-content 2
-
-&lt;/td&gt;
+&lt;th rowspan="2"&gt;merged rows&lt;/th&gt;
+&lt;td&gt;row 1&lt;/td&gt;
+&lt;td&gt;content 1&lt;/td&gt;
+&lt;td&gt;content 2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;
-row 2
-
-&lt;/td&gt;
-&lt;td&gt;
-content 1
-
-&lt;/td&gt;
-&lt;td&gt;
-content 2
-
-&lt;/td&gt;
+&lt;td&gt;row 2&lt;/td&gt;
+&lt;td&gt;content 1&lt;/td&gt;
+&lt;td&gt;content 2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -662,8 +635,8 @@ content 2
 &lt;p&gt;But as I say, the good news is that HTML tables are now supported in
 GFM.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;Since posting this, I've been told about &lt;a href="https://github.com/gollum/gollum"&gt;Gollum&lt;/a&gt;, a Git-based wiki
-system that apparently supports GFM.&lt;/p&gt;</summary></entry><entry><title>Lǐ Bái on time (8th century)</title><link href="http://brannerchinese.github.io/li-bai-on-time-8th-century.html" rel="alternate"></link><updated>2013-10-02T23:32:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-10-02:li-bai-on-time-8th-century.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Since posting this, I've been told about &lt;a href="https://github.com/gollum/gollum"&gt;Gollum&lt;/a&gt;, a Git-based wiki system that apparently supports GFM.&lt;/p&gt;
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>Lǐ Bái on time (8th century)</title><link href="http://brannerchinese.github.io/li-bai-on-time-8th-century.html" rel="alternate"></link><updated>2013-10-02T23:32:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-10-02:li-bai-on-time-8th-century.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;光陰者百代之過客. ["Light and shade" (= time) is a passing visitor
 across a hundred generations.]&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -919,15 +892,21 @@ message? The programmer? Or the code itself?&lt;/p&gt;
 &lt;p&gt;In cases where there is a difference between the English first and third
 person singular, the first person sounds like the programmer speaking
 (or if you're inclined that way, the code itself)&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;"refactor main()" =&amp;gt; "In this commit *I* refactor main()"&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="s"&gt;&amp;quot;refactor main()&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;In this commit *I* refactor main()&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;while the third person sounds like the commit's action is being
 described&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;"refactors main()" =&amp;gt; "This commit refactors main()".&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="s"&gt;&amp;quot;refactors main()&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;This commit refactors main()&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;I can't say I see the suitability of imperative mood, though.&lt;/p&gt;
 &lt;p&gt;At times I find it useful not even to use a verb at all, such as when I
 commit after a merge — I just enter "after merge". Is more than that
-effective?&lt;/p&gt;</summary></entry><entry><title>A better plan is needed for transporting equipment in the subway</title><link href="http://brannerchinese.github.io/a-better-plan-for-transporting-equipment-in-the-subway.html" rel="alternate"></link><updated>2013-08-13T08:20:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-08-13:a-better-plan-for-transporting-equipment-in-the-subway.html</id><summary type="html">&lt;p&gt;There are getting to be a lot more bicycles in the subway and the cars
+effective?&lt;/p&gt;
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>A better plan is needed for transporting equipment in the subway</title><link href="http://brannerchinese.github.io/a-better-plan-for-transporting-equipment-in-the-subway.html" rel="alternate"></link><updated>2013-08-13T08:20:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-08-13:a-better-plan-for-transporting-equipment-in-the-subway.html</id><summary type="html">&lt;p&gt;There are getting to be a lot more bicycles in the subway and the cars
 weren't designed to hold them. Near the exits they're a safety hazard
 and wherever they are they take up the space of several people. Their
 wheels make your clothes dirty if you happen to touch them; the chains
@@ -960,41 +939,56 @@ mark", &lt;code&gt;?&lt;/code&gt;) with a parenthesis-delimited "group" or marke
 sub-expression. In Python, if such a group is found (below, &lt;code&gt;(ghi)?&lt;/code&gt;),
 it can be referred back to with a back-reference (below, &lt;code&gt;\2&lt;/code&gt;; code
 below is Python 3.3 in Ipython 0.13.2):&lt;/p&gt;
-&lt;p&gt;~~~~ {style="font-style:NORMAL;font-size:SMALL;"}&lt;/p&gt;
-&lt;p&gt;In [1]: re.sub('(abc)\t(ghi)', r'\2', 'abc\tghi')&lt;/p&gt;
-&lt;p&gt;Out[1]: 'ghi'
-~~~~&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;(abc)&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s"&gt;(ghi)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;r&amp;#39;\2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;abc&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s"&gt;ghi&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;ghi&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;but if it is not found an error is raised instead of an empty string
 being returned (which is the norm):&lt;/p&gt;
-&lt;p&gt;In [2]: re.sub('(abc)\t(ghi)?', r'\2', 'abc\t')&lt;/p&gt;
-&lt;p&gt;...&lt;/p&gt;
-&lt;p&gt;error: unmatched group&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;(abc)&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;t(ghi)?&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;r&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;abc&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;t&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;...&lt;/span&gt;
+&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;unmatched&lt;/span&gt; &lt;span class="n"&gt;group&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;I'm aware of two work-arounds for this curious situation.&lt;/p&gt;
 &lt;p&gt;First, rewrite the optional sub-expression as an optional look-ahead
 marked sub-expression: &lt;code&gt;((?:ghi)?)&lt;/code&gt;. There are two pairs of parentheses:
 one for the look-ahead syntax &lt;code&gt;(?:...)&lt;/code&gt; and one for the optional
 matching group &lt;code&gt;(...?)&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;In [3]: re.sub('(abc)\t((?:ghi)?)', r'\2', 'abc\tghi')&lt;/p&gt;
-&lt;p&gt;Out[3]: 'ghi'&lt;/p&gt;
-&lt;p&gt;In [4]: re.sub('(abc)\t((?:ghi)?)', r'\2', 'abc\t')&lt;/p&gt;
-&lt;p&gt;Out[4]: ''&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;(abc)&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;t((?:ghi)?)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;r&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;abc&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;tghi&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;ghi&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;(abc)&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;t((?:ghi)?)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;r&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;abc&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;t&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Second, discard the zero-or-one operator and put a set-union operator
 (metacharacter "pipe", &lt;code&gt;|&lt;/code&gt;) inside the parentheses so that the
 sub-expression now means "either nothing or else the target in question"
 (below, &lt;code&gt;(|ghi)&lt;/code&gt;):&lt;/p&gt;
-&lt;p&gt;In [5]: re.sub('(abc)\t(|ghi)', r'\2', 'abc\tghi')&lt;/p&gt;
-&lt;p&gt;Out[5]: 'ghi'&lt;/p&gt;
-&lt;p&gt;In [6]: re.sub('(abc)\t(|ghi)', r'\2', 'abc\t')&lt;/p&gt;
-&lt;p&gt;Out[6]: ''&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;(abc)&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;t(|ghi)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;r&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;abc&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;tghi&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;ghi&amp;#39;&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;(abc)&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;t(|ghi)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;r&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;abc&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;t&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;The first work-around is marginally faster than the second:&lt;/p&gt;
-&lt;p&gt;\$ python -m timeit -n 1000000 -s "from re import sub"
-"sub('(abc)\t((?:ghi)?)', r'\2', 'abc\tghi')"&lt;/p&gt;
-&lt;p&gt;1000000 loops, best of 3: 6.48 usec per loop&lt;/p&gt;
-&lt;p&gt;\$&lt;/p&gt;
-&lt;p&gt;\$ python -m timeit -n 1000000 -s "from re import sub"
-"sub('(abc)\t(|ghi)', r'\2', 'abc\tghi')"&lt;/p&gt;
-&lt;p&gt;1000000 loops, best of 3: 6.97 usec per loop&lt;/p&gt;
-&lt;p&gt;\$&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;timeit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="mi"&gt;1000000&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;from re import sub&amp;quot;&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot;sub(&amp;#39;(abc)&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;t((?:ghi)?)&amp;#39;, r&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;2&amp;#39;, &amp;#39;abc&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;tghi&amp;#39;)&amp;quot;&lt;/span&gt;
+&lt;span class="mi"&gt;1000000&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;6.48&lt;/span&gt; &lt;span class="n"&gt;usec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;timeit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="mi"&gt;1000000&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;from re import sub&amp;quot;&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot;sub(&amp;#39;(abc)&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;t(|ghi)&amp;#39;, r&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;2&amp;#39;, &amp;#39;abc&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;tghi&amp;#39;)&amp;quot;&lt;/span&gt;
+&lt;span class="mi"&gt;1000000&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;6.97&lt;/span&gt; &lt;span class="n"&gt;usec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;though it's longer to type and more complex to understand and remember.&lt;/p&gt;
 &lt;p&gt;I vote for the second work-around.&lt;/p&gt;
 &lt;hr /&gt;
@@ -1003,7 +997,8 @@ addresses this issue ("&lt;a href="https://pypi.python.org/pypi/regex"&gt;regex 
 &lt;blockquote&gt;
 &lt;p&gt;Unmatched group in replacement: An unmatched group is treated as an
 empty string in a replacement template.&lt;/p&gt;
-&lt;/blockquote&gt;</summary></entry><entry><title>A faster Python sort</title><link href="http://brannerchinese.github.io/a-faster-python-sort.html" rel="alternate"></link><updated>2013-07-24T13:38:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-07-24:a-faster-python-sort.html</id><summary type="html">&lt;p&gt;Python's built-in &lt;code&gt;sort&lt;/code&gt; function uses TimSort, a variety of MergeSort
+&lt;/blockquote&gt;
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>A faster Python sort</title><link href="http://brannerchinese.github.io/a-faster-python-sort.html" rel="alternate"></link><updated>2013-07-24T13:38:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-07-24:a-faster-python-sort.html</id><summary type="html">&lt;p&gt;Python's built-in &lt;code&gt;sort&lt;/code&gt; function uses TimSort, a variety of MergeSort
 with preliminary optimizations to save time by identifying partially
 ordered subarrays. Part of the optimization process involves the much
 slower InsertionSort.&lt;/p&gt;
@@ -1172,31 +1167,35 @@ faster than a list of lists.&lt;/p&gt;
 generations of programming languages predating Python. How do I convert
 between the index of the linear array and the coordinates &lt;code&gt;row&lt;/code&gt; and
 &lt;code&gt;column&lt;/code&gt; of the corresponding matrix?&lt;/p&gt;
-&lt;p&gt;&lt;code style="font-style:NORMAL;font-size:SMALL;"&gt;Matrix showing linear array-indices of matrix-cells:&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;row_number: +—————————————————+&lt;/p&gt;
-&lt;p&gt;2       | 8 | 9 | 10 | 11 |&lt;/p&gt;
-&lt;p&gt;+———+———+————+————+&lt;/p&gt;
-&lt;p&gt;1       | 4 | 5 |  6 |  7 |&lt;/p&gt;
-&lt;p&gt;+———+———+————+————+&lt;/p&gt;
-&lt;p&gt;0       | 0 | 1 |  2 |  3 |&lt;/p&gt;
-&lt;p&gt;+—————————————————+&lt;/p&gt;
-&lt;p&gt;0 | 1 |  2 |  3    \&amp;lt;= column_number&lt;/p&gt;
-&lt;p&gt;total_rows  = 3&lt;/p&gt;
-&lt;p&gt;total_columns = 4&lt;/p&gt;
-&lt;p&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Matrix showing linear array-indices of matrix-cells&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;row_number&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;—————————————————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;
+    &lt;span class="mi"&gt;2&lt;/span&gt;       &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+            &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;———&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;———&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;
+    &lt;span class="mi"&gt;1&lt;/span&gt;       &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+            &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;———&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;———&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;
+    &lt;span class="mi"&gt;0&lt;/span&gt;       &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+            &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;—————————————————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;
+              &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;3&lt;/span&gt;    \&lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="n"&gt;column_number&lt;/span&gt;
+
+  &lt;span class="n"&gt;total_rows&lt;/span&gt;    &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+  &lt;span class="n"&gt;total_columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Three small calculations are needed to convert between an index and the
 corresponding row_number and column_number:&lt;/p&gt;
-&lt;p&gt;index = row_number * total_columns + column_number&lt;/p&gt;
-&lt;p&gt;column_number = index % total_columns&lt;/p&gt;
-&lt;p&gt;# Python 3, non-integer division&lt;/p&gt;
-&lt;p&gt;row_number = (index - column_number) / total_columns&lt;/p&gt;
-&lt;p&gt;# Alternately, by integer division&lt;/p&gt;
-&lt;p&gt;row_number = index // total_columns&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;row_number&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;total_columns&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;column_number&lt;/span&gt;
+    &lt;span class="n"&gt;column_number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;total_columns&lt;/span&gt;
+    &lt;span class="c"&gt;# Python 3, non-integer division&lt;/span&gt;
+    &lt;span class="n"&gt;row_number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;column_number&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;total_columns&lt;/span&gt;
+    &lt;span class="c"&gt;# Alternately, by integer division&lt;/span&gt;
+    &lt;span class="n"&gt;row_number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;total_columns&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;hr /&gt;
-&lt;p&gt;As for "non-integer division", Guido van Rossum proposed "float
-division" for this
-(http://mail.python.org/pipermail/python-dev/2001-March/013444.html,
-20010311, accessed 20130722)&lt;/p&gt;</summary></entry><entry><title>Attempting a generic SQL INSERT statement in Python</title><link href="http://brannerchinese.github.io/attempting-a-generic-sql-insert-statement-in-python.html" rel="alternate"></link><updated>2013-07-20T19:41:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-07-20:attempting-a-generic-sql-insert-statement-in-python.html</id><summary type="html">&lt;p&gt;(The main version of this discussion is posted at &lt;a href="https://github.com/brannerchinese/notes/blob/master/CONTENT/SQL/Attempting_a_generic_SQL_INSERT_statement_in_Python.md"&gt;my GitHub
+&lt;p&gt;As for "non-integer division", Guido van Rossum proposed "float division" for this: ([http://mail.python.org/pipermail/python-dev/2001-March/013444.html], 20010311, accessed 20130722)&lt;/p&gt;
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>Attempting a generic SQL INSERT statement in Python</title><link href="http://brannerchinese.github.io/attempting-a-generic-sql-insert-statement-in-python.html" rel="alternate"></link><updated>2013-07-20T19:41:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-07-20:attempting-a-generic-sql-insert-statement-in-python.html</id><summary type="html">&lt;p&gt;(The main version of this discussion is posted at &lt;a href="https://github.com/brannerchinese/notes/blob/master/CONTENT/SQL/Attempting_a_generic_SQL_INSERT_statement_in_Python.md"&gt;my GitHub
 notebook&lt;/a&gt;, where it may be updated in future.)&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;I am working with SQLite3 in Python but am not yet at the stage of using
@@ -1314,18 +1313,21 @@ that the bracket-delimited replacement fields in &lt;code&gt;str&lt;/code&gt; ar
 Only if the string is constructed by concatenation in response to the
 number of arguments of &lt;code&gt;format&lt;/code&gt; is it possible for each of those
 arguments to be assured a corresponding replacement field:&lt;/p&gt;
-&lt;p&gt;&lt;code style="font-style:NORMAL;font-size:SMALL;"&gt;In [1]: user_input = input('What did R. Crumb say? ')&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Out[1]: What did R. Crumb say? Are the lumpen proletariat a lost
-cause?&lt;/p&gt;
-&lt;p&gt;In [2]: variable_length_args = user_input.split()&lt;/p&gt;
-&lt;p&gt;In [3]: the_string = [str(i) for i in
-range(len(variable_length_args))]&lt;/p&gt;
-&lt;p&gt;In [4]: the_string = '"{' + '}" and "{'.join(the_string) + '}"'&lt;/p&gt;
-&lt;p&gt;In [5]: the_string.format(*variable_length_args)&lt;/p&gt;
-&lt;p&gt;Out[5]: '"Are" and "the" and "lumpen" and "proletariat" and "a" and
-"lost" and "cause?"'&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;user_input&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;What did R. Crumb say? &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;What&lt;/span&gt; &lt;span class="n"&gt;did&lt;/span&gt; &lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Crumb&lt;/span&gt; &lt;span class="n"&gt;say&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt; &lt;span class="n"&gt;Are&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;lumpen&lt;/span&gt; &lt;span class="n"&gt;proletariat&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;lost&lt;/span&gt; &lt;span class="n"&gt;cause&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;variable_length_args&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;user_input&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;the_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;variable_length_args&lt;/span&gt;&lt;span class="p"&gt;))]&lt;/span&gt;
+
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;the_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;quot;{&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;}&amp;quot; and &amp;quot;{&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;the_string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;}&amp;quot;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;the_string&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;\&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;variable_length_args&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;quot;Are&amp;quot; and &amp;quot;the&amp;quot; and &amp;quot;lumpen&amp;quot; and &amp;quot;proletariat&amp;quot; and &amp;quot;a&amp;quot; and &amp;quot;lost&amp;quot; and &amp;quot;cause?&amp;quot;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Or is there some other special syntax for ensuring the right number of
-replacement fields, if that number is not known until runtime?&lt;/p&gt;</summary></entry><entry><title>Compelled by forces I can no longer resist…</title><link href="http://brannerchinese.github.io/compelled-by-forces-i-can-no-longer-resist.html" rel="alternate"></link><updated>2013-07-13T12:30:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-07-13:compelled-by-forces-i-can-no-longer-resist.html</id><summary type="html">&lt;p&gt;The number 42 appears so often in sample Python code that I am now
+replacement fields, if that number is not known until runtime?&lt;/p&gt;
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>Compelled by forces I can no longer resist…</title><link href="http://brannerchinese.github.io/compelled-by-forces-i-can-no-longer-resist.html" rel="alternate"></link><updated>2013-07-13T12:30:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-07-13:compelled-by-forces-i-can-no-longer-resist.html</id><summary type="html">&lt;p&gt;The number 42 appears so often in sample Python code that I am now
 reading the &lt;em&gt;Hitchhiker's Guide to the Universe&lt;/em&gt;, despite myself. I see
 that I must fully understand the context of this inane meme.&lt;/p&gt;
 &lt;p&gt;Because of the lingering effects of a childhood interest in numerology
@@ -9023,14 +9025,10 @@ history of his famed programming language," &lt;em&gt;Computer World&lt;/em&gt;,
 &lt;p&gt;[interviewed by Naomi Hamilton, "The A-Z of Programming Languages:
   C++: Bjarne Stroustrup of C++ fame dissects the history of his famed
   programming language," &lt;em&gt;Computer World&lt;/em&gt;, 20080625]: http://www.computerworld.com.au/article/print/250514/a-z_programming_languages_c_/&lt;/p&gt;</summary></entry><entry><title>Steve Bourne, advice to up-and-coming programmers (2009)</title><link href="http://brannerchinese.github.io/steve-bourne-advice-to-up-and-coming-programmers-2009.html" rel="alternate"></link><updated>2011-10-29T22:36:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2011-10-29:steve-bourne-advice-to-up-and-coming-programmers-2009.html</id><summary type="html">&lt;p&gt;From an interview by Howard Dahdah:&lt;/p&gt;
-&lt;p&gt;
-&gt; **If you were teaching up-and-coming programmers, what would you
-&gt; say?**
-&gt; &lt;/p&gt;
-
 &lt;blockquote&gt;
-&lt;p&gt;&lt;p&gt;
-First, I would be somewhat intimidated because they all know more than
+&lt;p&gt;&lt;strong&gt;If you were teaching up-and-coming programmers, what would you
+say?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;First, I would be somewhat intimidated because they all know more than
 I do these days! And the environments today are so much more
 complicated than when I wrote code. Having said that software
 engineering hasn’t changed much over the years. The thing we practised
@@ -9052,10 +9050,9 @@ understand the environment that your program will be deployed into.
 Lastly, take pride in your code so that your peers and customers alike
 will appreciate your skill.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;/p&gt;
-Steve Bourne, interviewed by Howard Dahdah, "The A-Z of Programming
-Languages: Bourne Shell, or sh", &lt;a href="http://www.techworld.com.au/article/print/279011/a-z_programming_languages_bourne_shell_sh/"&gt;&lt;em&gt;Computer World&lt;/em&gt;, 20090305&lt;/a&gt;,
-accessed 20111029.&lt;/p&gt;</summary></entry><entry><title>Alfred Aho on the origins of awk (2008)</title><link href="http://brannerchinese.github.io/alfred-aho-on-the-origins-of-awk-2008.html" rel="alternate"></link><updated>2011-10-29T22:26:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2011-10-29:alfred-aho-on-the-origins-of-awk-2008.html</id><summary type="html">&lt;p&gt;From an interview by Naomi Hamilton:&lt;/p&gt;
+&lt;p&gt;Steve Bourne, interviewed by Howard Dahdah, "The A-Z of Programming
+Languages: Bourne Shell, or sh", &lt;a href="http://www.techworld.com.au/article/print/279011/a-z_programming_languages_bourne_shell_sh/"&gt;&lt;em&gt;Computer World&lt;/em&gt;, 20090305&lt;/a&gt;, accessed 20111029.&lt;/p&gt;
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>Alfred Aho on the origins of awk (2008)</title><link href="http://brannerchinese.github.io/alfred-aho-on-the-origins-of-awk-2008.html" rel="alternate"></link><updated>2011-10-29T22:26:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2011-10-29:alfred-aho-on-the-origins-of-awk-2008.html</id><summary type="html">&lt;p&gt;From an interview by Naomi Hamilton:&lt;/p&gt;
 &lt;p&gt;
 &gt; Language design is a very personal activity and each person brings to
 &gt; a language the classes of problems that they'd like to solve, and the
