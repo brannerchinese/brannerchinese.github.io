@@ -405,22 +405,28 @@ Levenson, (The Bancroft Library University of California, Berkeley;
 http://content.cdlib.org/view?docId=hb8779p27v&amp;amp;brand=calisphere&amp;amp;doc.view=entire_text
 (accessed 20131102).&lt;/p&gt;</summary></entry><entry><title>Data within literal curly brackets using Python format()</title><link href="http://brannerchinese.github.io/data-within-literal-curly-brackets-using-python-format.html" rel="alternate"></link><updated>2013-10-20T20:43:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-10-20:data-within-literal-curly-brackets-using-python-format.html</id><summary type="html">&lt;p&gt;In current Python syntax, the &lt;code&gt;format()&lt;/code&gt; command for strings inserts
 data inside of curly brackets in a string:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Insert&lt;/span&gt; &lt;span class="n"&gt;five&lt;/span&gt; &lt;span class="n"&gt;here&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{}.&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Insert&lt;/span&gt; &lt;span class="n"&gt;five&lt;/span&gt; &lt;span class="n"&gt;here&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;5.&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Insert five here: {}.&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="s"&gt;&amp;#39;Insert five here: 5.&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;If you want literal brackets in a string modified by &lt;code&gt;format()&lt;/code&gt;, you
 have to escape the brackets by doubling them:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Here&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt; &lt;span class="n"&gt;what&lt;/span&gt; &lt;span class="n"&gt;brackets&lt;/span&gt; &lt;span class="n"&gt;look&lt;/span&gt; &lt;span class="n"&gt;like&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{{}}.&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Here&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt; &lt;span class="n"&gt;what&lt;/span&gt; &lt;span class="n"&gt;brackets&lt;/span&gt; &lt;span class="n"&gt;look&lt;/span&gt; &lt;span class="n"&gt;like&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{}.&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;{.python}&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;'Here is what brackets look like: {{}}.'.format()
+'Here is what brackets look like: {}.'&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;To&lt;/span&gt; &lt;span class="n"&gt;place&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="n"&gt;inside&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;literal&lt;/span&gt; &lt;span class="n"&gt;brackets&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;need&lt;/span&gt; &lt;span class="n"&gt;triple&lt;/span&gt; &lt;span class="n"&gt;brackets&lt;/span&gt; &lt;span class="err"&gt;—&lt;/span&gt;
+&lt;span class="kt"&gt;double&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;escaped&lt;/span&gt; &lt;span class="n"&gt;brackets&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;literal&lt;/span&gt; &lt;span class="n"&gt;brackets&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;then&lt;/span&gt; &lt;span class="n"&gt;another&lt;/span&gt; &lt;span class="n"&gt;pair&lt;/span&gt;
+&lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;brackets&lt;/span&gt; &lt;span class="n"&gt;as&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;socket&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
 
-
-&lt;p&gt;To place data inside of literal brackets, you need triple brackets —
-double-escaped brackets for the literal brackets and then another pair
-of brackets as the socket for the data:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Now&lt;/span&gt; &lt;span class="n"&gt;put&lt;/span&gt; &lt;span class="n"&gt;five&lt;/span&gt; &lt;span class="n"&gt;inside&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;brackets&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{{{}}}.&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{.&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Now&lt;/span&gt; &lt;span class="n"&gt;put&lt;/span&gt; &lt;span class="n"&gt;five&lt;/span&gt; &lt;span class="n"&gt;inside&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;brackets&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{{{}}}.&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Now&lt;/span&gt; &lt;span class="n"&gt;put&lt;/span&gt; &lt;span class="n"&gt;five&lt;/span&gt; &lt;span class="n"&gt;inside&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;brackets&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;}.&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1006,41 +1012,42 @@ unoptimized MergeSort may be faster. And it is available to Python
 through the &lt;code&gt;NumPy&lt;/code&gt; library. Below is an example in which &lt;code&gt;NumPy&lt;/code&gt;
 MergeSort is a third faster than the default Python &lt;code&gt;sort&lt;/code&gt; function:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;timeit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;  
-&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;  
-&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ascii_uppercase&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;  
-&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;137&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;  
-&lt;span class="n"&gt;gibberish&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ascii_uppercase&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1000000&lt;/span&gt;&lt;span class="p"&gt;)];&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;  
-&lt;span class="n"&gt;gibberish_np&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gibberish&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s"&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;  
-&lt;span class="n"&gt;gibberish_np&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gibberish_np&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kind&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;mergesort&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
-&lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;29.7&lt;/span&gt; &lt;span class="n"&gt;msec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;\  
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;\  
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;string&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ascii_uppercase&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;\  
+&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;137&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;\  
+&lt;span class="n"&gt;gibberish&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ascii_uppercase&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1000000&lt;/span&gt;&lt;span class="p"&gt;)];&lt;/span&gt;\  
+&lt;span class="n"&gt;gibberish_np&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gibberish&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s"&gt;&amp;quot; &amp;quot;&lt;/span&gt;\  
+&lt;span class="n"&gt;gibberish_np&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gibberish_np&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kind&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;mergesort&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;29.7&lt;/span&gt; &lt;span class="n"&gt;msec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
 &lt;span class="err"&gt;$&lt;/span&gt;
 &lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;timeit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;  
-&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ascii_uppercase&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;  
-&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;137&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;  
-&lt;span class="n"&gt;gibberish&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ascii_uppercase&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1000000&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;&lt;span class="s"&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;  
-&lt;span class="n"&gt;gibberish&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
-&lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;39.9&lt;/span&gt; &lt;span class="n"&gt;msec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;\  
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;string&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ascii_uppercase&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;\  
+&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;137&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;\  
+&lt;span class="n"&gt;gibberish&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ascii_uppercase&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1000000&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;&lt;span class="s"&gt;&amp;quot; &amp;quot;&lt;/span&gt;\  
+&lt;span class="n"&gt;gibberish&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;39.9&lt;/span&gt; &lt;span class="n"&gt;msec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
 &lt;span class="err"&gt;$&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;code&gt;Numpy&lt;/code&gt; also supplies QuickSort and HeapSort, which are slower than
 MergeSort but which sort lists without additional space complexity, as
-does TimSort. See the &lt;a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.sort.html"&gt;NumPy docs&lt;/a&gt; for more information.&lt;/p&gt;</summary></entry><entry><title>A question about time complexity when testing membership in a Python nested sequence</title><link href="http://brannerchinese.github.io/a-question-about-time-complexity-when-testing-membership-in-a-python-nested-sequence.html" rel="alternate"></link><updated>2013-07-22T16:22:00Z</updated><author><name>brannerchinese</name></author><id>tag:brannerchinese.github.io,2013-07-22:a-question-about-time-complexity-when-testing-membership-in-a-python-nested-sequence.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;(Corrected at bottom.)&lt;/strong&gt;&lt;/p&gt;
+does TimSort. See the &lt;a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.sort.html"&gt;NumPy docs&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>A question about time complexity when testing membership in a Python nested sequence</title><link href="http://brannerchinese.github.io/a-question-about-time-complexity-when-testing-membership-in-a-python-nested-sequence.html" rel="alternate"></link><updated>2013-07-22T16:22:00Z</updated><author><name>brannerchinese</name></author><id>tag:brannerchinese.github.io,2013-07-22:a-question-about-time-complexity-when-testing-membership-in-a-python-nested-sequence.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;(Corrected at bottom.)&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Python's &lt;code&gt;in&lt;/code&gt; operator tests for membership in a sequence.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;
-&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;True&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;But it does not work directly on nested sequences such as a list of
 lists or two-dimensional matrix:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
-&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;
-&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;False&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1084,11 +1091,11 @@ this to me.&lt;/p&gt;
 
 
 &lt;p&gt;Results:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;\#&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10000&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;1.61&lt;/span&gt; &lt;span class="n"&gt;sec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
-&lt;span class="err"&gt;\#&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;15.9&lt;/span&gt; &lt;span class="n"&gt;msec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
-&lt;span class="err"&gt;\#&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="mi"&gt;10000&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;158&lt;/span&gt; &lt;span class="n"&gt;usec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
-&lt;span class="err"&gt;\#&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="mi"&gt;1000000&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;1.63&lt;/span&gt; &lt;span class="n"&gt;usec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
-&lt;span class="err"&gt;\#&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="mi"&gt;10000000&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.194&lt;/span&gt; &lt;span class="n"&gt;usec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# i = j = 10000; 10 loops, best of 3: 1.61 sec per loop&lt;/span&gt;
+&lt;span class="c"&gt;# i = j = 1000; 100 loops, best of 3: 15.9 msec per loop&lt;/span&gt;
+&lt;span class="c"&gt;# i = j = 100; 10000 loops, best of 3: 158 usec per loop&lt;/span&gt;
+&lt;span class="c"&gt;# i = j = 10; 1000000 loops, best of 3: 1.63 usec per loop&lt;/span&gt;
+&lt;span class="c"&gt;# i = j = 3; 10000000 loops, best of 3: 0.194 usec per loop&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1199,81 +1206,74 @@ without having to write them out manually.&lt;/p&gt;
 &lt;p&gt;Below is what I came up with.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;An example of my original inline &lt;code&gt;INSERT&lt;/code&gt; statements&lt;/li&gt;
+&lt;li&gt;The same insertion carried out by a generic function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;kanji_fields&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;OrderedDict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;kanji_traditional&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kanji_traditional&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;kanji_simplified&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kanji_simplified&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;time_of_commit&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;timestamp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="n"&gt;insert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cursor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;kanji&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kanji_fields&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;insert()&lt;/code&gt; function called above&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CustomException&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ne"&gt;Exception&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;pass&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;insert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cursor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;table_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;field_ordereddict&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;raise_error_or_not&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Constructs and executes generic INSERT function.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+        &lt;span class="n"&gt;the_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;field_ordereddict&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+        &lt;span class="c"&gt;# prepare replacement fields for SQL field names&lt;/span&gt;
+        &lt;span class="n"&gt;the_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;{&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;},{&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;the_string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;}&amp;#39;&lt;/span&gt;
+        &lt;span class="c"&gt;# prepare question marks for VALUES&lt;/span&gt;
+        &lt;span class="n"&gt;question_marks&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;?&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;,?&amp;#39;&lt;/span&gt; \&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;field_ordereddict&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="c"&gt;# construct string&lt;/span&gt;
+        &lt;span class="n"&gt;the_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&amp;#39;&amp;#39;INSERT INTO {0} (&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;the_string&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;#39;&amp;#39;)&lt;/span&gt;
+&lt;span class="s"&gt;                VALUES (&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;question_marks&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;#39;&amp;#39;)&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;the_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;the_string&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;table_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+                &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nb"&gt;tuple&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;field_ordereddict&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;()))&lt;/span&gt;
+        &lt;span class="c"&gt;# execute as &lt;/span&gt;
+        &lt;span class="c"&gt;#   cursor.execute(the_string, *tuple(field_ordereddict.values()))&lt;/span&gt;
+        &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;cursor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;the_string&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;tuple&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;field_ordereddict&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="p"&gt;()))&lt;/span&gt;
+        &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;sqlite3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IntegrityError&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;raise_error_or_not&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;at {}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;tuple&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;field_ordereddict&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="p"&gt;())))&lt;/span&gt;
+                &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;CustomException&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+            &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="k"&gt;pass&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Notes on parameters:&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;The same insertion carried out by a generic function&lt;/p&gt;
-&lt;p&gt;&lt;code style="font-style:NORMAL;font-size:SMALL;"&gt;kanji_fields = OrderedDict((&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;('kanji_traditional', kanji_traditional),&lt;/p&gt;
-&lt;p&gt;('kanji_simplified', kanji_simplified),&lt;/p&gt;
-&lt;p&gt;('time_of_commit', timestamp)&lt;/p&gt;
-&lt;p&gt;))&lt;/p&gt;
-&lt;p&gt;&lt;p&gt;
-insert(cursor, 'kanji', kanji_fields)&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The &lt;code&gt;insert()&lt;/code&gt; function called above&lt;/p&gt;
-&lt;p&gt;&lt;code style="font-style:NORMAL;font-size:SMALL;"&gt;class CustomException(Exception):&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;pass&lt;/p&gt;
-&lt;p&gt;def insert(cursor, table_name, field_ordereddict,
-raise_error_or_not=True):&lt;/p&gt;
-&lt;p&gt;'''&lt;/p&gt;
-&lt;p&gt;Constructs and executes generic INSERT function.&lt;/p&gt;
-&lt;p&gt;Notes on parameters:&lt;/p&gt;
-&lt;p&gt;"cursor" is instantiated as:&lt;/p&gt;
-&lt;p&gt;con = sqlite3.connect()&lt;/p&gt;
-&lt;p&gt;with con:&lt;/p&gt;
-&lt;p&gt;cursor = con.cursor()&lt;/p&gt;
-&lt;p&gt;and passed to this function.&lt;/p&gt;
-&lt;p&gt;"table_name" is the name of the table in&lt;/p&gt;
-&lt;p&gt;where INSERT is to take place&lt;/p&gt;
-&lt;p&gt;"field_ordereddict" is a collections.OrderedDict of&lt;/p&gt;
-&lt;p&gt;(field_name, field_contents) tuples. The field_name keys
-populate the&lt;/p&gt;
-&lt;p&gt;arguments of the INTO expression and the field_contents values
-populate the&lt;/p&gt;
-&lt;p&gt;arguments of the VALUES expression.&lt;/p&gt;
-&lt;p&gt;"raise_error_or_not" is used to decide whether or not to log
-details about&lt;/p&gt;
-&lt;p&gt;a sqlite3.IntegrityError and then raise a CustomException or
-not.&lt;/p&gt;
-&lt;p&gt;'''&lt;/p&gt;
-&lt;p&gt;the_string = [str(i) for i in range(1,
-len(field_ordereddict)+1)]&lt;/p&gt;
-&lt;p&gt;# prepare replacement fields for SQL field names&lt;/p&gt;
-&lt;p&gt;the_string = '{' + '},{'.join(the_string) + '}'&lt;/p&gt;
-&lt;p&gt;# prepare question marks for VALUES&lt;/p&gt;
-&lt;p&gt;question_marks = '?' + ',?' * (len(field_ordereddict) - 1)&lt;/p&gt;
-&lt;p&gt;# construct string&lt;/p&gt;
-&lt;p&gt;the_string = ('''INSERT INTO {0} (''' + the_string + ''')&lt;/p&gt;
-&lt;p&gt;VALUES (''' + question_marks + ''')''')&lt;/p&gt;
-&lt;p&gt;the_string = the_string.format(table_name,
-*tuple(field_ordereddict.keys()))&lt;/p&gt;
-&lt;p&gt;# execute as cursor.execute(the_string,
-*tuple(field_ordereddict.values()))&lt;/p&gt;
-&lt;p&gt;try:&lt;/p&gt;
-&lt;p&gt;cursor.execute(the_string,
-tuple(field_ordereddict.values()))&lt;/p&gt;
-&lt;p&gt;except sqlite3.IntegrityError as e:&lt;/p&gt;
-&lt;p&gt;if raise_error_or_not:&lt;/p&gt;
-&lt;p&gt;print(e, 'at
-{}'.format(tuple(field_ordereddict.values())))&lt;/p&gt;
-&lt;p&gt;raise CustomException()&lt;/p&gt;
-&lt;p&gt;else:&lt;/p&gt;
-&lt;p&gt;&lt;p&gt;
-            pass&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Results&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Virtues&lt;/strong&gt;. Chiefly modularity and readability. This design
-    worked, and I was able to replace a number of long, messy
-    in-line &lt;code&gt;INSERT&lt;/code&gt; statements with neat &lt;code&gt;insert()&lt;/code&gt; calls.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Drawbacks&lt;/strong&gt;. However, The time required increased by a factor
-    of 3.2, which I judge fatal to my project.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Going forward&lt;/strong&gt;. Using &lt;code&gt;OrderedDict&lt;/code&gt; to keep field-names and
-    their contents organized improved readability:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;cursor&lt;/code&gt; is instantiated as:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;con&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sqlite3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;con&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;cursor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;con&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cursor&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;and passed to this function.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;table_name&lt;/code&gt; is the name of the table where &lt;code&gt;INSER&lt;/code&gt;T is to take place&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;field_ordereddict&lt;/code&gt; is a &lt;code&gt;collections.OrderedDict&lt;/code&gt; of &lt;code&gt;(field_name, field_contents)&lt;/code&gt; tuples. The &lt;code&gt;field_name&lt;/code&gt; keys populate the arguments of the INTO expression and the field_contents values populate the arguments of the VALUES expression.
+ • &lt;code&gt;raise_error_or_not&lt;/code&gt; is used to decide whether or not to log details about a &lt;code&gt;sqlite3.IntegrityError&lt;/code&gt; and then raise a &lt;code&gt;CustomException&lt;/code&gt; or not.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Virtues&lt;/strong&gt;. Chiefly modularity and readability. This design worked, and I was able to replace a number of long, messy in-line &lt;code&gt;INSERT&lt;/code&gt; statements with neat &lt;code&gt;insert()&lt;/code&gt; calls.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Drawbacks&lt;/strong&gt;. However, The time required increased by a factor of 3.2, which I judge fatal to my project.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Going forward&lt;/strong&gt;. Using &lt;code&gt;OrderedDict&lt;/code&gt; to keep field-names and their contents organized improved readability:&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>Welsh bwg 'bogey': an alternate proposal about the origin of "computer bug"</title><link href="http://brannerchinese.github.io/welsh-bwg-bogey-an-alternate-proposal-about-the-origin-of-computer-bug.html" rel="alternate"></link><updated>2013-07-18T23:40:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-07-18:welsh-bwg-bogey-an-alternate-proposal-about-the-origin-of-computer-bug.html</id><summary type="html">&lt;p&gt;A well-known account of the origin of "bug" for a computer error has it
 that Grace Hopper (1906–92) coined the term or at least used it in jest
 after an actual moth got into a vacuum-tube installation and cause a
@@ -1510,13 +1510,13 @@ and so more quickly — with a comprehension than with a corresponding
 loop over an &lt;code&gt;append&lt;/code&gt; or &lt;code&gt;add&lt;/code&gt; operation.&lt;/p&gt;
 &lt;p&gt;For a loop such as&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;the_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-    &lt;span class="n"&gt;the_list&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;the_list&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;we write a comprehension as&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;the_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;the_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1525,32 +1525,32 @@ loop over an &lt;code&gt;append&lt;/code&gt; or &lt;code&gt;add&lt;/code&gt; ope
 loop undergoes only minimal change in order when replaced with a
 comprehension; we replace&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;the_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;outermost&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;statement&lt;/span&gt;
-    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;subitem&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;next&lt;/span&gt; &lt;span class="n"&gt;outermost&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;statement&lt;/span&gt;
-        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;subsubitem&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;subitem&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;next&lt;/span&gt; &lt;span class="n"&gt;outermost&lt;/span&gt;
-            &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="p"&gt;...&lt;/span&gt;
-                &lt;span class="n"&gt;the_list&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c"&gt;# outermost for statement&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;subitem&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c"&gt;# next outermost for statement&lt;/span&gt;
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;subsubitem&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;subitem&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="c"&gt;# next outermost&lt;/span&gt;
+            &lt;span class="c"&gt;# ...&lt;/span&gt;
+                &lt;span class="n"&gt;the_list&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;with&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;the_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;subitem&lt;/span&gt;
-        &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;subsubitem&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="p"&gt;...]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;the_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;subitem&lt;/span&gt;
+        &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;subsubitem&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;The improvement in speed is considerable (Python 3.3):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;timeit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt; &lt;span class="n"&gt;as&lt;/span&gt; &lt;span class="n"&gt;R&lt;/span&gt;
-&lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&amp;quot; &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-    &lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="mi"&gt;1000&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;1.08&lt;/span&gt; &lt;span class="n"&gt;msec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
+&lt;span class="s"&gt;from random import random as R&lt;/span&gt;
+&lt;span class="s"&gt;list = []&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="s"&gt;for item in range(10000):&lt;/span&gt;
+&lt;span class="s"&gt;    list.append(R())&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="mi"&gt;1000&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;1.08&lt;/span&gt; &lt;span class="n"&gt;msec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
 &lt;span class="err"&gt;$&lt;/span&gt;
 &lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;timeit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt; &lt;span class="n"&gt;as&lt;/span&gt; &lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&amp;quot; &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10000&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="mi"&gt;1000&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;334&lt;/span&gt; &lt;span class="n"&gt;usec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
+&lt;span class="s"&gt;from random import random as R&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="s"&gt;[item for item in range(10000)]&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="mi"&gt;1000&lt;/span&gt; &lt;span class="n"&gt;loops&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;best&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;334&lt;/span&gt; &lt;span class="n"&gt;usec&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;
 &lt;span class="err"&gt;$&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -1558,19 +1558,19 @@ comprehension; we replace&lt;/p&gt;
 &lt;p&gt;(Note the primitive use of "u" for μ in "usec" (μsec). But the savings
 becomes smaller for deeply nested loops.)&lt;/p&gt;
 &lt;p&gt;Similarly, for a set:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;the_set&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-    &lt;span class="n"&gt;the_set&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;the_set&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;the_set&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;we write&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;the_set&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;the_set&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;and for a dictionary (mapping) we replace&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;span class="n"&gt;mapping&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2030,12 +2030,14 @@ understood at the moment — on StackOverflow. Afterwards, we gradually
 made sense of why that solution worked, and came to considered the
 problem fully solved.&lt;/p&gt;
 &lt;p&gt;(Here is a schematic of the solution:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;In:  b_list = [[1, 2], [3, 4], [5, 6], [7, 8]]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;[subitem for item in b_list&lt;/p&gt;
-&lt;p&gt;for subitem in item]&lt;/p&gt;
-&lt;p&gt;Out: [1, 2, 3, 4, 5, 6, 7, 8]&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="n"&gt;b_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+     &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;subitem&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;b_list&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;subitem&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;This assumes the list of lists is only two levels deep.)&lt;/p&gt;
-&lt;p&gt;And *that*, I think, is a good example of how a successful pairing
+&lt;p&gt;And &lt;em&gt;that&lt;/em&gt;, I think, is a good example of how a successful pairing
 encounter might turn out — joint pursuit of working code as well as a
 grasp of why it works, without anyone being in charge, exactly, and both
 parties learning from the experience. I've had a good week all around,
@@ -2046,7 +2048,8 @@ driven by my own expression of self. This, on the other hand, was driven
 merely by the desire to move forward an inch in writing a function, and
 it ended up setting me forward a good yard — and perhaps it taught the
 facilitator something, too. There was no pressure at all, and it was a
-delight. I must find ways to make this happen much more often.&lt;/p&gt;</summary></entry><entry><title>Computer science and rugelach</title><link href="http://brannerchinese.github.io/computer-science-and-rugelach.html" rel="alternate"></link><updated>2013-03-31T13:57:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-03-31:computer-science-and-rugelach.html</id><summary type="html">&lt;p&gt;&lt;em&gt;Rugelach&lt;/em&gt; are a data structure containing walnuts, raisins or other
+delight. I must find ways to make this happen much more often.&lt;/p&gt;
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>Computer science and rugelach</title><link href="http://brannerchinese.github.io/computer-science-and-rugelach.html" rel="alternate"></link><updated>2013-03-31T13:57:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-03-31:computer-science-and-rugelach.html</id><summary type="html">&lt;p&gt;&lt;em&gt;Rugelach&lt;/em&gt; are a data structure containing walnuts, raisins or other
 dried fruit, or sometimes chocolate. Their container is usually
 constructed of flour mixed with cream cheese or sour cream.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Rugelach&lt;/em&gt; have in common with the nodes of a canonical linked list that
@@ -2493,11 +2496,29 @@ tools will do.&lt;/p&gt;
 &lt;p&gt;Journals in the humanities with which I have regular contact do not, on
 the whole, seem ready to accept articles composed in LaTeX.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;/p&gt;
-Below is what I have been using for formatting Java code:&lt;/p&gt;
-&lt;p&gt;&lt;code style="font-size:9pt;"&gt;\usepackage{listings}&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;\lstset{language=Java,basicstyle=\ttfamily\footnotesize,frame=lines,captionpos=b,tabsize=4,keywordstyle=\color{blue},commentstyle=\color{dark-green},stringstyle=\color{red},numbers=left,numberstyle=\tiny,numbersep=5pt,breaklines=true,showstringspaces=false}&lt;/p&gt;
-&lt;p&gt;&lt;/code&gt;&lt;/p&gt;</summary></entry><entry><title>Hacker School</title><link href="http://brannerchinese.github.io/hacker-school.html" rel="alternate"></link><updated>2013-02-08T12:54:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-02-08:hacker-school.html</id><summary type="html">&lt;p&gt;I have now had one-on-one meetings with six of my Hacker School
+&lt;p&gt;Below is what I have been using for formatting Java code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;\usepackage&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;listings&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;{&lt;/span&gt;style=&amp;quot;font-size:9pt;&amp;quot;&lt;span class="nb"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;\lstset&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
+    language=Java,
+    basicstyle=&lt;span class="k"&gt;\ttfamily\footnotesize&lt;/span&gt;,
+    frame=lines,
+    captionpos=b,
+    tabsize=4,
+    keywordstyle=&lt;span class="k"&gt;\color&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;blue&lt;span class="nb"&gt;}&lt;/span&gt;,
+    commentstyle=&lt;span class="k"&gt;\color&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;dark-green&lt;span class="nb"&gt;}&lt;/span&gt;,
+    stringstyle=&lt;span class="k"&gt;\color&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;red&lt;span class="nb"&gt;}&lt;/span&gt;,
+    numbers=left,
+    numberstyle=&lt;span class="k"&gt;\tiny&lt;/span&gt;,
+    numbersep=5pt,
+    breaklines=true,
+    showstringspaces=false
+    &lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>Hacker School</title><link href="http://brannerchinese.github.io/hacker-school.html" rel="alternate"></link><updated>2013-02-08T12:54:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2013-02-08:hacker-school.html</id><summary type="html">&lt;p&gt;I have now had one-on-one meetings with six of my Hacker School
 "batchlings" — brothers and sisters in the impending batch — to begin
 building personal relationships before the madness of meeting 50 new
 people all at once, which starts in three days. Establishing individual
@@ -2681,7 +2702,7 @@ sure he is talking about a volume of Christmas carols.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Di magni, horribilem et sacrum libellum&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Quem tu scilicet ad tuum Catullum&lt;/p&gt;
 &lt;p&gt;Misti, continuo ut die periret,&lt;/p&gt;
-&lt;p&gt;Saturnalibus, optimo dierum!&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Saturnalibus, optimo dierum!&lt;/p&gt;
 &lt;p&gt;Great gods — what a horrible and damnable little book you sent your
 Catullus — so that on every day throughout the Saturnalia (the best of
 the holidays) he would perish of boredom.&lt;/p&gt;
@@ -2764,23 +2785,25 @@ there might be, since the basic idea is not terribly complicated.&lt;/p&gt;
 &lt;p&gt;Well, there are large numbers of implementations, and I was impressed to
 see how many crafty one-liners people have come up with. I studied a few
 of them and learned a thing or two. Although I classify myself as a fox
-on the &lt;a href="http://en.wikipedia.org/wiki/The_Hedgehog_and_the_Fox" title="Hedgehog and Fox"&gt;Archilochan dichotomy&lt;/a&gt;, my mind is slower than other people's,
+on the &lt;a href="http://en.wikipedia.org/wiki/The_Hedgehog_and_the_Fox"&gt;Archilochan dichotomy&lt;/a&gt;, my mind is slower than other people's,
 and it is my weakness as a programmer always to write as simply and
 explicitly as I can. When I see craftiness at work, after the initial
 envy subsides, I always feel I'll never catch up to it, although I
 usually then try to untangle what the experts have created, for my own
 education. I timed the various implementations, too, and mine came out
 far and away the slowest (results in seconds):&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;iterations =  100&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function dpb at 0x1107791b8&gt;: 0.00968&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function tamurakoichi at 0x110779320&gt;: 0.00067&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function anonymous at 0x110779398&gt;: 0.00144&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function smog at 0x110779410&gt;: 0.00158&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function chrisclark at 0x110779488&gt;: 0.00181&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function jefallbright at 0x110779500&gt;: 0.00158&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function anonymous2 at 0x110779578&gt;: 0.00072&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function anonymous4 at 0x1107795f0&gt;: 0.00171&lt;/p&gt;
-&lt;p&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;iterations&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;  &lt;span class="mi"&gt;100&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;dpb&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x1107791b8&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00968&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;tamurakoichi&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x110779320&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00067&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;anonymous&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x110779398&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00144&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;smog&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x110779410&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00158&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;chrisclark&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x110779488&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00181&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;jefallbright&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x110779500&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00158&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;anonymous2&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x110779578&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00072&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;anonymous4&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x1107795f0&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00171&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;So much for the advantages of writing clear, explicit code!&lt;/p&gt;
 &lt;p&gt;But then I looked a little more closely, and saw that most of these
 faster methods assembled the whole output as a string or array first,
@@ -2790,55 +2813,61 @@ time, surely an expensive luxury.&lt;/p&gt;
 without sending it to the console.** That allowed me to compare the
 results, string to string, and gave me a more equable basis for timing
 comparisons. And the results now?&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;iterations =  100&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function dpb at 0x10a729230&gt;: 0.00018&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function tamurakoichi at 0x10a729668&gt;: 0.00021&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function anonymous at 0x10a7291b8&gt;: 0.00023&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function smog at 0x10a7292a8&gt;: 0.00021&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function chrisclark at 0x10a729320&gt;: 0.00117&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function jefallbright at 0x10a729398&gt;: 0.00100&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function anonymous2 at 0x10a729410&gt;: 0.00024&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function anonymous4 at 0x10a729488&gt;: 0.00019&lt;/p&gt;
-&lt;p&gt;iterations = 10000000&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function dpb at 0x10a729230&gt;: 12.48893&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function tamurakoichi at 0x10a729668&gt;: 15.50518&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function anonymous at 0x10a7291b8&gt;: 19.88059&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function smog at 0x10a7292a8&gt;: 72.46663&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function chrisclark at 0x10a729320&gt;: 87.58923&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function jefallbright at 0x10a729398&gt;: 70.65603&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function anonymous2 at 0x10a729410&gt;: 17.89535&lt;/p&gt;
-&lt;p&gt;\&amp;lt;function anonymous4 at 0x10a729488&gt;: 19.54576&lt;/p&gt;
-&lt;p&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;iterations&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;  &lt;span class="mi"&gt;100&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;dpb&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a729230&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00018&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;tamurakoichi&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a729668&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00021&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;anonymous&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a7291b8&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00023&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;smog&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a7292a8&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00021&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;chrisclark&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a729320&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00117&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;jefallbright&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a729398&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00100&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;anonymous2&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a729410&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00024&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;anonymous4&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a729488&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.00019&lt;/span&gt;
+
+&lt;span class="n"&gt;iterations&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10000000&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;dpb&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a729230&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;12.48893&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;tamurakoichi&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a729668&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;15.50518&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;anonymous&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a7291b8&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;19.88059&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;smog&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a7292a8&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;72.46663&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;chrisclark&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a729320&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;87.58923&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;jefallbright&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a729398&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;70.65603&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;anonymous2&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a729410&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;17.89535&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;anonymous4&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x10a729488&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;19.54576&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;My painfully explicit code is also the fastest of the implementations
 I've examined.&lt;/p&gt;
 &lt;p&gt;Well, I feel a little better now. Readable code is vindicated!&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;* "Count incrementally, replacing any number divisible by three with
 the word 'fizz', and any number divisible by five with the word 'buzz'."
-&lt;a href="http://en.wikipedia.org/wiki/FizzBuzz"&gt;Wikipedia article "BizzBuzz"&lt;/a&gt;, accessed 20121206.&lt;/p&gt;
+&lt;a href="http://en.wikipedia.org/wiki/FizzBuzz"&gt;Wikipedia article "FizzBuzz"&lt;/a&gt;, accessed 20121206.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;** Here is my code, with the algorithm just as submitted but revised
 to save the printing time:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;def dpb(limit = 101):&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;output = ''&lt;/p&gt;
-&lt;p&gt;for i in xrange(1, limit):&lt;/p&gt;
-&lt;p&gt;if i%3 and i%5:&lt;/p&gt;
-&lt;p&gt;# neither of the special cases&lt;/p&gt;
-&lt;p&gt;output += str(i) + '\n'&lt;/p&gt;
-&lt;p&gt;else:&lt;/p&gt;
-&lt;p&gt;# the special cases&lt;/p&gt;
-&lt;p&gt;if not i%3:&lt;/p&gt;
-&lt;p&gt;# divisible by 3;&lt;/p&gt;
-&lt;p&gt;# we are not done yet so no linebreak&lt;/p&gt;
-&lt;p&gt;output += 'Fizz'&lt;/p&gt;
-&lt;p&gt;if not i%5:&lt;/p&gt;
-&lt;p&gt;# divisible by 5&lt;/p&gt;
-&lt;p&gt;output += 'Buzz\n'&lt;/p&gt;
-&lt;p&gt;else:&lt;/p&gt;
-&lt;p&gt;# now add linebreak after Fizz case&lt;/p&gt;
-&lt;p&gt;output += '\n'&lt;/p&gt;
-&lt;p&gt;return output&lt;/p&gt;
-&lt;p&gt;&lt;/code&gt;&lt;/p&gt;</summary></entry><entry><title>Godfrey Reggio on technology in life (2002)</title><link href="http://brannerchinese.github.io/godfrey-reggio-on-technology-in-life-2002.html" rel="alternate"></link><updated>2012-12-06T00:17:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2012-12-06:godfrey-reggio-on-technology-in-life-2002.html</id><summary type="html">&lt;p&gt;Filmed and edited over the six years from 1978–1983, &lt;em&gt;Koyaanisqatsi&lt;/em&gt; is
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;dpb&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;limit&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;101&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;xrange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            \&lt;span class="c"&gt;# neither of the special cases&lt;/span&gt;
+            &lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;n&amp;#39;&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            \&lt;span class="c"&gt;# the special cases&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                \&lt;span class="c"&gt;# divisible by 3;&lt;/span&gt;
+                \&lt;span class="c"&gt;# we are not done yet so no linebreak&lt;/span&gt;
+                &lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Fizz&amp;#39;&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                \&lt;span class="c"&gt;# divisible by 5&lt;/span&gt;
+                &lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Buzz&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;n&amp;#39;&lt;/span&gt;
+            &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                \&lt;span class="c"&gt;# now add linebreak after Fizz case&lt;/span&gt;
+                &lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s"&gt;n&amp;#39;&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>Godfrey Reggio on technology in life (2002)</title><link href="http://brannerchinese.github.io/godfrey-reggio-on-technology-in-life-2002.html" rel="alternate"></link><updated>2012-12-06T00:17:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2012-12-06:godfrey-reggio-on-technology-in-life-2002.html</id><summary type="html">&lt;p&gt;Filmed and edited over the six years from 1978–1983, &lt;em&gt;Koyaanisqatsi&lt;/em&gt; is
 an exceptionally beautiful piece of poetry, visual and musical. The DVD
 contains an "extra" called "Essence of Life" (2002), which features
 extended discussion by the directory, Godfrey Reggio, and the composer,
@@ -8400,17 +8429,19 @@ a number of hours reading the materials and taking the notes below.&lt;/p&gt;
 &lt;/p&gt;</summary></entry><entry><title>"Suppose" for math proofs, in LaTeX</title><link href="http://brannerchinese.github.io/suppose-for-math-proofs-in-latex.html" rel="alternate"></link><updated>2011-11-17T16:17:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2011-11-17:suppose-for-math-proofs-in-latex.html</id><summary type="html">&lt;p&gt;Slightly adapted from a suggestion by &lt;a href="http://www.pakin.org/~scott/"&gt;Scott Pakin&lt;/a&gt;, here is LaTeX
 code to generate the "suppose" symbol used by some mathematicians in
 writing proofs:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;\newlength{\Swidth}&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;\newcommand{\suppose}{%&lt;/p&gt;
-&lt;p&gt;\settowidth{\Swidth}{S}&lt;/p&gt;
-&lt;p&gt;\makebox[\Swidth]{\(_{\rule{.15ex}{.8ex}}\)}\llap{S}%&lt;/p&gt;
-&lt;p&gt;}&lt;/p&gt;
-&lt;p&gt;``Suppose there exists some \(x\) in set \(U\ldots\)'' becomes
-\(\suppose\ \exists\ x\in U\ldots\)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;[&lt;img alt="" src="http://brannerchinese.files.wordpress.com/2011/11/suppose_example_in_latex1.png?w=300" title="suppose_example_in_latex" /&gt;][]&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;\newlength&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\Swidth&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt;`
+&lt;span class="k"&gt;\newcommand&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\suppose&lt;/span&gt;&lt;span class="nb"&gt;}{&lt;/span&gt;&lt;span class="c"&gt;%&lt;/span&gt;
+&lt;span class="k"&gt;\settowidth&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\Swidth&lt;/span&gt;&lt;span class="nb"&gt;}{&lt;/span&gt;S&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\makebox&lt;/span&gt;&lt;span class="na"&gt;[\Swidth]&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="s"&gt;\(&lt;/span&gt;&lt;span class="nv"&gt;\_&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="nv"&gt;\rule&lt;/span&gt;&lt;span class="nb"&gt;{.&lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;&lt;span class="nb"&gt;ex}{.&lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;&lt;span class="nb"&gt;ex}}&lt;/span&gt;&lt;span class="s"&gt;\)&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt;&lt;span class="k"&gt;\llap&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;S&lt;span class="nb"&gt;}&lt;/span&gt;&lt;span class="c"&gt;%&lt;/span&gt;
+    &lt;span class="nb"&gt;}&lt;/span&gt;
+
+``Suppose there exists some &lt;span class="s"&gt;\(&lt;/span&gt;&lt;span class="nb"&gt;x&lt;/span&gt;&lt;span class="s"&gt;\)&lt;/span&gt; in set &lt;span class="s"&gt;\(&lt;/span&gt;&lt;span class="nb"&gt;U&lt;/span&gt;&lt;span class="nv"&gt;\ldots&lt;/span&gt;&lt;span class="s"&gt;\)&lt;/span&gt;&amp;#39;&amp;#39; becomes
+&lt;span class="s"&gt;\(&lt;/span&gt;&lt;span class="nv"&gt;\suppose\ \exists\ &lt;/span&gt;&lt;span class="nb"&gt;x&lt;/span&gt;&lt;span class="nv"&gt;\in&lt;/span&gt;&lt;span class="nb"&gt; U&lt;/span&gt;&lt;span class="nv"&gt;\ldots&lt;/span&gt;&lt;span class="s"&gt;\)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;hr /&gt;
-&lt;p&gt;&lt;/p&gt;
-The symbol is the letter S with a vertical bar through the bottom curve:&lt;/p&gt;
+&lt;p&gt;The symbol is the letter S with a vertical bar through the bottom curve:&lt;/p&gt;
 &lt;p&gt;[&lt;img alt="" src="http://brannerchinese.files.wordpress.com/2011/11/suppose_symbol_in_latex.png" title="suppose_symbol_in_latex" /&gt;][]&lt;/p&gt;
 &lt;p&gt;[&lt;img alt="" src="http://brannerchinese.files.wordpress.com/2011/11/suppose_example_in_latex1.png?w=300" title="suppose_example_in_latex" /&gt;]: http://brannerchinese.files.wordpress.com/2011/11/suppose_example_in_latex1.png
   [&lt;img alt="" src="http://brannerchinese.files.wordpress.com/2011/11/suppose_symbol_in_latex.png" title="suppose_symbol_in_latex" /&gt;]: http://brannerchinese.files.wordpress.com/2011/11/suppose_symbol_in_latex.png&lt;/p&gt;</summary></entry><entry><title>A rule of thumb in teaching</title><link href="http://brannerchinese.github.io/a-rule-of-thumb-in-teaching.html" rel="alternate"></link><updated>2011-11-17T14:30:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2011-11-17:a-rule-of-thumb-in-teaching.html</id><summary type="html">&lt;p&gt;I think a good rule of thumb is that anything I want students to learn

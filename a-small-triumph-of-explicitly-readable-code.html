@@ -72,23 +72,25 @@ there might be, since the basic idea is not terribly complicated.</p>
 <p>Well, there are large numbers of implementations, and I was impressed to
 see how many crafty one-liners people have come up with. I studied a few
 of them and learned a thing or two. Although I classify myself as a fox
-on the <a href="http://en.wikipedia.org/wiki/The_Hedgehog_and_the_Fox" title="Hedgehog and Fox">Archilochan dichotomy</a>, my mind is slower than other people's,
+on the <a href="http://en.wikipedia.org/wiki/The_Hedgehog_and_the_Fox">Archilochan dichotomy</a>, my mind is slower than other people's,
 and it is my weakness as a programmer always to write as simply and
 explicitly as I can. When I see craftiness at work, after the initial
 envy subsides, I always feel I'll never catch up to it, although I
 usually then try to untangle what the experts have created, for my own
 education. I timed the various implementations, too, and mine came out
 far and away the slowest (results in seconds):</p>
-<p><code>iterations =  100</code></p>
-<p>\&lt;function dpb at 0x1107791b8>: 0.00968</p>
-<p>\&lt;function tamurakoichi at 0x110779320>: 0.00067</p>
-<p>\&lt;function anonymous at 0x110779398>: 0.00144</p>
-<p>\&lt;function smog at 0x110779410>: 0.00158</p>
-<p>\&lt;function chrisclark at 0x110779488>: 0.00181</p>
-<p>\&lt;function jefallbright at 0x110779500>: 0.00158</p>
-<p>\&lt;function anonymous2 at 0x110779578>: 0.00072</p>
-<p>\&lt;function anonymous4 at 0x1107795f0>: 0.00171</p>
-<p></code></p>
+<div class="highlight"><pre><span class="n">iterations</span> <span class="o">=</span>  <span class="mi">100</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">dpb</span> <span class="n">at</span> <span class="mh">0x1107791b8</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00968</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">tamurakoichi</span> <span class="n">at</span> <span class="mh">0x110779320</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00067</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">anonymous</span> <span class="n">at</span> <span class="mh">0x110779398</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00144</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">smog</span> <span class="n">at</span> <span class="mh">0x110779410</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00158</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">chrisclark</span> <span class="n">at</span> <span class="mh">0x110779488</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00181</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">jefallbright</span> <span class="n">at</span> <span class="mh">0x110779500</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00158</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">anonymous2</span> <span class="n">at</span> <span class="mh">0x110779578</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00072</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">anonymous4</span> <span class="n">at</span> <span class="mh">0x1107795f0</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00171</span>
+</pre></div>
+
+
 <p>So much for the advantages of writing clear, explicit code!</p>
 <p>But then I looked a little more closely, and saw that most of these
 faster methods assembled the whole output as a string or array first,
@@ -98,55 +100,61 @@ time, surely an expensive luxury.</p>
 without sending it to the console.** That allowed me to compare the
 results, string to string, and gave me a more equable basis for timing
 comparisons. And the results now?</p>
-<p><code>iterations =  100</code></p>
-<p>\&lt;function dpb at 0x10a729230>: 0.00018</p>
-<p>\&lt;function tamurakoichi at 0x10a729668>: 0.00021</p>
-<p>\&lt;function anonymous at 0x10a7291b8>: 0.00023</p>
-<p>\&lt;function smog at 0x10a7292a8>: 0.00021</p>
-<p>\&lt;function chrisclark at 0x10a729320>: 0.00117</p>
-<p>\&lt;function jefallbright at 0x10a729398>: 0.00100</p>
-<p>\&lt;function anonymous2 at 0x10a729410>: 0.00024</p>
-<p>\&lt;function anonymous4 at 0x10a729488>: 0.00019</p>
-<p>iterations = 10000000</p>
-<p>\&lt;function dpb at 0x10a729230>: 12.48893</p>
-<p>\&lt;function tamurakoichi at 0x10a729668>: 15.50518</p>
-<p>\&lt;function anonymous at 0x10a7291b8>: 19.88059</p>
-<p>\&lt;function smog at 0x10a7292a8>: 72.46663</p>
-<p>\&lt;function chrisclark at 0x10a729320>: 87.58923</p>
-<p>\&lt;function jefallbright at 0x10a729398>: 70.65603</p>
-<p>\&lt;function anonymous2 at 0x10a729410>: 17.89535</p>
-<p>\&lt;function anonymous4 at 0x10a729488>: 19.54576</p>
-<p></code></p>
+<div class="highlight"><pre><span class="n">iterations</span> <span class="o">=</span>  <span class="mi">100</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">dpb</span> <span class="n">at</span> <span class="mh">0x10a729230</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00018</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">tamurakoichi</span> <span class="n">at</span> <span class="mh">0x10a729668</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00021</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">anonymous</span> <span class="n">at</span> <span class="mh">0x10a7291b8</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00023</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">smog</span> <span class="n">at</span> <span class="mh">0x10a7292a8</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00021</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">chrisclark</span> <span class="n">at</span> <span class="mh">0x10a729320</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00117</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">jefallbright</span> <span class="n">at</span> <span class="mh">0x10a729398</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00100</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">anonymous2</span> <span class="n">at</span> <span class="mh">0x10a729410</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00024</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">anonymous4</span> <span class="n">at</span> <span class="mh">0x10a729488</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.00019</span>
+
+<span class="n">iterations</span> <span class="o">=</span> <span class="mi">10000000</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">dpb</span> <span class="n">at</span> <span class="mh">0x10a729230</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">12.48893</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">tamurakoichi</span> <span class="n">at</span> <span class="mh">0x10a729668</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">15.50518</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">anonymous</span> <span class="n">at</span> <span class="mh">0x10a7291b8</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">19.88059</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">smog</span> <span class="n">at</span> <span class="mh">0x10a7292a8</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">72.46663</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">chrisclark</span> <span class="n">at</span> <span class="mh">0x10a729320</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">87.58923</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">jefallbright</span> <span class="n">at</span> <span class="mh">0x10a729398</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">70.65603</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">anonymous2</span> <span class="n">at</span> <span class="mh">0x10a729410</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">17.89535</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">anonymous4</span> <span class="n">at</span> <span class="mh">0x10a729488</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">19.54576</span>
+</pre></div>
+
+
 <p>My painfully explicit code is also the fastest of the implementations
 I've examined.</p>
 <p>Well, I feel a little better now. Readable code is vindicated!</p>
 <hr />
 <p>* "Count incrementally, replacing any number divisible by three with
 the word 'fizz', and any number divisible by five with the word 'buzz'."
-<a href="http://en.wikipedia.org/wiki/FizzBuzz">Wikipedia article "BizzBuzz"</a>, accessed 20121206.</p>
+<a href="http://en.wikipedia.org/wiki/FizzBuzz">Wikipedia article "FizzBuzz"</a>, accessed 20121206.</p>
 <hr />
 <p>** Here is my code, with the algorithm just as submitted but revised
 to save the printing time:</p>
-<p><code>def dpb(limit = 101):</code></p>
-<p>output = ''</p>
-<p>for i in xrange(1, limit):</p>
-<p>if i%3 and i%5:</p>
-<p># neither of the special cases</p>
-<p>output += str(i) + '\n'</p>
-<p>else:</p>
-<p># the special cases</p>
-<p>if not i%3:</p>
-<p># divisible by 3;</p>
-<p># we are not done yet so no linebreak</p>
-<p>output += 'Fizz'</p>
-<p>if not i%5:</p>
-<p># divisible by 5</p>
-<p>output += 'Buzz\n'</p>
-<p>else:</p>
-<p># now add linebreak after Fizz case</p>
-<p>output += '\n'</p>
-<p>return output</p>
-<p></code></p></div>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">dpb</span><span class="p">(</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">101</span><span class="p">):</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">3</span> <span class="ow">and</span> <span class="n">i</span><span class="o">%</span><span class="mi">5</span><span class="p">:</span>
+            \<span class="c"># neither of the special cases</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\\</span><span class="s">n&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            \<span class="c"># the special cases</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">i</span><span class="o">%</span><span class="mi">3</span><span class="p">:</span>
+                \<span class="c"># divisible by 3;</span>
+                \<span class="c"># we are not done yet so no linebreak</span>
+                <span class="n">output</span> <span class="o">+=</span> <span class="s">&#39;Fizz&#39;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">i</span><span class="o">%</span><span class="mi">5</span><span class="p">:</span>
+                \<span class="c"># divisible by 5</span>
+                <span class="n">output</span> <span class="o">+=</span> <span class="s">&#39;Buzz</span><span class="se">\\</span><span class="s">n&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                \<span class="c"># now add linebreak after Fizz case</span>
+                <span class="n">output</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\\</span><span class="s">n&#39;</span>
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+
+
+<p>[end]</p></div>
 		<div>
 			<h2>Comments</h2>
 		<div>

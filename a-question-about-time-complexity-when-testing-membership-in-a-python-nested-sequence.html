@@ -57,17 +57,17 @@ by <a class="url fn" href="http://brannerchinese.github.io/author/brannerchinese
 </div>
 		<div><p><strong>(Corrected at bottom.)</strong></p>
 <p>Python's <code>in</code> operator tests for membership in a sequence.</p>
-<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span> <span class="mi">1</span> <span class="n">in</span> <span class="n">a</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span> <span class="n">True</span>
+<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">a</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="bp">True</span>
 </pre></div>
 
 
 <p>But it does not work directly on nested sequences such as a list of
 lists or two-dimensional matrix:</p>
-<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">:</span> <span class="mi">1</span> <span class="n">in</span> <span class="n">a</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">:</span> <span class="n">False</span>
+<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">a</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="bp">False</span>
 </pre></div>
 
 
@@ -111,11 +111,11 @@ this to me.</p>
 
 
 <p>Results:</p>
-<div class="highlight"><pre><span class="err">\#</span> <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span> <span class="mi">10</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="o">:</span> <span class="mf">1.61</span> <span class="n">sec</span> <span class="n">per</span> <span class="n">loop</span>
-<span class="err">\#</span> <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span> <span class="mi">100</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="o">:</span> <span class="mf">15.9</span> <span class="n">msec</span> <span class="n">per</span> <span class="n">loop</span>
-<span class="err">\#</span> <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="mi">10000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="o">:</span> <span class="mi">158</span> <span class="n">usec</span> <span class="n">per</span> <span class="n">loop</span>
-<span class="err">\#</span> <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="mi">1000000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="o">:</span> <span class="mf">1.63</span> <span class="n">usec</span> <span class="n">per</span> <span class="n">loop</span>
-<span class="err">\#</span> <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">10000000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="o">:</span> <span class="mf">0.194</span> <span class="n">usec</span> <span class="n">per</span> <span class="n">loop</span>
+<div class="highlight"><pre><span class="c"># i = j = 10000; 10 loops, best of 3: 1.61 sec per loop</span>
+<span class="c"># i = j = 1000; 100 loops, best of 3: 15.9 msec per loop</span>
+<span class="c"># i = j = 100; 10000 loops, best of 3: 158 usec per loop</span>
+<span class="c"># i = j = 10; 1000000 loops, best of 3: 1.63 usec per loop</span>
+<span class="c"># i = j = 3; 10000000 loops, best of 3: 0.194 usec per loop</span>
 </pre></div>
 
 

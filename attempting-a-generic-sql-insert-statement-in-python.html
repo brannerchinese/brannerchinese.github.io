@@ -65,81 +65,74 @@ without having to write them out manually.</p>
 <p>Below is what I came up with.</p>
 <ul>
 <li>An example of my original inline <code>INSERT</code> statements</li>
+<li>The same insertion carried out by a generic function</li>
+</ul>
+<div class="highlight"><pre><span class="n">kanji_fields</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span>
+        <span class="p">(</span>
+        <span class="p">(</span><span class="s">&#39;kanji_traditional&#39;</span><span class="p">,</span> <span class="n">kanji_traditional</span><span class="p">),</span>
+        <span class="p">(</span><span class="s">&#39;kanji_simplified&#39;</span><span class="p">,</span> <span class="n">kanji_simplified</span><span class="p">),</span>
+        <span class="p">(</span><span class="s">&#39;time_of_commit&#39;</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">)</span>
+        <span class="p">))</span>
+    <span class="n">insert</span><span class="p">(</span><span class="n">cursor</span><span class="p">,</span> <span class="s">&#39;kanji&#39;</span><span class="p">,</span> <span class="n">kanji_fields</span><span class="p">)</span>
+</pre></div>
+
+
+<ul>
+<li>The <code>insert()</code> function called above</li>
+</ul>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">CustomException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="n">cursor</span><span class="p">,</span> <span class="n">table_name</span><span class="p">,</span> <span class="n">field_ordereddict</span><span class="p">,</span> <span class="n">raise_error_or_not</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Constructs and executes generic INSERT function.&quot;&quot;&quot;</span>
+
+        <span class="n">the_string</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">field_ordereddict</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+        <span class="c"># prepare replacement fields for SQL field names</span>
+        <span class="n">the_string</span> <span class="o">=</span> <span class="s">&#39;{&#39;</span> <span class="o">+</span> <span class="s">&#39;},{&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">the_string</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;}&#39;</span>
+        <span class="c"># prepare question marks for VALUES</span>
+        <span class="n">question_marks</span> <span class="o">=</span> <span class="s">&#39;?&#39;</span> <span class="o">+</span> <span class="s">&#39;,?&#39;</span> \<span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">field_ordereddict</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="c"># construct string</span>
+        <span class="n">the_string</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;&#39;&#39;INSERT INTO {0} (&#39;&#39;&#39;</span> <span class="o">+</span> <span class="n">the_string</span> <span class="o">+</span> <span class="s">&#39;&#39;&#39;)</span>
+<span class="s">                VALUES (&#39;&#39;&#39;</span> <span class="o">+</span> <span class="n">question_marks</span> <span class="o">+</span> <span class="s">&#39;&#39;&#39;)&#39;&#39;&#39;</span><span class="p">)</span>
+        <span class="n">the_string</span> <span class="o">=</span> <span class="n">the_string</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> 
+                <span class="o">*</span><span class="nb">tuple</span><span class="p">(</span><span class="n">field_ordereddict</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+        <span class="c"># execute as </span>
+        <span class="c">#   cursor.execute(the_string, *tuple(field_ordereddict.values()))</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">the_string</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">field_ordereddict</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+        <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">IntegrityError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">raise_error_or_not</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s">&#39;at {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">field_ordereddict</span><span class="o">.</span><span class="n">values</span><span class="p">())))</span>
+                <span class="k">raise</span> <span class="n">CustomException</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">pass</span>
+</pre></div>
+
+
+<h2>Notes on parameters:</h2>
+<ul>
 <li>
-<p>The same insertion carried out by a generic function</p>
-<p><code style="font-style:NORMAL;font-size:SMALL;">kanji_fields = OrderedDict((</code></p>
-<p>('kanji_traditional', kanji_traditional),</p>
-<p>('kanji_simplified', kanji_simplified),</p>
-<p>('time_of_commit', timestamp)</p>
-<p>))</p>
-<p><p>
-insert(cursor, 'kanji', kanji_fields)</code></p>
-</li>
-<li>
-<p>The <code>insert()</code> function called above</p>
-<p><code style="font-style:NORMAL;font-size:SMALL;">class CustomException(Exception):</code></p>
-<p>pass</p>
-<p>def insert(cursor, table_name, field_ordereddict,
-raise_error_or_not=True):</p>
-<p>'''</p>
-<p>Constructs and executes generic INSERT function.</p>
-<p>Notes on parameters:</p>
-<p>"cursor" is instantiated as:</p>
-<p>con = sqlite3.connect()</p>
-<p>with con:</p>
-<p>cursor = con.cursor()</p>
-<p>and passed to this function.</p>
-<p>"table_name" is the name of the table in</p>
-<p>where INSERT is to take place</p>
-<p>"field_ordereddict" is a collections.OrderedDict of</p>
-<p>(field_name, field_contents) tuples. The field_name keys
-populate the</p>
-<p>arguments of the INTO expression and the field_contents values
-populate the</p>
-<p>arguments of the VALUES expression.</p>
-<p>"raise_error_or_not" is used to decide whether or not to log
-details about</p>
-<p>a sqlite3.IntegrityError and then raise a CustomException or
-not.</p>
-<p>'''</p>
-<p>the_string = [str(i) for i in range(1,
-len(field_ordereddict)+1)]</p>
-<p># prepare replacement fields for SQL field names</p>
-<p>the_string = '{' + '},{'.join(the_string) + '}'</p>
-<p># prepare question marks for VALUES</p>
-<p>question_marks = '?' + ',?' * (len(field_ordereddict) - 1)</p>
-<p># construct string</p>
-<p>the_string = ('''INSERT INTO {0} (''' + the_string + ''')</p>
-<p>VALUES (''' + question_marks + ''')''')</p>
-<p>the_string = the_string.format(table_name,
-*tuple(field_ordereddict.keys()))</p>
-<p># execute as cursor.execute(the_string,
-*tuple(field_ordereddict.values()))</p>
-<p>try:</p>
-<p>cursor.execute(the_string,
-tuple(field_ordereddict.values()))</p>
-<p>except sqlite3.IntegrityError as e:</p>
-<p>if raise_error_or_not:</p>
-<p>print(e, 'at
-{}'.format(tuple(field_ordereddict.values())))</p>
-<p>raise CustomException()</p>
-<p>else:</p>
-<p><p>
-            pass</code></p>
-</li>
-<li>
-<p>Results</p>
-<ol>
-<li><strong>Virtues</strong>. Chiefly modularity and readability. This design
-    worked, and I was able to replace a number of long, messy
-    in-line <code>INSERT</code> statements with neat <code>insert()</code> calls.</li>
-<li><strong>Drawbacks</strong>. However, The time required increased by a factor
-    of 3.2, which I judge fatal to my project.</li>
-<li><strong>Going forward</strong>. Using <code>OrderedDict</code> to keep field-names and
-    their contents organized improved readability:</li>
-</ol>
+<p><code>cursor</code> is instantiated as:</p>
+<div class="highlight"><pre><span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">with</span> <span class="n">con</span><span class="o">:</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="p">.</span><span class="n">cursor</span><span class="p">()</span>
+</pre></div>
+
+
 </li>
 </ul>
+<p>and passed to this function.</p>
+<ul>
+<li><code>table_name</code> is the name of the table where <code>INSER</code>T is to take place</li>
+<li><code>field_ordereddict</code> is a <code>collections.OrderedDict</code> of <code>(field_name, field_contents)</code> tuples. The <code>field_name</code> keys populate the arguments of the INTO expression and the field_contents values populate the arguments of the VALUES expression.
+ • <code>raise_error_or_not</code> is used to decide whether or not to log details about a <code>sqlite3.IntegrityError</code> and then raise a <code>CustomException</code> or not.</li>
+</ul>
+<h2>Results</h2>
+<ol>
+<li><strong>Virtues</strong>. Chiefly modularity and readability. This design worked, and I was able to replace a number of long, messy in-line <code>INSERT</code> statements with neat <code>insert()</code> calls.</li>
+<li><strong>Drawbacks</strong>. However, The time required increased by a factor of 3.2, which I judge fatal to my project.</li>
+<li><strong>Going forward</strong>. Using <code>OrderedDict</code> to keep field-names and their contents organized improved readability:</li>
+</ol>
 <p>[end]</p></div>
 		<div>
 			<h2>Comments</h2>

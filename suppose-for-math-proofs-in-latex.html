@@ -58,17 +58,19 @@ by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-b
 		<div><p>Slightly adapted from a suggestion by <a href="http://www.pakin.org/~scott/">Scott Pakin</a>, here is LaTeX
 code to generate the "suppose" symbol used by some mathematicians in
 writing proofs:</p>
-<p><code>\newlength{\Swidth}</code></p>
-<p>\newcommand{\suppose}{%</p>
-<p>\settowidth{\Swidth}{S}</p>
-<p>\makebox[\Swidth]{\(_{\rule{.15ex}{.8ex}}\)}\llap{S}%</p>
-<p>}</p>
-<p>``Suppose there exists some \(x\) in set \(U\ldots\)'' becomes
-\(\suppose\ \exists\ x\in U\ldots\)</code></p>
-<p>[<img alt="" src="http://brannerchinese.files.wordpress.com/2011/11/suppose_example_in_latex1.png?w=300" title="suppose_example_in_latex" />][]</p>
+<div class="highlight"><pre><span class="k">\newlength</span><span class="nb">{</span><span class="k">\Swidth</span><span class="nb">}</span>`
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\suppose</span><span class="nb">}{</span><span class="c">%</span>
+<span class="k">\settowidth</span><span class="nb">{</span><span class="k">\Swidth</span><span class="nb">}{</span>S<span class="nb">}</span>
+<span class="k">\makebox</span><span class="na">[\Swidth]</span><span class="nb">{</span><span class="s">\(</span><span class="nv">\_</span><span class="nb">{</span><span class="nv">\rule</span><span class="nb">{.</span><span class="m">15</span><span class="nb">ex}{.</span><span class="m">8</span><span class="nb">ex}}</span><span class="s">\)</span><span class="nb">}</span><span class="k">\llap</span><span class="nb">{</span>S<span class="nb">}</span><span class="c">%</span>
+    <span class="nb">}</span>
+
+``Suppose there exists some <span class="s">\(</span><span class="nb">x</span><span class="s">\)</span> in set <span class="s">\(</span><span class="nb">U</span><span class="nv">\ldots</span><span class="s">\)</span>&#39;&#39; becomes
+<span class="s">\(</span><span class="nv">\suppose\ \exists\ </span><span class="nb">x</span><span class="nv">\in</span><span class="nb"> U</span><span class="nv">\ldots</span><span class="s">\)</span>
+</pre></div>
+
+
 <hr />
-<p></p>
-The symbol is the letter S with a vertical bar through the bottom curve:</p>
+<p>The symbol is the letter S with a vertical bar through the bottom curve:</p>
 <p>[<img alt="" src="http://brannerchinese.files.wordpress.com/2011/11/suppose_symbol_in_latex.png" title="suppose_symbol_in_latex" />][]</p>
 <p>[<img alt="" src="http://brannerchinese.files.wordpress.com/2011/11/suppose_example_in_latex1.png?w=300" title="suppose_example_in_latex" />]: http://brannerchinese.files.wordpress.com/2011/11/suppose_example_in_latex1.png
   [<img alt="" src="http://brannerchinese.files.wordpress.com/2011/11/suppose_symbol_in_latex.png" title="suppose_symbol_in_latex" />]: http://brannerchinese.files.wordpress.com/2011/11/suppose_symbol_in_latex.png</p></div>

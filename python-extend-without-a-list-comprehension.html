@@ -62,13 +62,13 @@ and so more quickly — with a comprehension than with a corresponding
 loop over an <code>append</code> or <code>add</code> operation.</p>
 <p>For a loop such as</p>
 <div class="highlight"><pre><span class="n">the_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">container</span><span class="o">:</span>
-    <span class="n">the_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">container</span><span class="p">:</span>
+    <span class="n">the_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
 </pre></div>
 
 
 <p>we write a comprehension as</p>
-<div class="highlight"><pre><span class="n">the_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">object</span> <span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">container</span><span class="p">]</span>
+<div class="highlight"><pre><span class="n">the_list</span> <span class="o">=</span> <span class="p">[</span><span class="nb">object</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">container</span><span class="p">]</span>
 </pre></div>
 
 
@@ -77,32 +77,32 @@ loop over an <code>append</code> or <code>add</code> operation.</p>
 loop undergoes only minimal change in order when replaced with a
 comprehension; we replace</p>
 <div class="highlight"><pre><span class="n">the_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">container</span><span class="o">:</span> <span class="err">#</span> <span class="n">outermost</span> <span class="k">for</span> <span class="n">statement</span>
-    <span class="k">for</span> <span class="n">subitem</span> <span class="n">in</span> <span class="n">item</span><span class="o">:</span> <span class="err">#</span> <span class="n">next</span> <span class="n">outermost</span> <span class="k">for</span> <span class="n">statement</span>
-        <span class="k">for</span> <span class="n">subsubitem</span> <span class="n">in</span> <span class="n">subitem</span><span class="o">:</span> <span class="err">#</span> <span class="n">next</span> <span class="n">outermost</span>
-            <span class="err">#</span> <span class="p">...</span>
-                <span class="n">the_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">object</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">container</span><span class="p">:</span> <span class="c"># outermost for statement</span>
+    <span class="k">for</span> <span class="n">subitem</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span> <span class="c"># next outermost for statement</span>
+        <span class="k">for</span> <span class="n">subsubitem</span> <span class="ow">in</span> <span class="n">subitem</span><span class="p">:</span> <span class="c"># next outermost</span>
+            <span class="c"># ...</span>
+                <span class="n">the_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
 </pre></div>
 
 
 <p>with</p>
-<div class="highlight"><pre><span class="n">the_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">object</span> <span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">container</span> <span class="k">for</span> <span class="n">subitem</span>
-        <span class="n">in</span> <span class="n">item</span> <span class="k">for</span> <span class="n">subsubitem</span> <span class="n">in</span> <span class="n">item</span> <span class="p">...]</span>
+<div class="highlight"><pre><span class="n">the_list</span> <span class="o">=</span> <span class="p">[</span><span class="nb">object</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">container</span> <span class="k">for</span> <span class="n">subitem</span>
+        <span class="ow">in</span> <span class="n">item</span> <span class="k">for</span> <span class="n">subsubitem</span> <span class="ow">in</span> <span class="n">item</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
 
 
 <p>The improvement in speed is considerable (Python 3.3):</p>
 <div class="highlight"><pre><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">s</span> <span class="s">&quot;&quot;&quot;</span>
-<span class="n">from</span> <span class="n">random</span> <span class="n">import</span> <span class="n">random</span> <span class="n">as</span> <span class="n">R</span>
-<span class="n">list</span> <span class="o">=</span> <span class="p">[]</span><span class="s">&quot;&quot;&quot; &quot;&quot;&quot;</span>
-<span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="o">:</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">R</span><span class="p">())</span><span class="s">&quot;&quot;&quot;</span>
-<span class="mi">1000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="o">:</span> <span class="mf">1.08</span> <span class="n">msec</span> <span class="n">per</span> <span class="n">loop</span>
+<span class="s">from random import random as R</span>
+<span class="s">list = []&quot;&quot;&quot;</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">for item in range(10000):</span>
+<span class="s">    list.append(R())&quot;&quot;&quot;</span>
+<span class="mi">1000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">1.08</span> <span class="n">msec</span> <span class="n">per</span> <span class="n">loop</span>
 <span class="err">$</span>
 <span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">s</span> <span class="s">&quot;&quot;&quot;</span>
-<span class="n">from</span> <span class="n">random</span> <span class="n">import</span> <span class="n">random</span> <span class="n">as</span> <span class="n">R</span><span class="s">&quot;&quot;&quot; &quot;&quot;&quot;</span>
-<span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]</span><span class="s">&quot;&quot;&quot;</span>
-<span class="mi">1000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="o">:</span> <span class="mi">334</span> <span class="n">usec</span> <span class="n">per</span> <span class="n">loop</span>
+<span class="s">from random import random as R&quot;&quot;&quot;</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">[item for item in range(10000)]&quot;&quot;&quot;</span>
+<span class="mi">1000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">334</span> <span class="n">usec</span> <span class="n">per</span> <span class="n">loop</span>
 <span class="err">$</span>
 </pre></div>
 
@@ -110,19 +110,19 @@ comprehension; we replace</p>
 <p>(Note the primitive use of "u" for μ in "usec" (μsec). But the savings
 becomes smaller for deeply nested loops.)</p>
 <p>Similarly, for a set:</p>
-<div class="highlight"><pre><span class="n">the_set</span> <span class="o">=</span> <span class="n">set</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">container</span><span class="o">:</span>
-    <span class="n">the_set</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">the_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">container</span><span class="p">:</span>
+    <span class="n">the_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
 </pre></div>
 
 
 <p>we write</p>
-<div class="highlight"><pre><span class="n">the_set</span> <span class="o">=</span> <span class="p">[</span><span class="n">object</span> <span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">container</span><span class="p">]</span>
+<div class="highlight"><pre><span class="n">the_set</span> <span class="o">=</span> <span class="p">[</span><span class="nb">object</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">container</span><span class="p">]</span>
 </pre></div>
 
 
 <p>and for a dictionary (mapping) we replace</p>
-<div class="highlight"><pre><span class="k">for</span> <span class="n">key</span> <span class="n">in</span> <span class="n">container</span><span class="o">:</span>
+<div class="highlight"><pre><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">container</span><span class="p">:</span>
 <span class="n">mapping</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 </pre></div>
 
