@@ -55,32 +55,35 @@
 by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
  in <a href="http://brannerchinese.github.io/category/.html"></a>
 </div>
-		<div><p>I <a href="http://brannerchinese.wordpress.com/2011/11/20/testing-the-reliability-of-the-python-priority-queue/">wrote earlier</a> about modeling Python's priority queue using the
+		<div><p>I <a href="testing-the-reliability-of-the-python-priority-queue.html">wrote earlier</a> about modeling Python's priority queue using the
 "list" data type, in order to find a rumored source of error in
 implementing the Dijkstra shortest-path algorithm.</p>
 <p>I see now that there is an important feature, possible in the list model
 but apparently not in the priority queue: stable sorting. I've altered
-[my queue_test code][] to illustrate this difference. I am dealing here
+<a href="https://bitbucket.org/dpb/queue_test">my queue_test code</a> to illustrate this difference. I am dealing here
 with v. 2.6 of Python.</p>
 <p>When a list of lists is sorted under normal conditions, all items of the
 sub-lists take part in the sorting: their first item is sorted, then
 their second item, then their third, and so on. The result looks like
 this:</p>
-<p><code>[6, 17, 18, 16]</code></p>
-<p>[6, 17, 18, 17]</p>
-<p>[6, 17, 19, 6]</p>
-<p>[6, 17, 20, 7]</p>
-<p>[6, 17, 20, 16]</p>
-<p>[6, 18, 1, 5]</p>
-<p>[6, 18, 1, 13]</p>
-<p>[6, 18, 2, 2]</p>
-<p>[6, 18, 2, 5]</p>
-<p>[6, 18, 2, 12]</p>
-<p>[6, 18, 3, 2]</p>
-<p>[6, 18, 3, 6]</p>
-<p>[6, 18, 3, 6]</p>
-<p>[6, 18, 4, 19]</p>
-<p>[6, 18, 4, 20]</code></p>
+<div class="highlight"><pre><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">17</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+</pre></div>
+
+
 <p>All these lists begin with 6, but we cannot tell anything about their
 original order relative to each other. Those whose second element is 17
 all come before those whose second element is 18. Among those beginning
@@ -90,15 +93,17 @@ all elements, leaving no trace of the original order of the lists.</p>
 <p>In a stable sort, however, only some specified item is sorted, and the
 other items are not examined, so a remnant of the earlier order persists
 in the sorted result. The result might look like this:</p>
-<p><code>[6, 17, 18, 16]</code></p>
-<p>[6, 9, 20, 4]</p>
-<p>[6, 9, 19, 6]</p>
-<p>[6, 20, 18, 11]</p>
-<p>[6, 20, 6, 12]</p>
-<p>[6, 19, 1, 12]</p>
-<p>[6, 17, 4, 8]</p>
-<p>[6, 12, 9, 20]</p>
-<p></code></p>
+<div class="highlight"><pre><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+</pre></div>
+
+
 <p>You can see that <code>[6, 17, 18, 16]</code> "ought" to be placed after
 <code>[6, 9, 20, 4]</code>, and so forth, but stable sorting has left them out of
 order, reflecting their original relative position.</p>
@@ -107,7 +112,8 @@ the <code>sort()</code> method, and can be refined by use of the <code>itemgette
 method of the <code>operator</code> module. But Python's priority queue does not
 seem able to sort by a key or to sort stably. For an illustration, see
 the current version of my <code>queue_test</code> code, online at
-<a href="https://bitbucket.org/dpb/queue_test">https://bitbucket.org/dpb/queue_test</a>.</p></div>
+<a href="https://bitbucket.org/dpb/queue_test">https://bitbucket.org/dpb/queue_test</a>.</p>
+<p>[end]</p></div>
 		<div>
 			<h2>Comments</h2>
 		<div>

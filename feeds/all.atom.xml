@@ -1175,7 +1175,7 @@ between the index of the linear array and the coordinates &lt;code&gt;row&lt;/co
             &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;———&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;———&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;
     &lt;span class="mi"&gt;0&lt;/span&gt;       &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
             &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;—————————————————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;
-              &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;3&lt;/span&gt;    \&lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="n"&gt;column_number&lt;/span&gt;
+              &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="mi"&gt;3&lt;/span&gt;    &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="n"&gt;column_number&lt;/span&gt;
 
   &lt;span class="n"&gt;total_rows&lt;/span&gt;    &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
   &lt;span class="n"&gt;total_columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
@@ -2978,10 +2978,13 @@ little used to it — I never believe it's going to happen again until it
 does.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;Hardware and software involved:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Mac OS 10.8.2 on 11-inch MacBook Air, Late 2010&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Eclipse Version: Juno Service Release 1&lt;/p&gt;
-&lt;p&gt;Build id: 20121004-1855&lt;/p&gt;
-&lt;p&gt;Android tools: 21.0.0.v201210310015-519525&lt;/code&gt;&lt;/p&gt;</summary></entry><entry><title>Black optimism explained</title><link href="http://brannerchinese.github.io/black-optimism-explained.html" rel="alternate"></link><updated>2012-11-24T18:47:00-05:00</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2012-11-24:black-optimism-explained.html</id><summary type="html">&lt;p&gt;Today, three weeks from the end of my Java course, I am finally working
+&lt;ul&gt;
+&lt;li&gt;Mac OS 10.8.2 on 11-inch MacBook Air, Late 2010&lt;/li&gt;
+&lt;li&gt;Eclipse Version: Juno Service Release 1&lt;/li&gt;
+&lt;li&gt;Build id: 20121004-1855&lt;/li&gt;
+&lt;li&gt;Android tools: 21.0.0.v201210310015-519525&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>Black optimism explained</title><link href="http://brannerchinese.github.io/black-optimism-explained.html" rel="alternate"></link><updated>2012-11-24T18:47:00-05:00</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2012-11-24:black-optimism-explained.html</id><summary type="html">&lt;p&gt;Today, three weeks from the end of my Java course, I am finally working
 my way through the Android training tools.&lt;/p&gt;
 &lt;p&gt;I am moved to reflect that some people assume technology will solve all
 their problems, but that I am not one of them.&lt;/p&gt;
@@ -7740,32 +7743,35 @@ people all human beings are equally heirs.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;/p&gt;
 There is at least one program available to generate graphs from the
-Project: see &lt;a href="http://www.davidalber.net/geneagrapher/"&gt;http://www.davidalber.net/geneagrapher/&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>Lack of stable sort in Python's priority queue</title><link href="http://brannerchinese.github.io/lack-of-stable-sort-in-pythons-priority-queue.html" rel="alternate"></link><updated>2011-11-28T23:23:00-05:00</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2011-11-28:lack-of-stable-sort-in-pythons-priority-queue.html</id><summary type="html">&lt;p&gt;I &lt;a href="http://brannerchinese.wordpress.com/2011/11/20/testing-the-reliability-of-the-python-priority-queue/"&gt;wrote earlier&lt;/a&gt; about modeling Python's priority queue using the
+Project: see &lt;a href="http://www.davidalber.net/geneagrapher/"&gt;http://www.davidalber.net/geneagrapher/&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>Lack of stable sort in Python's priority queue</title><link href="http://brannerchinese.github.io/lack-of-stable-sort-in-pythons-priority-queue.html" rel="alternate"></link><updated>2011-11-28T23:23:00-05:00</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2011-11-28:lack-of-stable-sort-in-pythons-priority-queue.html</id><summary type="html">&lt;p&gt;I &lt;a href="testing-the-reliability-of-the-python-priority-queue.html"&gt;wrote earlier&lt;/a&gt; about modeling Python's priority queue using the
 "list" data type, in order to find a rumored source of error in
 implementing the Dijkstra shortest-path algorithm.&lt;/p&gt;
 &lt;p&gt;I see now that there is an important feature, possible in the list model
 but apparently not in the priority queue: stable sorting. I've altered
-[my queue_test code][] to illustrate this difference. I am dealing here
+&lt;a href="https://bitbucket.org/dpb/queue_test"&gt;my queue_test code&lt;/a&gt; to illustrate this difference. I am dealing here
 with v. 2.6 of Python.&lt;/p&gt;
 &lt;p&gt;When a list of lists is sorted under normal conditions, all items of the
 sub-lists take part in the sorting: their first item is sorted, then
 their second item, then their third, and so on. The result looks like
 this:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;[6, 17, 18, 16]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;[6, 17, 18, 17]&lt;/p&gt;
-&lt;p&gt;[6, 17, 19, 6]&lt;/p&gt;
-&lt;p&gt;[6, 17, 20, 7]&lt;/p&gt;
-&lt;p&gt;[6, 17, 20, 16]&lt;/p&gt;
-&lt;p&gt;[6, 18, 1, 5]&lt;/p&gt;
-&lt;p&gt;[6, 18, 1, 13]&lt;/p&gt;
-&lt;p&gt;[6, 18, 2, 2]&lt;/p&gt;
-&lt;p&gt;[6, 18, 2, 5]&lt;/p&gt;
-&lt;p&gt;[6, 18, 2, 12]&lt;/p&gt;
-&lt;p&gt;[6, 18, 3, 2]&lt;/p&gt;
-&lt;p&gt;[6, 18, 3, 6]&lt;/p&gt;
-&lt;p&gt;[6, 18, 3, 6]&lt;/p&gt;
-&lt;p&gt;[6, 18, 4, 19]&lt;/p&gt;
-&lt;p&gt;[6, 18, 4, 20]&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;All these lists begin with 6, but we cannot tell anything about their
 original order relative to each other. Those whose second element is 17
 all come before those whose second element is 18. Among those beginning
@@ -7775,15 +7781,17 @@ all elements, leaving no trace of the original order of the lists.&lt;/p&gt;
 &lt;p&gt;In a stable sort, however, only some specified item is sorted, and the
 other items are not examined, so a remnant of the earlier order persists
 in the sorted result. The result might look like this:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;[6, 17, 18, 16]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;[6, 9, 20, 4]&lt;/p&gt;
-&lt;p&gt;[6, 9, 19, 6]&lt;/p&gt;
-&lt;p&gt;[6, 20, 18, 11]&lt;/p&gt;
-&lt;p&gt;[6, 20, 6, 12]&lt;/p&gt;
-&lt;p&gt;[6, 19, 1, 12]&lt;/p&gt;
-&lt;p&gt;[6, 17, 4, 8]&lt;/p&gt;
-&lt;p&gt;[6, 12, 9, 20]&lt;/p&gt;
-&lt;p&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;You can see that &lt;code&gt;[6, 17, 18, 16]&lt;/code&gt; "ought" to be placed after
 &lt;code&gt;[6, 9, 20, 4]&lt;/code&gt;, and so forth, but stable sorting has left them out of
 order, reflecting their original relative position.&lt;/p&gt;
@@ -7792,7 +7800,8 @@ the &lt;code&gt;sort()&lt;/code&gt; method, and can be refined by use of the &lt
 method of the &lt;code&gt;operator&lt;/code&gt; module. But Python's priority queue does not
 seem able to sort by a key or to sort stably. For an illustration, see
 the current version of my &lt;code&gt;queue_test&lt;/code&gt; code, online at
-&lt;a href="https://bitbucket.org/dpb/queue_test"&gt;https://bitbucket.org/dpb/queue_test&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>Suitable pots for making turmeric tea</title><link href="http://brannerchinese.github.io/suitable-pots-for-making-turmeric-tea.html" rel="alternate"></link><updated>2011-11-28T07:44:00-05:00</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2011-11-28:suitable-pots-for-making-turmeric-tea.html</id><summary type="html">&lt;p&gt;When fresh turmeric tea (&lt;em&gt;haldi chai&lt;/em&gt;) is made by infusion in a ceramic
+&lt;a href="https://bitbucket.org/dpb/queue_test"&gt;https://bitbucket.org/dpb/queue_test&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>Suitable pots for making turmeric tea</title><link href="http://brannerchinese.github.io/suitable-pots-for-making-turmeric-tea.html" rel="alternate"></link><updated>2011-11-28T07:44:00-05:00</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2011-11-28:suitable-pots-for-making-turmeric-tea.html</id><summary type="html">&lt;p&gt;When fresh turmeric tea (&lt;em&gt;haldi chai&lt;/em&gt;) is made by infusion in a ceramic
 pot, it is a deep yellow color. But when turmeric is cooked at low heat
 in a stainless steel pot, it is noticeably more reddish and darker.&lt;/p&gt;
 &lt;p&gt;I know that the reddening of turmeric is the result of interaction with
@@ -7941,8 +7950,7 @@ seclusion. When I was a boy, my friends and I called these things
 &lt;p&gt;I bought one this morning from Sun Sai Gai 新世界 at 220 Canal, corner
 Baxter, one of Chinatown's long-term institutions (though the management
 has changed a number of times in the 35 years I've been going there).&lt;/p&gt;</summary></entry><entry><title>Testing the reliability of the Python priority queue</title><link href="http://brannerchinese.github.io/testing-the-reliability-of-the-python-priority-queue.html" rel="alternate"></link><updated>2011-11-20T19:58:00-05:00</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2011-11-20:testing-the-reliability-of-the-python-priority-queue.html</id><summary type="html">&lt;p&gt;Hearing of a problem with the PriorityQueue class in Python's &lt;code&gt;Queue&lt;/code&gt;
-module, I wrote [this short program to test the class.
-https://bitbucket.org/dpb/queue_test][]&lt;/p&gt;
+module, I wrote &lt;a href="https://bitbucket.org/dpb/queue_test"&gt;this short program to test the class&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The Python priority queue is modeled here by a list, which is sorted so
 as to match the queue's ascending order. The queue data structure
 differs from a list in having its size fixed at creation time, making
@@ -7974,17 +7982,11 @@ does not enter values.&lt;/p&gt;
 &lt;p&gt;Note that blocking and timeout is not tested here. The &lt;code&gt;put_nowait()&lt;/code&gt;
 and &lt;code&gt;get_nowait()&lt;/code&gt; methods were tested manually but then removed from
 the code.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt;: No problems have been found in Queue.PriorityQueue as of
+&lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt;: No problems have been found in &lt;code&gt;Queue.PriorityQueue&lt;/code&gt; as of
 this writing.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;strong&gt;Update&lt;/strong&gt;, 20111130: I've more recently discussed a more interesting
-conclusion about this problem: see
-&lt;a href="https://brannerchinese.wordpress.com/2011/11/28/lack-of-stable-sort-in-pythons-priority-queue/"&gt;https://brannerchinese.wordpress.com/2011/11/28/lack-of-stable-sort-in-pythons-priority-queue/&lt;/a&gt;
-and
-&lt;a href="https://brannerchinese.wordpress.com/2011/11/30/apparent-error-in-pythons-priority-queue/"&gt;https://brannerchinese.wordpress.com/2011/11/30/apparent-error-in-pythons-priority-queue/&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;[this short program to test the class.
-  https://bitbucket.org/dpb/queue_test]: https://bitbucket.org/dpb/queue_test&lt;/p&gt;</summary></entry><entry><title>Edsger Dijkstra on programming as an intellectual discipline (2001)</title><link href="http://brannerchinese.github.io/edsger-dijkstra-on-programming-as-an-intellectual-discipline-2001.html" rel="alternate"></link><updated>2011-11-20T07:33:00-05:00</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2011-11-20:edsger-dijkstra-on-programming-as-an-intellectual-discipline-2001.html</id><summary type="html">&lt;p&gt;Edsger Dijkstra, from an an oral history interview with Philip Frana in
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;, 20111130: I've more recently discussed a more interesting conclusion about this problem: see &lt;lack-of-stable-sort-in-pythons-priority-queue.html&gt; and &lt;apparent-error-in-pythons-priority-queue.html&gt;.&lt;/p&gt;
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>Edsger Dijkstra on programming as an intellectual discipline (2001)</title><link href="http://brannerchinese.github.io/edsger-dijkstra-on-programming-as-an-intellectual-discipline-2001.html" rel="alternate"></link><updated>2011-11-20T07:33:00-05:00</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2011-11-20:edsger-dijkstra-on-programming-as-an-intellectual-discipline-2001.html</id><summary type="html">&lt;p&gt;Edsger Dijkstra, from an an oral history interview with Philip Frana in
 2001:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;False dreams paralyzed a lot of American computing science.&lt;/p&gt;
