@@ -77,10 +77,10 @@ loop over an <code>append</code> or <code>add</code> operation.</p>
 loop undergoes only minimal change in order when replaced with a
 comprehension; we replace</p>
 <div class="highlight"><pre><span class="n">the_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">container</span><span class="o">:</span> <span class="err">\#</span> <span class="n">outermost</span> <span class="k">for</span> <span class="n">statement</span>
-    <span class="k">for</span> <span class="n">subitem</span> <span class="n">in</span> <span class="n">item</span><span class="o">:</span> <span class="err">\#</span> <span class="n">next</span> <span class="n">outermost</span> <span class="k">for</span> <span class="n">statement</span>
-        <span class="k">for</span> <span class="n">subsubitem</span> <span class="n">in</span> <span class="n">subitem</span><span class="o">:</span> <span class="err">\#</span> <span class="n">next</span> <span class="n">outermost</span>
-            <span class="err">\#</span> <span class="p">...</span>
+<span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">container</span><span class="o">:</span> <span class="err">#</span> <span class="n">outermost</span> <span class="k">for</span> <span class="n">statement</span>
+    <span class="k">for</span> <span class="n">subitem</span> <span class="n">in</span> <span class="n">item</span><span class="o">:</span> <span class="err">#</span> <span class="n">next</span> <span class="n">outermost</span> <span class="k">for</span> <span class="n">statement</span>
+        <span class="k">for</span> <span class="n">subsubitem</span> <span class="n">in</span> <span class="n">subitem</span><span class="o">:</span> <span class="err">#</span> <span class="n">next</span> <span class="n">outermost</span>
+            <span class="err">#</span> <span class="p">...</span>
                 <span class="n">the</span><span class="err">\</span><span class="n">_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">object</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
 </pre></div>
 
