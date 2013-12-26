@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Annotations of Cormen et al.'s algorithm for a Red-Black Tree (delete and delete-fixup functions only)</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/annotations-of-cormen-et-al-s-algorithm-for-a-red-black-tree-delete-and-delete-fixup-functions-only.html">2011-10-27 19:28:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>I recently completed a partial implementation in Python of the Red-Black
+Tree algorithm from Chapter 13 of <em>Introduction to Algorithms</em>, 3rd ed.,
+by Cormen, Leiserson, Rivest, and Stein. In a number of places I found
+the pseudo-code hard to implement, and devoted considerable time to
+annotating it. For the benefit of others who may be attempting the same
+project, I offer my annotations here of the RB-DELETE and
+RB-DELETE-FIXUP functions, which were the most difficult to follow.</p>
+<p>As always, comment and criticism are welcome. For functions not shown,
+such as RB-TRANSPLANT and TREE-MINIMUM, see the book by Cormen <em>et al</em>.</p>
+<hr />
+<p></p>
+<p>
+~~~~ {style="line-height:50%;font-size:small;"}
+RB-DELETE(T, z)
+        # Identifying Cormen's variable names in this function:</p>
+<h1>z: node to delete</h1>
+<h1>y: successor node</h1>
+<h1>x: node that moves into y's original position</h1>
+<h1>T: tree object</h1>
+<h1>1. Retrieve node to be deleted, as "z" (Cormen does not</h1>
+<h1>show this.)</h1>
+<h1>2. Cormen creates "y" to manipulate subtrees and color</h1>
+<h1>of node</h1>
+<p>1 y = z
+        # 3. If y is black, must later run RB-DELETE-FIXUP</p>
+<h1>So store node's color in separate variable</h1>
+<h1>"y-original-color"; y itself cannot be used,</h1>
+<h1>since it may be changed below</h1>
+<p>2 y-original-color = y.color
+        # 4a. If z has only one subtree,</p>
+<h1>then replace z with that subtree;</h1>
+<h1>use "x" to manipulate the subtree in interim</h1>
+<p>3 if  z.left == T.nil
+4    x = z.right
+5    RB-TRANSPLANT(T, z, z.right)
+6 elseif z.right == T.nil
+7    x = z.left
+8    RB-TRANSPLANT(T, z, z.left)
+        # 4b. But if z has two subtrees or none,</p>
+<h1>must set y to z's successor.</h1>
+<h1>4bi. Traverse down left subtree to the bottom</h1>
+<p>9 else y = TREE-MINIMUM(z.right)
+        # 4bii. Reset "y-original-color" based on newly set y
+10    y-original-color = y.color
+        # 4biii. Set "x" for successor's right subtree
+11    x = y.right
+        # 4biv. y now replaces z</p>
+<h1>4biv-a. If we traversed only one level down,</h1>
+<h1>then keep y as parent of x</h1>
+<p>12    if y.p == z
+13       x.p = y
+        # 4biv-b. But if we traversed more than one level down,</p>
+<h1>then have y adopt z's right child.</h1>
+<p>14    else RB-TRANSPLANT(T, y, y.right)
+15       y.right = z.right
+16       y.right.p = y
+        # 4bv. Move left subtree of "z" to "y"
+17    RB-TRANSPLANT(T, z, y)
+18    y.left = z.left
+19    y.left.p = y
+        # 4bvi. Move z's color to y
+20    y.color = z.color
+        # 5. Finally, do any "fix-up" that is needed.
+21 if y-original-color == BLACK
+22    RB-DELETE-FIXUP(T, x)</p>
+<p>RB-DELETE-FIXUP (T, x)
+        # PRE: x is a black node that has been moved as</p>
+<h1>successor to a deleted node</h1>
+<h1>POST: red-black properties, disturbed by the deletion,</h1>
+<h1>are restored.</h1>
+<h1>Identifying Cormen's variable names:</h1>
+<h1>x: node in question</h1>
+<h1>w: x's sibling</h1>
+<h1>T: tree object</h1>
+<h1>1. Do this for a black, non-root node.</h1>
+<p>1 while x ≠ T.root and x.color == BLACK
+        # 1a. For x as left sibling
+ 2    if x == x.p.left
+3       w = x.p.right
+        # 1ai. Case 1. Sibling is red.
+ 4       if w.color == RED
+        #  1ai-a. Make it black and parent red
+ 5          w.color = BLACK
+6          x.p.color = RED
+        #  1ai-b. Then left-rotate and recognize the new sibling</p>
+<h1>to our node</h1>
+<p>7          LEFT-ROTATE(T, x.p)
+8          w = x.p.right
+        # 1aii. Case 2. Sibling's children are both black.
+ 9       if w.left.color == BLACK
+and w.right.color == BLACK
+        # 1aii-a. Make sibling red and declare parent to be new</p>
+<h1>node in question (eventually to be made black,</h1>
+<h1>at the end of this function).</h1>
+<p>10          w.color = RED
+11          x = x.p
+        # 1aiii. Case 3. Sibling's right child is black.
+12       else if w.right.color == BLACK
+        # 1aiii-a. Sibling's left child must be red;</p>
+<h1>make it black and make sibling itself red;</h1>
+<h1>then right-rotate sibling;</h1>
+<h1>that finally produces Case 4.</h1>
+<p>13          w.left.color = BLACK
+14          w.color = RED
+15          RIGHT-ROTATE(T, w)
+        # 1aiii-b. Recognize new right sibling.
+16          w = x.p.right
+        # 1aiv. Case 4. Parent and sibling's right child are red.</p>
+<h1>NOTE Although Cormen does not add an</h1>
+<h1>"if" test here, I suggest doing so.</h1>
+<h1>1aiv-a. Sibling adopts parent's color</h1>
+<p>17          w.color = x.p.color
+        # 1aiv-b. Parent and sibling's right child become black
+18          x.p.color = BLACK
+19          w.right.color = BLACK
+        # 1aiv-c. Left-rotate.
+20          LEFT-ROTATE(T, x.p)
+        # 1aiv-d. End condition non-root, ending initial</p>
+<h1>while-loop.</h1>
+<p>21          x = T.root
+22    else (same as then clause with “right”
+and “left” exchanged)
+        # 2. Finally, set node to black, in case it was made red</p>
+<h1>in Case 2.</h1>
+<p>23 x.color = BLACK
+[end]
+~~~~</p>
+<p></pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</pre>
+</p></p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

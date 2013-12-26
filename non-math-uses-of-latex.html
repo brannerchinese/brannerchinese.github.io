@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Non-math uses of LaTeX</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/non-math-uses-of-latex.html">2013-02-08 17:06:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>Now that I'm no longer dealing with math very much, I suspect the main
+uses I expect to have for LaTeX are for documenting code — I have found
+the <code>listings</code> package most useful for for this — and for dealing with
+Chinese text — <code>xeCJK</code> is the best tool I have for Chinese typesetting
+right now, and it seems to be under active development.</p>
+<p>The great utility of LaTeX for me as a coder is being able to format
+output from database dumps, to PDF. For the web, of course, normal HTML
+tools will do.</p>
+<p>Journals in the humanities with which I have regular contact do not, on
+the whole, seem ready to accept articles composed in LaTeX.</p>
+<hr />
+<p></p>
+Below is what I have been using for formatting Java code:</p>
+<p><code style="font-size:9pt;">\usepackage{listings}</code></p>
+<p>\lstset{language=Java,basicstyle=\ttfamily\footnotesize,frame=lines,captionpos=b,tabsize=4,keywordstyle=\color{blue},commentstyle=\color{dark-green},stringstyle=\color{red},numbers=left,numberstyle=\tiny,numbersep=5pt,breaklines=true,showstringspaces=false}</p>
+<p></code></p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>The virtue of Vim (or: why I do not remap copy and paste)</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/the-virtue-of-vim-or-why-i-do-not-remap-copy-and-paste.html">2011-10-12 07:34:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>This is a meditation on making my peace with Vim, the present
+instantiation of <code>vi</code>, one of the old text editors from the days of the
+"editor wars" before Bill Gates and Steve Jobs and their wares were
+fixtures in the media and our households.</p>
+<p>In the editor wars, <code>vi</code> was the great rival of Emacs — this
+relationship has been <a href="https://en.wikipedia.org/wiki/Editor_Wars">described with precision and acerbity
+elsewhere</a>, but they and their adherents were once the Punch and Judy
+of programmers' intellectual world. They were seen as tokens of
+competing outlooks and much was made of the rivalry. When I got back
+into programming, I knew I would have to revive my long-deferred
+relationship with them. I had already found <code>vi</code> to suit my temperament
+more happily, but its learning curve is steeper so I took up Emacs
+first.</p>
+<p>The two striking things about Emacs were its great power and the
+unfamiliar way that familiar tasks were named and conceived of. Its
+power is the reason to use it; the vocabulary and ideas are the price of
+that power. For instance, copying and pasting text are not part of Emacs
+— they come from the Jobs/Gates world. In Emacs there is no "clipboard"
+but there is a "kill-ring", where pieces of text go when when you "kill"
+them with \^-k. The kill-ring is a stack structure of what we would now
+call clipboards, where you can find different things you have killed, if
+you have saved the with "kill-ring-save" (meta-key plus w). If you want
+to use something in the kill-ring, you "yank-pop" it back with \^-y.</p>
+<p>I wrote this about a year ago, when I was struggling to adapt to Emacs:</p>
+<blockquote>
+<p>Don't think copy; think kill-ring-save;</p>
+<p>don't think paste; think yank.</p>
+<p>Strange new terms are things to save;</p>
+<p>let your mind be their bank.</p>
+</blockquote>
+<p>I got reasonably comfortable with Emacs. It is a work of abiding
+quality, though as I had anticipated, not entirely perfect for me. Now I
+am ready to deal with Vim.</p>
+<p>A friend recently wrote to say that he had become addicted to Vim and,
+despite the burden of many grave professional obligations, has found
+himself spending dozens of hours adjusting the settings it to suit
+himself. The first thing he did was remap the equivalents of copy and
+paste to the familiar key-commands \^-c and \^-v, and at some point
+after that he awoke to find himself tumbling down a steep passageway of
+editor configuration without end.</p>
+<p>I told him not to feel guilty, because there are just two kinds of
+people: those who live on friendly terms with tools and those who don't.
+We have no choice as to which kind we are. Tool-people need to spend
+time mastering and adjusting their tools. It is an act of
+self-fulfillment and neither to be rushed nor disparaged.</p>
+<p>I did not tell him that for myself, copy/paste are among the very last
+things I would change.</p>
+<p>The familiar Jobs/Gates conception of word-processing, and therefore its
+characteristic terminology, and therefore also its system of key
+commands, represents a model of thinking to which I would like to have
+alternatives. That was one of the big appeals about Emacs, frankly — and
+about Awk and TeX and Vim, all survivors from decades ago. These things,
+coelacanths in the ocean of modern computing, seem to me to possess a
+goodness of their own just because they represent a competing vision of
+how to work and how to use basic tools.</p>
+<p>This, more than even Vim and Emacs in particular, is what attracts me
+about old utilities that have survived into the new dispensation. Using
+them well means training my mind to unfamiliar processes and
+conceptions, and that gives me a feeling of great well-being. The hunt
+is not about the fox.</p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

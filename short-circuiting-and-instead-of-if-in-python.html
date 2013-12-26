@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Short-circuiting and (and ==) instead of if in Python</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/short-circuiting-and-instead-of-if-in-python.html">2013-05-01 15:02:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>Some people use a special short-circuiting <code>and</code> expression to replace
+<code>if</code> blocks in Python. For instance, instead of</p>
+<p>if x >= 0.5:</p>
+<p>f(x)</code></p>
+<p>one can use</p>
+<p>x >= 0.5 and f(x)</p>
+<p></code></p>
+<p>The point is that because multi-term logical conditions are evaluated in
+series, <code>f(x)</code> is only evaluated after <code>x &gt;= 0.5</code> returns <code>True</code>, making
+<code>x &gt;= 0.5</code> a pre-condition of <code>f(x)</code>.</p>
+<p>You cannot use an outright assignment (here <code>y = x</code>) as the second part
+of the <code>and</code> statement; only a function will do.</p>
+<p>In any case, this syntax is unsatisfying to me because it is less
+explicit than using <code>if</code> outright. But I've seen it defended by a gifted
+programmer as being "explicit once you recognize the syntax", and I
+wondered if there was any timing advantage to it.</p>
+<p>The results of timing, on 10\^8 iterations, are (in seconds):</p>
+<p>time using if:  43.7663021088</p>
+<p>time using and: 44.545058012</p>
+<p></code></p>
+<p>It doesn't look as though the <code>and</code> statement saves time, particularly.
+I suspect it is a case of coding craftiness — surely a pleasurable thing
+in itself. But it now seems clear to me that using <code>if</code> is better; it is
+both explicit and involves no loss of speed.</p>
+<hr />
+<p><em>Addendum</em>, later in the evening:</p>
+<p>There is another way to use short-circuiting to avoid the use of <code>if</code>:
+with <code>==</code> instead of <code>and</code>; for instance:</p>
+<p>x >= 0.5 == f(x)</code></p>
+<p>Just as with <code>and</code>, <code>==</code> causes <code>f(x)</code> to be evaluated after <code>x &gt;= 0.5</code>;
+we can show (though I have not done so here) that <code>f(x)</code> is in fact
+evaluated. But it turns out that this trick saves even less time:</p>
+<p>time using ==:  50.7892489433</p>
+<p></code></p>
+<p>Best to stick with <code>if</code>, it seems.</p>
+<hr />
+<p>The program I wrote to compare processing times follows:</p>
+<p>import time</p>
+<p>import random</p>
+<p>def f(x):</p>
+<p>y = x</p>
+<p>rounds = 100000000</p>
+<p>r = random.random</p>
+<p>start_time = time.time()</p>
+<p>for i in xrange(rounds):</p>
+<p>x = r()</p>
+<p>if x >= 0.5:</p>
+<p>f(x)</p>
+<p>print 'time using if: ', time.time() - start_time</p>
+<p>start_time = time.time()</p>
+<p>for i in xrange(rounds):</p>
+<p>x = r()</p>
+<p>x >= 0.5 and f(x)</p>
+<p>print 'time using and:', time.time() - start_time</p>
+<p>start_time = time.time()</p>
+<p>for i in xrange(rounds):</p>
+<p>x = r()</p>
+<p>x >= 0.5 == f(x)</p>
+<p>print 'time using ==: ', time.time() - start_time</p>
+<p></code></p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

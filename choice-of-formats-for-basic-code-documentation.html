@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Choice of formats for basic code documentation</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/choice-of-formats-for-basic-code-documentation.html">2011-10-16 18:07:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>I have begun making my code available on <a href="https://bitbucket.org/dpb/">BitBucket</a> but I want to
+include some sort of README or other documentation in each code
+repository I set up. When plain text doesn't meet my needs, I've been
+unsure what to turn to.</p>
+<p>An interlocutor argued for <a href="http://daringfireball.net/projects/markdown/">Markdown</a>, but in practice all that really
+means is trying to adhere to Markdown principles in my plain text —
+actually interpreting Markdown (as HTML, LaTeX, etc.) requires the user
+to have a separate application, something I can't assume.</p>
+<p>Plain text will do for most cases, but more functionality is required
+when my README/doc needs math or tables. In the past I would have gone
+with HTML, but HTML now seems to be experiencing backward-incompatible
+growing pains and risks turning into Frankenstein. The competitor was
+PDF, which I had thought was proprietary but apparently I was wrong.</p>
+<ul>
+<li><a href="http://www.theinquirer.net/inquirer/news/1030411/pdf-approved-iso-32000">The official news</a>
+    </p>
+    <p></li>
+<li><a href="http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51502">The specification itself</a>
+    </p>
+    <p></li>
+<li><a href="http://www.prepressure.com/pdf/basics/history/5">A discursive account</a> (see section "PDF 1.7 – Adobe goes ISO"</li>
+</ul>
+<p></p>
+My plan now is to generate PDF from .tex and include both files, but
+only when text alone is inadequate. Ordinarily, however, I will just
+include an ASCII .txt file with newlines at 79 columns.</p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

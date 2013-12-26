@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>A faster Python sort</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/a-faster-python-sort.html">2013-07-24 13:38:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>Python's built-in <code>sort</code> function uses TimSort, a variety of MergeSort
+with preliminary optimizations to save time by identifying partially
+ordered subarrays. Part of the optimization process involves the much
+slower InsertionSort.</p>
+<p>If no such subarrays are likely to be present, however, plain,
+unoptimized MergeSort may be faster. And it is available to Python
+through the <code>NumPy</code> library. Below is an example in which <code>NumPy</code>
+MergeSort is a third faster than the default Python <code>sort</code> function:</p>
+<p>\$ python -m timeit -s "</p>
+<p>import numpy;\  </p>
+<p>from random import choice, seed;\  </p>
+<p>from string import ascii_uppercase;\  </p>
+<p>seed(137);\  </p>
+<p>gibberish = [choice(ascii_uppercase) for i in range(1000000)];\  </p>
+<p>gibberish_np = numpy.array(gibberish)" "\  </p>
+<p>gibberish_np = numpy.sort(gibberish_np, kind='mergesort')"</p>
+<p>10 loops, best of 3: 29.7 msec per loop</p>
+<p>\$</p>
+<p>\$ python -m timeit -s "</p>
+<p>from random import choice, seed;\  </p>
+<p>from string import ascii_uppercase;\  </p>
+<p>seed(137);\  </p>
+<p>gibberish = [choice(ascii_uppercase) for i in range(1000000)]" "\  </p>
+<p>gibberish.sort()"</p>
+<p>10 loops, best of 3: 39.9 msec per loop</p>
+<p>\$ </code></p>
+<p><code>Numpy</code> also supplies QuickSort and HeapSort, which are slower than
+MergeSort but which sort lists without additional space complexity, as
+does TimSort. See the <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.sort.html">NumPy docs</a> for more information.</p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

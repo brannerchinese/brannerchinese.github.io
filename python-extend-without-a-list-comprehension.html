@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Python extend() without a list comprehension</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/python-extend-without-a-list-comprehension.html">2013-06-14 15:17:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>Comprehensions are a common replacement for loops when we have to
+populate a Python container. The language is organized so that large
+lists, dictionaries, and tuples can be constructed more efficiently —
+and so more quickly — with a comprehension than with a corresponding
+loop over an <code>append</code> or <code>add</code> operation.</p>
+<p>For a loop such as</p>
+<p><code>the_list = []</code></p>
+<p>for item in container:</p>
+<p>the_list.append(object)</code></p>
+<p>we write a comprehension as</p>
+<p><code>the_list = [object for item in container]</code></p>
+<blockquote>
+<hr />
+<p>Aside: More generally, a group of nested for statements in a nested
+loop undergoes only minimal change in order when replaced with a
+comprehension; we replace</p>
+<p></p>
+<code>the_list = []</code></p>
+<p>for item in container: # outermost for statement</p>
+<p>for subitem in item: # next outermost for statement</p>
+<p>for subsubitem in subitem: # next outermost</p>
+<p># ...</p>
+<p>the_list.append(object)</code></p>
+<p>with</p>
+<p><code>the_list = [object for item in container for subitem</code></p>
+<p>in item for subsubitem in item ...]</code>  </p>
+<hr />
+</blockquote>
+<p>The improvement in speed is considerable (Python 3.3):</p>
+<p><code>$ python -m timeit -s 'from random import random as R; list = []' 'for item in range(10000):' '    list.append(R())'</code></p>
+<p>1000 loops, best of 3: 1.08 msec per loop</p>
+<p>\$</p>
+<p>\$ python -m timeit -s 'from random import random as R' '[item for item
+in range(10000)]'</p>
+<p>1000 loops, best of 3: 334 usec per loop</p>
+<p>\$</code></p>
+<p>(Note the primitive use of "u" for μ in "usec" (μsec). But the savings
+becomes smaller for deeply nested loops.)</p>
+<p>Similarly, for a set:</p>
+<p><code>the_set = set()</code></p>
+<p>for item in container:</p>
+<p>the_set.add(object)</code></p>
+<p>we write</p>
+<p><code>the_set = [object for item in container]</code></p>
+<p>and for a dictionary (mapping) we replace</p>
+<p><code>for key in container:</code></p>
+<p>mapping[key] = value</code></p>
+<p>with</p>
+<p><code>mapping = {key : value for key in container}</code></p>
+<p>For some tasks, such as converting a list of lists to a tuple of tuples,
+the improvement in speed is quite striking:</p>
+<p><code>$ python -m timeit -s 'from random import random as R; a_list = [[R(), R()] for i in range(1000)]' 'new_tuple = ()' 'for i in a_list:' '    new_tuple += (tuple(i),)'</code></p>
+<p>1000 loops, best of 3: 1.82 msec per loop</p>
+<p>\$</p>
+<p>\$ python -m timeit -s 'from random import random as R; a_list = [[R(),
+R()] for i in range(1000)]' 'new_tuple = ()' 'tuple(tuple(b_list) for
+b_list in a_list)'</p>
+<p>1000 loops, best of 3: 224 usec per loop</p>
+<p>\$</code></p>
+<p>(I included the unnecessary <code>'new_tuple = ()</code> in the timeit expression
+for the comprehension so that it would be more exactly comparable to the
+loop.)</p>
+<p>A comprehension recalls the format of a mathematical set. Using one to
+create a list, rather than a loop with <code>append</code>, is one of the signs of
+an experienced Python programmer. But for concatenating lists (or other
+sequences) it can actually be faster to use a loop if the <code>extend</code>
+operation is involved. Here the task is to concatenate a list of lists
+into a single list:</p>
+<p><code>$ python -m timeit -s 'from random import random as R; a_list = [[R(), R()] for i in range(100)]; b_list = []' 'for i in a_list:' '    b_list.extend(i)'</code></p>
+<p>100000 loops, best of 3: 7.04 usec per loop</p>
+<p>\$</p>
+<p>\$ python -m timeit -s 'from random import random as R; a_list = [[R(),
+R()] for i in range(100)]' '[subitem for item in a_list for subitem in
+item]'</p>
+<p>100000 loops, best of 3: 12 usec per loop</p>
+<p>\$</code></p>
+<p>This is plainly a matter of continuing optimization by the developers of
+the language; compare those Python 3.3 timings with Python 2.7:</p>
+<p>\$ python -m timeit -s 'from random import random as R; a_list = [[R(),
+R()] for i in range(100)]; b_list = []' 'for i in a_list:'
+'    b_list.extend(i)'</p>
+<p>100000 loops, best of 3: 11 usec per loop</p>
+<p>\$ python -m timeit -s 'from random import random as R; a_list = [[R(),
+R()] for i in range(100)]' '[subitem for item in a_list for subitem in
+item]'</p>
+<p>100000 loops, best of 3: 13.5 usec per loop</p>
+<p></code></p>
+<p>[end]</p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>A small triumph of explicitly readable code</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/a-small-triumph-of-explicitly-readable-code.html">2012-12-06 20:44:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>Recently I was asked to write an implementation of FizzBuzz*, a new
+notion to me. I took, I suppose, a quarter of an hour and put together a
+little Python program — it worked, and I felt clever because I had found
+two little time-saving tactics:</p>
+<ol>
+<li>taking care of the cases in order of how frequently they crop up
+    (unmarked cases account for 8 in every 15; the "Fizz" case is 4 in
+    15, "Buzz" is 2 in 15, and the co-occurrence "FizzBuzz" is 1 case in
+    15);</li>
+<li>taking care of the FizzBuzz case as a subset of the Fizz case.</li>
+</ol>
+<p>I submitted the code yesterday and went to sleep feeling good. This
+morning, however, I started to wonder how many different implementations
+there might be, since the basic idea is not terribly complicated.</p>
+<p>Well, there are large numbers of implementations, and I was impressed to
+see how many crafty one-liners people have come up with. I studied a few
+of them and learned a thing or two. Although I classify myself as a fox
+on the <a href="http://en.wikipedia.org/wiki/The_Hedgehog_and_the_Fox" title="Hedgehog and Fox">Archilochan dichotomy</a>, my mind is slower than other people's,
+and it is my weakness as a programmer always to write as simply and
+explicitly as I can. When I see craftiness at work, after the initial
+envy subsides, I always feel I'll never catch up to it, although I
+usually then try to untangle what the experts have created, for my own
+education. I timed the various implementations, too, and mine came out
+far and away the slowest (results in seconds):</p>
+<p><code>iterations =  100</code></p>
+<p>\&lt;function dpb at 0x1107791b8>: 0.00968</p>
+<p>\&lt;function tamurakoichi at 0x110779320>: 0.00067</p>
+<p>\&lt;function anonymous at 0x110779398>: 0.00144</p>
+<p>\&lt;function smog at 0x110779410>: 0.00158</p>
+<p>\&lt;function chrisclark at 0x110779488>: 0.00181</p>
+<p>\&lt;function jefallbright at 0x110779500>: 0.00158</p>
+<p>\&lt;function anonymous2 at 0x110779578>: 0.00072</p>
+<p>\&lt;function anonymous4 at 0x1107795f0>: 0.00171</p>
+<p></code></p>
+<p>So much for the advantages of writing clear, explicit code!</p>
+<p>But then I looked a little more closely, and saw that most of these
+faster methods assembled the whole output as a string or array first,
+and then printed it all at once. I had been printing each line at a
+time, surely an expensive luxury.</p>
+<p>So I rewrote all the implementations to generate an output-string
+without sending it to the console.** That allowed me to compare the
+results, string to string, and gave me a more equable basis for timing
+comparisons. And the results now?</p>
+<p><code>iterations =  100</code></p>
+<p>\&lt;function dpb at 0x10a729230>: 0.00018</p>
+<p>\&lt;function tamurakoichi at 0x10a729668>: 0.00021</p>
+<p>\&lt;function anonymous at 0x10a7291b8>: 0.00023</p>
+<p>\&lt;function smog at 0x10a7292a8>: 0.00021</p>
+<p>\&lt;function chrisclark at 0x10a729320>: 0.00117</p>
+<p>\&lt;function jefallbright at 0x10a729398>: 0.00100</p>
+<p>\&lt;function anonymous2 at 0x10a729410>: 0.00024</p>
+<p>\&lt;function anonymous4 at 0x10a729488>: 0.00019</p>
+<p>iterations = 10000000</p>
+<p>\&lt;function dpb at 0x10a729230>: 12.48893</p>
+<p>\&lt;function tamurakoichi at 0x10a729668>: 15.50518</p>
+<p>\&lt;function anonymous at 0x10a7291b8>: 19.88059</p>
+<p>\&lt;function smog at 0x10a7292a8>: 72.46663</p>
+<p>\&lt;function chrisclark at 0x10a729320>: 87.58923</p>
+<p>\&lt;function jefallbright at 0x10a729398>: 70.65603</p>
+<p>\&lt;function anonymous2 at 0x10a729410>: 17.89535</p>
+<p>\&lt;function anonymous4 at 0x10a729488>: 19.54576</p>
+<p></code></p>
+<p>My painfully explicit code is also the fastest of the implementations
+I've examined.</p>
+<p>Well, I feel a little better now. Readable code is vindicated!</p>
+<hr />
+<p>* "Count incrementally, replacing any number divisible by three with
+the word 'fizz', and any number divisible by five with the word 'buzz'."
+<a href="http://en.wikipedia.org/wiki/FizzBuzz">Wikipedia article "BizzBuzz"</a>, accessed 20121206.</p>
+<hr />
+<p>** Here is my code, with the algorithm just as submitted but revised
+to save the printing time:</p>
+<p><code>def dpb(limit = 101):</code></p>
+<p>output = ''</p>
+<p>for i in xrange(1, limit):</p>
+<p>if i%3 and i%5:</p>
+<p># neither of the special cases</p>
+<p>output += str(i) + '\n'</p>
+<p>else:</p>
+<p># the special cases</p>
+<p>if not i%3:</p>
+<p># divisible by 3;</p>
+<p># we are not done yet so no linebreak</p>
+<p>output += 'Fizz'</p>
+<p>if not i%5:</p>
+<p># divisible by 5</p>
+<p>output += 'Buzz\n'</p>
+<p>else:</p>
+<p># now add linebreak after Fizz case</p>
+<p>output += '\n'</p>
+<p>return output</p>
+<p></code></p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

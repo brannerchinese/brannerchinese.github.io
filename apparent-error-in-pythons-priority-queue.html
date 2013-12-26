@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Apparent error in Python's priority queue and heapq</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/apparent-error-in-pythons-priority-queue.html">2011-11-30 22:41:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>After some time spent trying to find a rumored error in Python's
+priority queue (<code>Queue.PriorityQueue</code>), I have succeeded in writing a
+little program that can reproduce this error.</p>
+<p>Code is available at <a href="https://bitbucket.org/dpb/queue_change_test">https://bitbucket.org/dpb/queue_change_test</a> . It
+is intended for Python v. 2.6. As <a href="http://brannerchinese.wordpress.com/2011/11/20/testing-the-reliability-of-the-python-priority-queue/" title="Testing the reliability of the Python priority queue">I found recently</a>, the problem does
+not normally arise when simple data structures are placed in the queue
+and can be sorted in lexicographic order; <a href="http://brannerchinese.wordpress.com/2011/11/28/lack-of-stable-sort-in-pythons-priority-queue/" title="Lack of stable sort in Python’s priority queue">when stable sort is at issue,
+however, the queue sometimes fails</a>.</p>
+<p>The error occurs in this code when lists are enqueued and some of their
+values are then changed outside of the queue. The queue should
+automatically reorder itself, but this does not always happen correctly.</p>
+<p>If, after the change to the values, the queue is emptied into another
+list and those contents then re-enqueued, the new queue is found to be
+sorted correctly. That shows that the problem has something to do with
+the queue data structure itself and not the values in the queue. The
+queue adds values correctly but does not always sort them correctly when
+they are changed after being added.</p>
+<p>The pseudo-random numbers in the program use a seed, to allow the error
+to be reproduced.</p>
+<p>The user has two options:</p>
+<ul>
+<li>to enter other seeds (default is none, in which case Python attempts
+    to make the results look random by seeding with system time);</li>
+<li>to re-enqueue the contents, as described above, in order to
+    eliminate sorting errors (default is not to re-enqueue).</li>
+</ul>
+<p></p>
+The code is commented but as of this writing there is not yet a
+documentation file.</p>
+<hr />
+<p></p>
+Update (same night): I have added a second small program,
+<code>heapq_change_test.py</code>, which performs the same test using the <code>heapq</code>
+module. Results are the same. No surprise; Queue relies on <code>heapq</code>'s
+<code>heappush</code> and <code>heappop</code> for its <code>put</code> and <code>get</code> methods (see the
+<a href="http://hg.python.org/cpython/file/2.7/Lib/Queue.py">source code at http://hg.python.org/cpython/file/2.7/Lib/Queue.py</a>).
+The results are the same because the same methods are being called.</p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

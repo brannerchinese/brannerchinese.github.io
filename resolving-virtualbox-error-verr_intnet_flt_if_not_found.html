@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Resolving VirtualBox error VERR_INTNET_FLT_IF_NOT_FOUND</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/resolving-virtualbox-error-verr_intnet_flt_if_not_found.html">2012-04-29 13:02:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>At present I use Macintosh laptops on which I like to keep a current
+version of Ubuntu server, installed as a guest OS on VirtualBox. For
+maximum efficiency and minimum waste of CPU time, I run the server from
+the command line (using <code>vboxmanage startvm</code>) and then <code>ssh</code> into the
+server as needed.</p>
+<p>Sometimes a normally well-behaved VM spontaneously refuses to run,
+generating the strange error <code>VERR_INTNET_FLT_IF_NOT_FOUND</code>, which is
+undocumented in the User Manual that comes with VirtualBox.</p>
+<ul>
+<li>
+<p>If running the VirtualBox GUI, the error typically looks like this,
+    for a VM named <code>himself</code>:</p>
+<p><code style="font-size:12px;">Failed to open a session for the virtual machine himself.</code></p>
+<p>Failed to open/create the internal network
+'HostInterfaceNetworking-en2: USB Ethernet 2'
+(VERR_INTNET_FLT_IF_NOT_FOUND).</p>
+<p>Failed to attach the network LUN
+(VERR_INTNET_FLT_IF_NOT_FOUND).</p>
+<p>Result Code: NS_ERROR_FAILURE (0x80004005)</p>
+<p>Component: Console</p>
+<p><p>
+Interface: IConsole {1968b7d3-e3bf-4ceb-99e0-cb7c913317bb}</code></p>
+</li>
+<li>
+<p>At the command line, the error typically looks like this:</p>
+<p><code style="font-size:12px;">vboxmanage: error: Failed to open/create the internal network 'HostInterfaceNetworking-en2: USB Ethernet 2' (VERR_INTNET_FLT_IF_NOT_FOUND).</code></p>
+<p>VBoxManage: error: Failed to attach the network LUN
+(VERR_INTNET_FLT_IF_NOT_FOUND)</p>
+<p><p>
+VBoxManage: error: Details: code NS_ERROR_FAILURE (0x80004005),
+component Console, interface IConsole, callee </code></p>
+</li>
+</ul>
+<hr />
+<p>The solution is to reset the networking settings for the VM. I use the
+following:</p>
+<p><code>vboxmanage modifyvm himself --nic1 bridged\</code></p>
+<p>--bridgeadapter1 en1</code></p>
+<p>where <code>nic1</code> resets the <strong>n</strong>etworking mode to "<strong>i</strong>nternal <strong>c</strong>ard 1"
+(the indices appended to <code>nic</code> and other options start at 1) and
+<code>bridgeadapter1</code> resets the first adapter to <code>en1</code>, which is normally
+ethernet on my system, although it is best to check and make sure
+because it is sometimes <code>en0</code>. This Bridge Adapter setting is what
+sometimes seems to change without apparent actions on my part. Note that
+the <code>bridgeadapter1</code> option has no effect without the <code>nic</code> option.</p>
+<p>Simple headless start-up from the command line looks like this:</p>
+<p><code>prompt$ vboxheadless -startvm himself</code></p>
+<p>Waiting for VM "himself" to power on...</p>
+<p>VM "himself" has been successfully started.</p>
+<p>prompt\$ </code></p>
+<p>The additional option <code>--vrde=off</code> prevents running the standard remote
+display protocol server, which does not seem to be necessary for
+anything I do on my system.</p>
+<hr />
+<p><strong>For more information</strong>: The sections "Bridged Networking" and
+"Internal Networking" of the User Manual are useful to read. For
+command-line option, see the "Commands Overview" section.</p>
+<hr />
+<p><strong>Edit</strong>: I have added more information on configuring VirtualBox from
+the command line in <a href="https://brannerchinese.wordpress.com/2012/05/06/identifying-the-active-bridge-adapter-for-use-with-a-headless-virtual-machine-on-virtualbox/">another post</a>.</p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

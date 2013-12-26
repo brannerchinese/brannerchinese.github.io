@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Changes to the inventory of IPython magic commands (v. 0.10 to 0.11)</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/changes-to-the-inventory-of-ipython-magic-commands-v-0-10-to-0-11.html">2011-10-26 12:06:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>With the release of v.0.11 of IPython, there are a number of familiar
+magic commands that have been made silently obsolete. I was surprised to
+find the useful <code>store</code> and <code>r</code> commands gone, and it turns out there
+are several others. Based on a comparison of the Quick Reference Cards,
+I note the following:</p>
+<ul>
+<li><code>%bg</code>: Run a job in the background, in a separate thread.</li>
+<li><code>%color_info</code>: Toggle color_info.</li>
+<li><code>%p</code>: Just a short alias for Python's 'print'.</li>
+<li><code>%r</code>: Repeat previous input.</li>
+<li><code>%rehash</code>: Update the alias table with all entries in \$PATH.</li>
+<li><code>%runlog</code>: Run files as logs.</li>
+<li><code>%store</code>: Lightweight persistence for python variables.</li>
+<li><code>%system_verbose</code>: Set verbose printing of system calls.</li>
+<li><code>%upgrade</code>: Upgrade your IPython installation</li>
+</ul>
+<p>It appears IPython's syntax is basically unchanged, but see the
+<a href="http://ipython.org/ipython-doc/stable/whatsnew/version0.11.html">official "what's new" documentation</a>. Less urgently, but since I'm on
+the subject, the following new commands have been added:</p>
+<ul>
+<li><code>%gui</code>: Enable or disable IPython GUI event loop integration.</li>
+<li><code>%install_default_config</code>: Install IPython's default config file
+    into the .ipython dir.</li>
+<li><code>%install_profiles</code>: Install the default IPython profiles into the
+    .ipython dir.</li>
+<li><code>%load_ext</code>: Load an IPython extension by its module name.</li>
+<li><code>%loadpy</code>: Load a .py python script into the GUI console.</li>
+<li><code>%pastebin</code>: Upload code to the 'Lodge it' paste bin, returning the
+    URL.</li>
+<li><code>%pinfo2</code>: Provide extra detailed information about an object.</li>
+<li><code>%pprint</code>: Toggle pretty printing on/off.</li>
+<li><code>%precision</code>: Set floating point precision for pretty printing.</li>
+<li><code>%pylab</code>: Load numpy and matplotlib to work interactively.</li>
+<li><code>%recall</code>: Repeat a command, or get command to input line for
+    editing.</li>
+<li><code>%reload_ext</code>: Reload an IPython extension by its module name.</li>
+<li><code>%rerun</code>: Re-run previous input</li>
+<li><code>%reset_selective</code>: Resets the namespace by removing names defined
+    by the user.</li>
+<li><code>%tb</code>: Print the last traceback with the currently active exception
+    mode.</li>
+<li><code>%unload_ext</code>: Unload an IPython extension by its module name.</li>
+<li><code>%xdel</code>: Delete a variable, trying to clear it from anywhere that</li>
+</ul></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

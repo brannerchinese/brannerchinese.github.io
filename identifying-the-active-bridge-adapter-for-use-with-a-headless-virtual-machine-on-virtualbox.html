@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Identifying the active bridge adapter for use with a headless virtual machine on VirtualBox</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/identifying-the-active-bridge-adapter-for-use-with-a-headless-virtual-machine-on-virtualbox.html">2012-05-06 22:02:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>I mentioned in an <a href="https://brannerchinese.wordpress.com/2012/04/29/resolving-virtualbox-error-verr_intnet_flt_if_not_found/">earlier post</a> that it is possible to use the
+command line to set the particular bridge adapter required to run
+VirtualBox, resolving an error that aborts start-up of the virtual
+machine.</p>
+<p>Which adapter is in use depends on how the host machine is expecting to
+connect to the internet, even if it is not actually connected at the
+moment. Different airport and ethernet cards identify themselves using
+(in theory) different MAC addresses and will be assigned different BSD
+interface names, "en0", "en1", and so on. (These names are always of the
+format [letters][integer].) Since interface names are assigned at system
+start-up, they may occasionally be different from what you are used to
+seeing, so it is not a good idea to treat them as fixed.</p>
+<p>To direct VirtualBox to use a particular interface — <code>en0</code>, for instance
+— for a virtual machine "himself", use</p>
+<div class="highlight"><pre><span class="n">vboxmanage</span> <span class="n">modifyvm</span> <span class="n">himself</span> <span class="o">--</span><span class="n">nic1</span> <span class="n">bridged</span>
+
+<span class="o">--</span><span class="n">bridgeadapter1</span> <span class="n">en0</span>
+</pre></div>
+
+
+<p>at the command line.</p>
+<p>But sometimes it isn't easy to figure out which interface to use. On
+models of MacBook Air that have no built-in ethernet card, an external
+(USB) ethernet adapter is needed, and different USB adapters will have
+different MAC addresses, meaning that they will each be assigned
+different interface names. How do you know which interface name should
+be passed to VirtualBox?</p>
+<p>Active interface names are reported by the network interface
+configuration tool <code>ifconfig</code> when run without options. You can pipe
+that output through <code>awk</code> to return just the active <code>en-</code> interface name
+to standard output:</p>
+<div class="highlight"><pre><span class="n">ifconfig</span> <span class="o">|</span> <span class="n">awk</span> <span class="o">-</span><span class="n">F</span><span class="o">:</span> <span class="err">&#39;</span><span class="o">/^</span><span class="n">en</span><span class="o">/</span> <span class="p">{</span> <span class="n">print</span> <span class="err">$</span><span class="mi">1</span> <span class="p">}</span><span class="err">&#39;</span>
+</pre></div>
+
+
+<p>If you like, you can pass the output of that whole expression to
+<code>vboxmanage</code> in a one-line instruction:</p>
+<div class="highlight"><pre><span class="n">vboxmanage</span> <span class="n">modifyvm</span> <span class="n">himself</span> <span class="o">--</span><span class="n">nic1</span> <span class="n">bridged</span>
+
+<span class="o">--</span><span class="n">bridgeadapter1</span> <span class="err">`</span><span class="n">ifconfig</span> <span class="o">|</span> <span class="n">awk</span> <span class="o">-</span><span class="n">F</span><span class="o">:</span> <span class="err">&#39;</span><span class="o">/^</span><span class="n">en</span><span class="o">/</span> <span class="p">{</span> <span class="n">print</span> <span class="err">$</span><span class="mi">1</span> <span class="p">}</span><span class="err">&#39;`</span>
+</pre></div>
+
+
+<p>That should configure VirtualBox correctly so that the virtual machine
+will boot successfully. The only caveat is that if the virtual machine
+is already running, you will get an error. Occasionally, when even
+running <code>ipconfig getifaddr</code> does not return an IP address for the
+active interface name, I have found it helpful to reboot my hardware and
+run the filesystem consistency check, <code>fsck</code>.</p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Tense in Git commit messages</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/tense-in-git-commit-messages.html">2013-09-15 06:17:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>I notice that BitBucket fails to observe one important principle about
+tense in Git commit messages: one is supposed to write in the present
+tense, showing what the commit does, rather than what one did.</p>
+<p>When I edit a file on line, BitBucket populates the commit message with
+(say) "README.md edited online with Bitbucket", etc. Github, by
+comparison, populates it with "Update README.md".</p>
+<p>There are some useful comments about good Git commit-message style on
+<a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">Tim Pope's blog</a>. Here are <a href="https://github.com/torvalds/linux/pull/17#issuecomment-5659933">some remarks by Linus Torvalds</a> about
+commit-message style.</p>
+<p>Some people say one should be writing in the imperative. In Chinese, if
+one uses a concise register suited to list-making, verbal aspect is
+likely to be omitted, so that it may be impossible to tell the
+difference between past, present, and imperative forms.</p>
+<p>The real question is: who or what is the subject of the verb in a commit
+message? The programmer? Or the code itself?</p>
+<p>In cases where there is a difference between the English first and third
+person singular, the first person sounds like the programmer speaking
+(or if you're inclined that way, the code itself)</p>
+<p><code>"refactor main()" =&gt; "In this commit *I* refactor main()"</code></p>
+<p>while the third person sounds like the commit's action is being
+described</p>
+<p><code>"refactors main()" =&gt; "This commit refactors main()".</code></p>
+<p></code></p>
+<p>I can't say I see the suitability of imperative mood, though.</p>
+<p>At times I find it useful not even to use a verb at all, such as when I
+commit after a merge — I just enter "after merge". Is more than that
+effective?</p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Two complaints and one word of praise about GitHub Flavored Markdown</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/two-complaints-and-one-word-of-praise-about-github-flavored-markdown.html">2013-10-08 11:35:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>GitHub Flavored Markdown (GFM), GitHub's proprietary version of the
+Markdown standard, has a couple of unsatisfactory features.</p>
+<p>One is that there is no testing tool (such as the <a href="http://daringfireball.net/projects/markdown/dingus">Markdown Dingus</a>
+readily available, so the first time you write markdown you have to
+commit the file before you can see the result. That's bad design, since
+one the file is committed you can edit it on line and see what it looks
+like without committing again. So preview functionality exists; it just
+isn't available on the initial creation of a markdown file. And so the
+first time, you're stuck with whatever you produce. As a GitHub Flavored
+WorkAround I sometimes insert my new text into an existing markdown file
+and edit it until it looks the way I want it too, then copy it to the
+new file, canceling the changes to the existing file.</p>
+<p>Another issue is that although you can turn soft-wrap on or off while
+editing; at present there doesn't seem to be a way to assign soft-wrap
+to one's default settings. I've written to GitHub tech support to
+suggest this, but the people who responded didn't seem to know what I
+was talking about and didn't follow up. I let it drop.</p>
+<p>For a long time GFM didn't support HTML tables directly. You had to use
+a special GFM syntax for markdown tables, which has undocumented
+restrictions as to what you can do with it. You apparently cannot have
+merged cells or more than one hyphen-delimited line of header cells. Why
+is that important? Because it is very useful to be able to show a single
+merged header-cell representing two subordinate columns, each of which
+has its own subheader cell. For instance:</p>
+<p><code style="font-style:NORMAL;font-size:SMALL;">&lt;table border="1" cellpadding="5" cellspacing="0"&gt;</code></p>
+<p>\&lt;tr></p>
+<p>\&lt;th rowspan="2">(empty)\&lt;/th></p>
+<p>\&lt;th rowspan="2">merged rows\&lt;/th></p>
+<p>\&lt;th colspan="2">merged columns\&lt;/th></p>
+<p>\&lt;/tr></p>
+<p>\&lt;tr></p>
+<p>\&lt;th>unmerged\&lt;/th></p>
+<p>\&lt;th>unmerged\&lt;/th></p>
+<p>\&lt;/tr></p>
+<p>\&lt;tr></p>
+<p>\&lt;th rowspan="2">merged rows\&lt;/th></p>
+<p>\&lt;td>row 1\&lt;/td></p>
+<p>\&lt;td>content 1\&lt;/td></p>
+<p>\&lt;td>content 2\&lt;/td></p>
+<p>\&lt;/tr></p>
+<p>\&lt;tr></p>
+<p>\&lt;td>row 2\&lt;/td></p>
+<p>\&lt;td>content 1\&lt;/td></p>
+<p>\&lt;td>content 2\&lt;/td></p>
+<p>\&lt;/tr></p>
+<p>\&lt;/table></p>
+<p></code></p>
+<p>In HTML it produces:</p>
+<table border="1" cellspacing="0" cellpadding="5">
+<tbody>
+<tr>
+<th rowspan="2">
+(empty)
+
+</th>
+<th rowspan="2">
+merged rows
+
+</th>
+<th colspan="2">
+merged columns
+
+</th>
+</tr>
+<tr>
+<th>
+unmerged
+
+</th>
+<th>
+unmerged
+
+</th>
+</tr>
+<tr>
+<th rowspan="2">
+merged rows
+
+</th>
+<td>
+row 1
+
+</td>
+<td>
+content 1
+
+</td>
+<td>
+content 2
+
+</td>
+</tr>
+<tr>
+<td>
+row 2
+
+</td>
+<td>
+content 1
+
+</td>
+<td>
+content 2
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>But as I say, the good news is that HTML tables are now supported in
+GFM.</p>
+<hr />
+<p>Since posting this, I've been told about <a href="https://github.com/gollum/gollum">Gollum</a>, a Git-based wiki
+system that apparently supports GFM.</p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

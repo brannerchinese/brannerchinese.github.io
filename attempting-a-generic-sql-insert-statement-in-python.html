@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Attempting a generic SQL INSERT statement in Python</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/attempting-a-generic-sql-insert-statement-in-python.html">2013-07-20 19:41:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>(The main version of this discussion is posted at <a href="https://github.com/brannerchinese/notes/blob/master/CONTENT/SQL/Attempting_a_generic_SQL_INSERT_statement_in_Python.md">my GitHub
+notebook</a>, where it may be updated in future.)</p>
+<hr />
+<p>I am working with SQLite3 in Python but am not yet at the stage of using
+an ORM such as SQLAlchemy. But I had the idea that I could save trouble
+by writing a function to produce <code>INSERT</code> statements generically —
+without having to write them out manually.</p>
+<p>Below is what I came up with.</p>
+<ul>
+<li>An example of my original inline <code>INSERT</code> statements</li>
+<li>
+<p>The same insertion carried out by a generic function</p>
+<p><code style="font-style:NORMAL;font-size:SMALL;">kanji_fields = OrderedDict((</code></p>
+<p>('kanji_traditional', kanji_traditional),</p>
+<p>('kanji_simplified', kanji_simplified),</p>
+<p>('time_of_commit', timestamp)</p>
+<p>))</p>
+<p><p>
+insert(cursor, 'kanji', kanji_fields)</code></p>
+</li>
+<li>
+<p>The <code>insert()</code> function called above</p>
+<p><code style="font-style:NORMAL;font-size:SMALL;">class CustomException(Exception):</code></p>
+<p>pass</p>
+<p>def insert(cursor, table_name, field_ordereddict,
+raise_error_or_not=True):</p>
+<p>'''</p>
+<p>Constructs and executes generic INSERT function.</p>
+<p>Notes on parameters:</p>
+<p>"cursor" is instantiated as:</p>
+<p>con = sqlite3.connect()</p>
+<p>with con:</p>
+<p>cursor = con.cursor()</p>
+<p>and passed to this function.</p>
+<p>"table_name" is the name of the table in</p>
+<p>where INSERT is to take place</p>
+<p>"field_ordereddict" is a collections.OrderedDict of</p>
+<p>(field_name, field_contents) tuples. The field_name keys
+populate the</p>
+<p>arguments of the INTO expression and the field_contents values
+populate the</p>
+<p>arguments of the VALUES expression.</p>
+<p>"raise_error_or_not" is used to decide whether or not to log
+details about</p>
+<p>a sqlite3.IntegrityError and then raise a CustomException or
+not.</p>
+<p>'''</p>
+<p>the_string = [str(i) for i in range(1,
+len(field_ordereddict)+1)]</p>
+<p># prepare replacement fields for SQL field names</p>
+<p>the_string = '{' + '},{'.join(the_string) + '}'</p>
+<p># prepare question marks for VALUES</p>
+<p>question_marks = '?' + ',?' * (len(field_ordereddict) - 1)</p>
+<p># construct string</p>
+<p>the_string = ('''INSERT INTO {0} (''' + the_string + ''')</p>
+<p>VALUES (''' + question_marks + ''')''')</p>
+<p>the_string = the_string.format(table_name,
+*tuple(field_ordereddict.keys()))</p>
+<p># execute as cursor.execute(the_string,
+*tuple(field_ordereddict.values()))</p>
+<p>try:</p>
+<p>cursor.execute(the_string,
+tuple(field_ordereddict.values()))</p>
+<p>except sqlite3.IntegrityError as e:</p>
+<p>if raise_error_or_not:</p>
+<p>print(e, 'at
+{}'.format(tuple(field_ordereddict.values())))</p>
+<p>raise CustomException()</p>
+<p>else:</p>
+<p><p>
+            pass</code></p>
+</li>
+<li>
+<p>Results</p>
+<ol>
+<li><strong>Virtues</strong>. Chiefly modularity and readability. This design
+    worked, and I was able to replace a number of long, messy
+    in-line <code>INSERT</code> statements with neat <code>insert()</code> calls.</li>
+<li><strong>Drawbacks</strong>. However, The time required increased by a factor
+    of 3.2, which I judge fatal to my project.</li>
+<li><strong>Going forward</strong>. Using <code>OrderedDict</code> to keep field-names and
+    their contents organized improved readability:</li>
+</ol>
+</li>
+</ul>
+<p>[end]</p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

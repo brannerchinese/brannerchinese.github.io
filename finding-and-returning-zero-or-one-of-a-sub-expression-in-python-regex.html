@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Finding and returning zero or one of a marked sub-expression in Python regex</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/finding-and-returning-zero-or-one-of-a-sub-expression-in-python-regex.html">2013-08-01 12:48:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>One feature of Perl-style regular expressions that is not implemented in
+Python is the use of the zero-or-one operator (metacharacter "question
+mark", <code>?</code>) with a parenthesis-delimited "group" or marked
+sub-expression. In Python, if such a group is found (below, <code>(ghi)?</code>),
+it can be referred back to with a back-reference (below, <code>\2</code>; code
+below is Python 3.3 in Ipython 0.13.2):</p>
+<p>~~~~ {style="font-style:NORMAL;font-size:SMALL;"}</p>
+<p>In [1]: re.sub('(abc)\t(ghi)', r'\2', 'abc\tghi')</p>
+<p>Out[1]: 'ghi'
+~~~~</p>
+<p>but if it is not found an error is raised instead of an empty string
+being returned (which is the norm):</p>
+<p>In [2]: re.sub('(abc)\t(ghi)?', r'\2', 'abc\t')</p>
+<p>...</p>
+<p>error: unmatched group</code></p>
+<p>I'm aware of two work-arounds for this curious situation.</p>
+<p>First, rewrite the optional sub-expression as an optional look-ahead
+marked sub-expression: <code>((?:ghi)?)</code>. There are two pairs of parentheses:
+one for the look-ahead syntax <code>(?:...)</code> and one for the optional
+matching group <code>(...?)</code>:</p>
+<p>In [3]: re.sub('(abc)\t((?:ghi)?)', r'\2', 'abc\tghi')</p>
+<p>Out[3]: 'ghi'</p>
+<p>In [4]: re.sub('(abc)\t((?:ghi)?)', r'\2', 'abc\t')</p>
+<p>Out[4]: ''</code></p>
+<p>Second, discard the zero-or-one operator and put a set-union operator
+(metacharacter "pipe", <code>|</code>) inside the parentheses so that the
+sub-expression now means "either nothing or else the target in question"
+(below, <code>(|ghi)</code>):</p>
+<p>In [5]: re.sub('(abc)\t(|ghi)', r'\2', 'abc\tghi')</p>
+<p>Out[5]: 'ghi'</p>
+<p>In [6]: re.sub('(abc)\t(|ghi)', r'\2', 'abc\t')</p>
+<p>Out[6]: ''</code></p>
+<p>The first work-around is marginally faster than the second:</p>
+<p>\$ python -m timeit -n 1000000 -s "from re import sub"
+"sub('(abc)\t((?:ghi)?)', r'\2', 'abc\tghi')"</p>
+<p>1000000 loops, best of 3: 6.48 usec per loop</p>
+<p>\$</p>
+<p>\$ python -m timeit -n 1000000 -s "from re import sub"
+"sub('(abc)\t(|ghi)', r'\2', 'abc\tghi')"</p>
+<p>1000000 loops, best of 3: 6.97 usec per loop</p>
+<p>\$</code></p>
+<p>though it's longer to type and more complex to understand and remember.</p>
+<p>I vote for the second work-around.</p>
+<hr />
+<p>I've just noticed that the replacement version of regex now at PyPi
+addresses this issue ("<a href="https://pypi.python.org/pypi/regex">regex 2013-06-26</a>"):</p>
+<blockquote>
+<p>Unmatched group in replacement: An unmatched group is treated as an
+empty string in a replacement template.</p>
+</blockquote></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

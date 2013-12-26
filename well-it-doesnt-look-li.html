@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>MoinMoin for notebook-wiki (and WordPress, you are trying the patience of my affections)</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/well-it-doesnt-look-li.html">2012-02-05 00:12:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>For two days short of a full calendar year I have been keeping a wiki of
+my computing notes. A wiki, a lightly organized website structure, is
+much better than a nest of files in subdirectories if you are trying to
+keep track of what you have learned and accumulate a record of your
+experiments and experience. And running it on a server means it is
+available to you more or less everywhere.</p>
+<p>I have been using MediaWiki, the software that powers Wikipedia. I know
+it pretty well, having fiddled with Wikipedia ever since it emerged from
+the miasma of unrealized memes. But this year of MediaWiki has been
+frustrating. The application is good for mixing markdown with HTML —
+markdown is very low maintenance and HTML is helpful when you want fine
+control of formatting or to include something from a website — but MW's
+brand of markdown sometimes has small problems (for instance, numbering
+of an ordered list sometimes resets when a line of "preformatted"
+content is interspersed among the numbered items). And a whole MediaWiki
+site is not so easy to back up — the simplest thing is to dump the whole
+MySQL database, but then that's a large file to deal with every day.</p>
+<p>Finally this morning I broke down and installed MoinMoin, and
+transferred my whole MediaWiki database into it. MoinMoin isn't as good
+with HTML as MediaWiki is, but its brand of markdown is simpler than
+MediaWiki's. I like the fact that each page is stored as a flat
+text-file, meaning that backup with mercurial is very efficient — only
+individual diff patch-files are pushed to server.</p>
+<p>I dare say markdown will replace HTML in many environments.</p>
+<p>Best of all, MoinMoin looks pretty good in w3m, my text-only browser of
+choice.</p>
+<hr />
+<p></p>
+For a while it didn't look as though I would be permitted to post this.
+WordPress has drastically redone its software, and I could no longer see
+most of what I had written; nor could I preview my text or assign
+categories to it. Beside the non-functional text field there was a
+little remark: "Blogs are not just for long posts. Why not post a photo
+or video instead?"</p>
+<p>I chose WordPress over other sites because I liked their software; it
+seemed the best tool for what I wanted to do. If I stop liking it, the
+whole relationship will be in danger. I don't mean to sound like a
+pretty girl with too many suitors, but no company should take my
+patronage for granted. I don't need a slick interface — not at all — and
+I don't need social media. If that's all you have for me, it's "goombye
+pliz".</p>
+<hr />
+<p></p>
+(grumble, grumble, a little later)</p>
+<p>After posting the abortion of this note as a "quotation" (since
+WordPress's parsers determined that there was no content in the original
+"text" format), I later became able to edit it in the familiar
+interface, with the minimum functionality I require. What a mess. If
+your product works, leave it alone, people.</p>
+<hr />
+<p></p>
+Yes, I said text-only browser. W3m, made in Japan, the homeland of
+craftsmanship. I am a man of command-line temperament and of words
+written and then revised and then revised again. Spare me your sticky
+GUI; spare! o spare me your tweets and friending and live webcam feeds,
+and let me type what I have to type and have it read by those who have
+the patience to read.</p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

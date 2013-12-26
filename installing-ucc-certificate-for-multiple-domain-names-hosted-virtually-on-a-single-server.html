@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Installing UCC certificate for multiple domain names hosted virtually on a single server</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/installing-ucc-certificate-for-multiple-domain-names-hosted-virtually-on-a-single-server.html">2012-01-25 01:38:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>I spent some time learning how to set up a UCC certificate (for multiple
+domains hosted on a single server) on Apache2. I had originally bought
+separate SSL certificates for each domain, but the certifying authority
+swore they could not be used with a single IP address, and rather than
+muck with SNI (see
+<a href="https://wiki.apache.org/httpd/NameBasedSSLVHostsWithSNI">https://wiki.apache.org/httpd/NameBasedSSLVHostsWithSNI</a>) I paid for a
+UCC certificate, which allows this arrangement explicitly with a simpler
+Apache2 configuration. It seemed to me more important to learn how a
+basic Apache2 configuration worked before advancing to more elaborate
+topics.</p>
+<p>Below are my reference notes from the installation. I'll be glad for any
+corrections or comments.</p>
+<ul>
+<li>
+<p>Significance of the name UCC
+    ----------------------------</p>
+<p><p>
+UCC: Unified Communications Certificate, a single SSL certificate
+for multiple domains.</p>
+</li>
+<li>
+<p>Basics
+    ------</p>
+<p>After making changes to the various Apache2 configuration files, it
+is necessary to restart Apache:</p>
+<div class="highlight"><pre>  <span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">apache2</span> <span class="n">restart</span>
+</pre></div>
+
+
+<p>When /etc/apache2/sites-available/default-ssl is first created, it
+is necessary to use</p>
+<div class="highlight"><pre>  <span class="n">sudo</span> <span class="n">a2dissite</span> <span class="k">default</span><span class="o">-</span><span class="n">ssl</span>
+</pre></div>
+
+
+<p>and then</p>
+<div class="highlight"><pre>  <span class="n">sudo</span> <span class="n">a2ensite</span> <span class="k">default</span><span class="o">-</span><span class="n">ssl</span>
+</pre></div>
+
+
+<p>to disable and then re-enable the site; the latter creates a link
+from /etc/apache2/sites-enabled/default-ssl to
+/etc/apache2/sites-available/default-ssl . Do this before running</p>
+<div class="highlight"><pre>  <span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">apache2</span> <span class="n">restart</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Configuration files
+    -------------------</p>
+<ol>
+<li><strong>/etc/apache2/apache2.conf </strong>: The main configuration file</li>
+<li><strong>/etc/apache2/conf.d/ </strong>: Contains small configuration files
+    for various purposes</li>
+<li><strong>/etc/apache2/sites-enabled/ </strong>: Contains links to the material
+    in /etc/apache2/sites-available</li>
+<li><strong>/etc/apache2/sites-available/default </strong>: Contains VirtualHost
+    code-blocks for each domain name hosted virtually; each of them
+    contains appropriate entries for ServerName, ServerAlias,
+    DocumentRoot, CustomLog, ErrorLog; optionally also
+    DirectoryIndex and many other specified in the Apache
+    documentation.</li>
+<li><strong>/etc/apache2/sites-available/default-ssl </strong>: Contains a
+    \&lt;VirtualHost _default_> code block prefaced by \&lt;IfModule
+    mod_ssl.c>.</li>
+</ol>
+</li>
+<li>
+<p>Errors and Warnings
+    -------------------</p>
+<ul>
+<li>
+<p><strong>Warn</strong>: "NameVirtualHost *:80 has no VirtualHosts"</p>
+<p></p>
+Most of these can be eliminated by removing references to port
+80, such as the</p>
+<div class="highlight"><pre>  <span class="n">NameVirtualHost</span> <span class="o">*:</span><span class="mi">80</span>
+</pre></div>
+
+
+<p>that
+<a href="http://techexposures.com/2009/06/ubuntu-server-configure-and-run-multiple-websites-on-one-server/">http://techexposures.com/2009/06/ubuntu-server-configure-and-run-multiple-websites-on-one-server/</a>
+recommends in the apache2.conf file.</p>
+<p>However, one such warning remains. Why? Apparently if any
+duplicate "NameVirtualHost" entries exist anywhere in any
+configuration files, this error may crop up. I found such a case
+in /etc/apache2/ports.conf . At first, I simply changed</p>
+<div class="highlight"><pre>  <span class="n">NameVirtualHost</span> <span class="o">*:</span><span class="mi">80</span>
+</pre></div>
+
+
+<p>to</p>
+<div class="highlight"><pre>  <span class="n">NameVirtualHost</span> <span class="o">*</span>
+</pre></div>
+
+
+<p><p>
+but then the error became "NameVirtualHost *:0 has no
+VirtualHosts". So I commented out the whole line and now
+everything works correctly (or at least without complaint).</p>
+</li>
+<li>
+<p><strong>Error</strong>: "mixing * ports and non-* ports with a
+    NameVirtualHost address is not supported, proceeding with
+    undefined results"</p>
+<p>In /etc/apache2/sites-available/default , if an asterisk * is
+used in place of an explicit IP address:</p>
+<div class="highlight"><pre>  <span class="n">NameVirtualHost</span> <span class="o">*</span>
+</pre></div>
+
+
+<p><p>
+but without a specific port being given, then all the other
+references to IP addresses in incoming requests as an asterisk
+must also omit a port. But if a port is specified, it should be
+specified everywhere the asterisk appears.</p>
+</li>
+<li>
+<p><strong>Error</strong>: "Invalid command 'RewriteEngine', perhaps misspelled
+    or defined by a module not included in the server configuration"
+    <p>
+    Commented out the "RewriteEngine on" block in apache2.conf,
+    which writes any incoming port to be 443. Don't know this raises
+    an error, but everything apparently works without it.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Making sure each domain opens its own separate document tree
+    ------------------------------------------------------------</p>
+<ul>
+<li>In /etc/apache2/sites-available/default , each domain name must
+    have its own separate \&lt;VirtualHost> block, containing a
+    different DocumentRoot.</li>
+<li>Also, <strong>before</strong> all the VirtualHost blocks but after the
+    NameVirtualHost entry, there should be a ServerName statement
+    containing the name of the main domain, for which the UCC
+    certificate is configured. (All the other domains can be added
+    to or removed from the certificate later, assuming the
+    certificate-issuer permits it, but not the main one.)</li>
+</ul>
+</li>
+<li>
+<p>Location of certificates
+    ------------------------</p>
+<ul>
+<li>
+<p>Certificates should be listed in
+    /etc/apache2/sites-available/default within each VirtualHost
+    block that they apply to. Along with them,</p>
+<p></p>
+      SSLEngine on</p>
+<p><p>
+should be listed.</p>
+</li>
+<li>
+<p>Certificates themselves are placed in</p>
+<div class="highlight"><pre>  <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">certs</span>
+</pre></div>
+
+
+<p>and I have segregated them within a special folder so that they
+are easy to find (below "domain" stands for a whole domain
+name):</p>
+<div class="highlight"><pre>  <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">certs</span><span class="o">/</span><span class="n">domain_UCC</span>
+</pre></div>
+
+
+<p>In addition, I've labeled each one with a prefix "<code>domain_UCC</code>"
+so that they are easy to identify:</p>
+<div class="highlight"><pre>  <span class="n">domain_UCC_domain</span><span class="p">.</span><span class="n">com</span><span class="p">.</span><span class="n">crt</span>
+</pre></div>
+
+
+<p><p>
+etc.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Useful Documentation
+    --------------------</p>
+<p><a href="http://wiki.apache.org/httpd/CommonMisconfigurations">http://wiki.apache.org/httpd/CommonMisconfigurations</a></p>
+</li>
+</ul>
+<p>[end]</p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

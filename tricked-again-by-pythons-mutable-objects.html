@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>&</title>
+	<meta name="description" content="">
+	<meta name="author" content="David Prager Branner">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://brannerchinese.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://brannerchinese.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://brannerchinese.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- Feeds -->
+    <link href="http://brannerchinese.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="& Atom Feed" />
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://brannerchinese.github.io/">&</a>
+			<ul class="nav">
+					<li class="active"><a href="http://brannerchinese.github.io/category/misc.html">misc</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://brannerchinese.github.io/archives.html">[archives]</a> <a href="http://brannerchinese.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="https://brannerchinese.com/dpb/publications.html">Publications</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="/feeds/all.atom.xml">RSS</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Tricked again by Python's mutable objects</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/tricked-again-by-pythons-mutable-objects.html">2012-03-18 07:53:00</a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+ in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
+</div>
+		<div><p>In order to keep a running count of a group of things, I created a
+Python dictionary <code>d</code>, with its keys populated from unique members of a
+list <code>list_of_counters</code> and its values set uniformly to 0:</p>
+<div class="highlight"><pre><span class="n">d</span> <span class="o">=</span> <span class="p">{}.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">set</span><span class="p">(</span><span class="n">list_of_counters</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+
+<p>I used <code>set()</code> to ensure that only one unique copy of each element of
+<code>list_of_counters</code> was used, and all went well. Each item in the
+dictionary functioned as an independent counter.</p>
+<p>Later, I realized that I needed to keep track of two things for each
+counter, rather than one. No problem; I replaced the 0 above with a list
+<code>[0, 0]</code>, one index for each thing to be kept track of.</p>
+<div class="highlight"><pre><span class="n">d</span> <span class="o">=</span> <span class="p">{}.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">set</span><span class="p">(</span><span class="n">list_of_counters</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Disaster! Every time I updated one index for any particular item, the
+same index was changed for all the items.</p>
+<p>My error was to use a list to populate a dictionary's values using a
+single list. Since lists are mutable objects in Python, they are passed
+by reference. So there was only a single list being used as the value
+for all the keys in the dictionary; when one copy of it was updated, all
+were changed to match it.</p>
+<p>The solution is to populate the initial values using a loop, rather than
+all at once. For instance:</p>
+<div class="highlight"><pre><span class="n">d</span> <span class="o">=</span> <span class="p">{}.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">set</span><span class="p">(</span><span class="n">list_of_counters</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">d</span><span class="o">:</span>
+
+    <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+
+<p>A comprehension can also be used. In the intial creation of the
+dictionary, the values can be left empty.</p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; David Prager Branner</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>
