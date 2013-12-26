@@ -138,11 +138,16 @@ by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-b
 </div>
 	<div class="summary"><p>Some people use a special short-circuiting <code>and</code> expression to replace
 <code>if</code> blocks in Python. For instance, instead of</p>
-<p>if x >= 0.5:</p>
-<p>f(x)</code></p>
+<div class="highlight"><pre><span class="k">if</span> <span class="n">x</span> \<span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">:</span>
+    <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+
 <p>one can use</p>
-<p>x >= 0.5 and f(x)</p>
-<p></code></p>
+<div class="highlight"><pre><span class="n">x</span> \<span class="o">&gt;=</span> <span class="mf">0.5</span> <span class="ow">and</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+
 <p>The point is that because multi-term logical conditions are evaluated in
 series, <code>f(x)</code> is only evaluated ...</p> <a class="btn primary xsmall" href="http://brannerchinese.github.io/short-circuiting-and-instead-of-if-in-python.html">more…</a>
 	</div>
