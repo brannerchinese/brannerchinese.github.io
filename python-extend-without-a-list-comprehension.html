@@ -72,23 +72,25 @@ loop over an <code>append</code> or <code>add</code> operation.</p>
 </pre></div>
 
 
-<blockquote>
 <hr />
 <p>Aside: More generally, a group of nested for statements in a nested
 loop undergoes only minimal change in order when replaced with a
 comprehension; we replace</p>
-<p></p>
-<code>the_list = []</code></p>
-<p>for item in container: # outermost for statement</p>
-<p>for subitem in item: # next outermost for statement</p>
-<p>for subsubitem in subitem: # next outermost</p>
-<p># ...</p>
-<p>the_list.append(object)</code></p>
+<div class="highlight"><pre><span class="n">the_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">container</span><span class="o">:</span> <span class="err">\#</span> <span class="n">outermost</span> <span class="k">for</span> <span class="n">statement</span>
+    <span class="k">for</span> <span class="n">subitem</span> <span class="n">in</span> <span class="n">item</span><span class="o">:</span> <span class="err">\#</span> <span class="n">next</span> <span class="n">outermost</span> <span class="k">for</span> <span class="n">statement</span>
+        <span class="k">for</span> <span class="n">subsubitem</span> <span class="n">in</span> <span class="n">subitem</span><span class="o">:</span> <span class="err">\#</span> <span class="n">next</span> <span class="n">outermost</span>
+            <span class="err">\#</span> <span class="p">...</span>
+                <span class="n">the</span><span class="err">\</span><span class="n">_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">object</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
+</pre></div>
+
+
 <p>with</p>
-<p><code>the_list = [object for item in container for subitem</code></p>
-<p>in item for subsubitem in item ...]</code>  </p>
-<hr />
-</blockquote>
+<div class="highlight"><pre><span class="n">the_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">object</span> <span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">container</span> <span class="k">for</span> <span class="n">subitem</span>
+        <span class="n">in</span> <span class="n">item</span> <span class="k">for</span> <span class="n">subsubitem</span> <span class="n">in</span> <span class="n">item</span> <span class="p">...]</span>
+</pre></div>
+
+
 <p>The improvement in speed is considerable (Python 3.3):</p>
 <div class="highlight"><pre><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">s</span> <span class="err">&#39;</span><span class="n">from</span> <span class="n">random</span> <span class="n">import</span> <span class="n">random</span> <span class="n">as</span> <span class="n">R</span><span class="p">;</span> <span class="n">list</span> <span class="o">=</span> <span class="p">[]</span><span class="sc">&#39; &#39;</span><span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="o">:</span><span class="sc">&#39; &#39;</span><span class="err">    </span><span class="n">list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">R</span><span class="p">())</span><span class="err">&#39;</span>
 <span class="mi">1000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="o">:</span> <span class="mf">1.08</span> <span class="n">msec</span> <span class="n">per</span> <span class="n">loop</span>
