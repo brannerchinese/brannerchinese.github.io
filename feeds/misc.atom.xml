@@ -3146,13 +3146,17 @@ be a lot of tiresome work.&lt;/p&gt;
 &lt;p&gt;Below is the bare-bones description of the package from the full
 documentation:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;The following provides an example of the user interface of the
-package.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;\usepackage[&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;active,&lt;/p&gt;
-&lt;p&gt;generate=file,&lt;/p&gt;
-&lt;p&gt;extract-env={figure,table}&lt;/p&gt;
-&lt;p&gt;]{extract}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The following provides an example of the user interface of the package.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;\usepackage&lt;/span&gt;[
+    active,
+    generate=file,
+    extract-env=&lt;span class="nb"&gt;{&lt;/span&gt;figure,table&lt;span class="nb"&gt;}&lt;/span&gt;
+    ]&lt;span class="nb"&gt;{&lt;/span&gt;extract&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
 &lt;p&gt;If the active option is not specified (or set to false), the package
 does nothing and active no files are generated. If the option is
 specified, the package will redefine the environments figure and table
@@ -3161,13 +3165,17 @@ the file indicated with the generate option, here &lt;code&gt;file.tex&lt;/code&
 including the &lt;code&gt;\begin{figure}&lt;/code&gt; and &lt;code&gt;\end{figure}&lt;/code&gt; commands.&lt;/p&gt;
 &lt;p&gt;… This package can also extract commands. It supplies two methods to
 do this. See the extract-cmd example below.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;\usepackage[&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;active,&lt;/p&gt;
-&lt;p&gt;generate=file,&lt;/p&gt;
-&lt;p&gt;extract-cmd=section,&lt;/p&gt;
-&lt;p&gt;extract-cmdline=label&lt;/p&gt;
-&lt;p&gt;]{extract}&lt;/p&gt;
-&lt;p&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;\usepackage&lt;/span&gt;[
+    active,
+    generate=file,
+    extract-cmd=section,
+    extract-cmdline=label
+    ]&lt;span class="nb"&gt;{&lt;/span&gt;extract&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
 &lt;p&gt;The first method (accessed with the &lt;code&gt;extract-cmd&lt;/code&gt; option) is based on
 the particular syntax of the command and hence only supports
 particular commands. It will read it arguments and write them,
@@ -10878,25 +10886,19 @@ affected area, but also to those who call them from outside that area.
 &lt;p&gt;PEOPLE OF THE STATE v FCC,
 &lt;a href="http://caselaw.lp.findlaw.com/scripts/getcase.pl?navby=search&amp;amp;case=/data2/circs/2nd/994205.html"&gt;http://caselaw.lp.findlaw.com/scripts/getcase.pl?navby=search&amp;amp;case=/data2/circs/2nd/994205.html&lt;/a&gt;)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-The court did not agree that
-
-&gt; Without mandatory 10-digit dialing … numbers from the new area code
-&gt; are less valuable than numbers from the old area code, placing the
-&gt; carrier with more old numbers … at an advantage over new carriers, an
-&gt; inequitable result.
-&gt; &lt;/p&gt;
-
+&lt;p&gt;The court did not agree that  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Without mandatory 10-digit dialing … numbers from the new area code
+are less valuable than numbers from the old area code, placing the
+carrier with more old numbers … at an advantage over new carriers, an
+inequitable result.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;The &lt;em&gt;New York Times&lt;/em&gt; has two important stories about this issue, at&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;21 January, 2003: "[11-Digit Local Dialing Starts In New York City
-    on Feb. 1][]."
-    &lt;/p&gt;
-    &lt;p&gt;&lt;/li&gt;
-&lt;li&gt;25 November, 1997: "[Manhattan, Short on (212)'s, Will get a Second
-    Area Code][]."&lt;/li&gt;
+&lt;li&gt;21 January, 2003: "&lt;a href="http://www.nytimes.com/2003/01/21/nyregion/11-digit-local-dialing-starts-in-new-york-city-on-feb-1.html"&gt;11-Digit Local Dialing Starts In New York City on Feb. 1&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;25 November, 1997: "&lt;a href="http://www.nytimes.com/1997/11/25/nyregion/manhattan-short-on-212-s-will-get-a-second-area-code.html?pagewanted=all"&gt;Manhattan, Short on (212)'s, Will get a Second Area Code&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/p&gt;</summary></entry><entry><title>Dr. Johnson on keeping a diary</title><link href="http://brannerchinese.github.io/dr-johnson-on-keeping-a-diary.html" rel="alternate"></link><updated>2011-09-02T10:56:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2011-09-02:dr-johnson-on-keeping-a-diary.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>Dr. Johnson on keeping a diary</title><link href="http://brannerchinese.github.io/dr-johnson-on-keeping-a-diary.html" rel="alternate"></link><updated>2011-09-02T10:56:00Z</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io,2011-09-02:dr-johnson-on-keeping-a-diary.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;[Johnson] recommended to me to keep a journal of my life, full and
 unreserved. He said it would be a very good exercise, and would yield
 me great satisfaction when the particulars were faded from my

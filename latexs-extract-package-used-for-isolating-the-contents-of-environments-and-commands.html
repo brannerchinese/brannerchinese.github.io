@@ -66,13 +66,17 @@ be a lot of tiresome work.</p>
 <p>Below is the bare-bones description of the package from the full
 documentation:</p>
 <blockquote>
-<p>The following provides an example of the user interface of the
-package.</p>
-<p><code>\usepackage[</code></p>
-<p>active,</p>
-<p>generate=file,</p>
-<p>extract-env={figure,table}</p>
-<p>]{extract}</code></p>
+<p>The following provides an example of the user interface of the package.</p>
+</blockquote>
+<div class="highlight"><pre><span class="k">\usepackage</span>[
+    active,
+    generate=file,
+    extract-env=<span class="nb">{</span>figure,table<span class="nb">}</span>
+    ]<span class="nb">{</span>extract<span class="nb">}</span>
+</pre></div>
+
+
+<blockquote>
 <p>If the active option is not specified (or set to false), the package
 does nothing and active no files are generated. If the option is
 specified, the package will redefine the environments figure and table
@@ -81,13 +85,17 @@ the file indicated with the generate option, here <code>file.tex</code>,
 including the <code>\begin{figure}</code> and <code>\end{figure}</code> commands.</p>
 <p>… This package can also extract commands. It supplies two methods to
 do this. See the extract-cmd example below.</p>
-<p><code>\usepackage[</code></p>
-<p>active,</p>
-<p>generate=file,</p>
-<p>extract-cmd=section,</p>
-<p>extract-cmdline=label</p>
-<p>]{extract}</p>
-<p></code></p>
+</blockquote>
+<div class="highlight"><pre><span class="k">\usepackage</span>[
+    active,
+    generate=file,
+    extract-cmd=section,
+    extract-cmdline=label
+    ]<span class="nb">{</span>extract<span class="nb">}</span>
+</pre></div>
+
+
+<blockquote>
 <p>The first method (accessed with the <code>extract-cmd</code> option) is based on
 the particular syntax of the command and hence only supports
 particular commands. It will read it arguments and write them,
