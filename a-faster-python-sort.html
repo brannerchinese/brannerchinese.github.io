@@ -63,24 +63,27 @@ slower InsertionSort.</p>
 unoptimized MergeSort may be faster. And it is available to Python
 through the <code>NumPy</code> library. Below is an example in which <code>NumPy</code>
 MergeSort is a third faster than the default Python <code>sort</code> function:</p>
-<p>\$ python -m timeit -s "</p>
-<p>import numpy;\  </p>
-<p>from random import choice, seed;\  </p>
-<p>from string import ascii_uppercase;\  </p>
-<p>seed(137);\  </p>
-<p>gibberish = [choice(ascii_uppercase) for i in range(1000000)];\  </p>
-<p>gibberish_np = numpy.array(gibberish)" "\  </p>
-<p>gibberish_np = numpy.sort(gibberish_np, kind='mergesort')"</p>
-<p>10 loops, best of 3: 29.7 msec per loop</p>
-<p>\$</p>
-<p>\$ python -m timeit -s "</p>
-<p>from random import choice, seed;\  </p>
-<p>from string import ascii_uppercase;\  </p>
-<p>seed(137);\  </p>
-<p>gibberish = [choice(ascii_uppercase) for i in range(1000000)]" "\  </p>
-<p>gibberish.sort()"</p>
-<p>10 loops, best of 3: 39.9 msec per loop</p>
-<p>\$ </code></p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">s</span> <span class="s">&quot;</span>
+<span class="n">import</span> <span class="n">numpy</span><span class="p">;</span><span class="err">\</span>  
+<span class="n">from</span> <span class="n">random</span> <span class="n">import</span> <span class="n">choice</span><span class="p">,</span> <span class="n">seed</span><span class="p">;</span><span class="err">\</span>  
+<span class="n">from</span> <span class="n">string</span> <span class="n">import</span> <span class="n">ascii_uppercase</span><span class="p">;</span><span class="err">\</span>  
+<span class="n">seed</span><span class="p">(</span><span class="mi">137</span><span class="p">);</span><span class="err">\</span>  
+<span class="n">gibberish</span> <span class="o">=</span> <span class="p">[</span><span class="n">choice</span><span class="p">(</span><span class="n">ascii_uppercase</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)];</span><span class="err">\</span>  
+<span class="n">gibberish_np</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">gibberish</span><span class="p">)</span><span class="s">&quot; &quot;</span><span class="err">\</span>  
+<span class="n">gibberish_np</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">gibberish_np</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="err">&#39;</span><span class="n">mergesort</span><span class="err">&#39;</span><span class="p">)</span><span class="s">&quot;</span>
+<span class="mi">10</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="o">:</span> <span class="mf">29.7</span> <span class="n">msec</span> <span class="n">per</span> <span class="n">loop</span>
+<span class="err">$</span>
+<span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">s</span> <span class="s">&quot;</span>
+<span class="n">from</span> <span class="n">random</span> <span class="n">import</span> <span class="n">choice</span><span class="p">,</span> <span class="n">seed</span><span class="p">;</span><span class="err">\</span>  
+<span class="n">from</span> <span class="n">string</span> <span class="n">import</span> <span class="n">ascii_uppercase</span><span class="p">;</span><span class="err">\</span>  
+<span class="n">seed</span><span class="p">(</span><span class="mi">137</span><span class="p">);</span><span class="err">\</span>  
+<span class="n">gibberish</span> <span class="o">=</span> <span class="p">[</span><span class="n">choice</span><span class="p">(</span><span class="n">ascii_uppercase</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)]</span><span class="s">&quot; &quot;</span><span class="err">\</span>  
+<span class="n">gibberish</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span><span class="s">&quot;</span>
+<span class="mi">10</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="o">:</span> <span class="mf">39.9</span> <span class="n">msec</span> <span class="n">per</span> <span class="n">loop</span>
+<span class="err">$</span>
+</pre></div>
+
+
 <p><code>Numpy</code> also supplies QuickSort and HeapSort, which are slower than
 MergeSort but which sort lists without additional space complexity, as
 does TimSort. See the <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.sort.html">NumPy docs</a> for more information.</p></div>

@@ -63,7 +63,7 @@ loop over an <code>append</code> or <code>add</code> operation.</p>
 <p>For a loop such as</p>
 <div class="highlight"><pre><span class="n">the_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">container</span><span class="o">:</span>
-    <span class="n">the</span><span class="err">\</span><span class="n">_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+    <span class="n">the_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
 </pre></div>
 
 
@@ -81,7 +81,7 @@ comprehension; we replace</p>
     <span class="k">for</span> <span class="n">subitem</span> <span class="n">in</span> <span class="n">item</span><span class="o">:</span> <span class="err">#</span> <span class="n">next</span> <span class="n">outermost</span> <span class="k">for</span> <span class="n">statement</span>
         <span class="k">for</span> <span class="n">subsubitem</span> <span class="n">in</span> <span class="n">subitem</span><span class="o">:</span> <span class="err">#</span> <span class="n">next</span> <span class="n">outermost</span>
             <span class="err">#</span> <span class="p">...</span>
-                <span class="n">the</span><span class="err">\</span><span class="n">_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">object</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
+                <span class="n">the_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">object</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
 </pre></div>
 
 
@@ -112,7 +112,7 @@ becomes smaller for deeply nested loops.)</p>
 <p>Similarly, for a set:</p>
 <div class="highlight"><pre><span class="n">the_set</span> <span class="o">=</span> <span class="n">set</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">container</span><span class="o">:</span>
-    <span class="n">the</span><span class="err">\</span><span class="n">_set</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+    <span class="n">the_set</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
 </pre></div>
 
 
@@ -144,9 +144,9 @@ the improvement in speed is quite striking:</p>
 <span class="err">$</span>
 <span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">s</span> <span class="s">&quot;&quot;&quot;</span>
 <span class="n">from</span> <span class="n">random</span> <span class="n">import</span> <span class="n">random</span> <span class="n">as</span> <span class="n">R</span>
-<span class="n">a</span><span class="err">\</span><span class="n">_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">R</span><span class="p">(),</span> <span class="n">R</span><span class="p">()]</span> <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span><span class="s">&quot;&quot;&quot; &quot;&quot;&quot;</span>
-<span class="n">new</span><span class="err">\</span><span class="n">_tuple</span> <span class="o">=</span> <span class="p">()</span>
-<span class="n">tuple</span><span class="p">(</span><span class="n">tuple</span><span class="p">(</span><span class="n">b</span><span class="err">\</span><span class="n">_list</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span><span class="err">\</span><span class="n">_list</span> <span class="n">in</span> <span class="n">a</span><span class="err">\</span><span class="n">_list</span><span class="p">)</span><span class="s">&quot;&quot;&quot;</span>
+<span class="n">a_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">R</span><span class="p">(),</span> <span class="n">R</span><span class="p">()]</span> <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span><span class="s">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+<span class="n">new_tuple</span> <span class="o">=</span> <span class="p">()</span>
+<span class="n">tuple</span><span class="p">(</span><span class="n">tuple</span><span class="p">(</span><span class="n">b_list</span><span class="p">)</span> <span class="k">for</span> <span class="n">b_list</span> <span class="n">in</span> <span class="n">a_list</span><span class="p">)</span><span class="s">&quot;&quot;&quot;</span>
 <span class="mi">1000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="o">:</span> <span class="mi">224</span> <span class="n">usec</span> <span class="n">per</span> <span class="n">loop</span>
 <span class="err">$</span>
 </pre></div>
@@ -171,8 +171,8 @@ into a single list:</p>
 <span class="err">$</span>
 <span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">s</span> <span class="s">&quot;&quot;&quot;</span>
 <span class="n">from</span> <span class="n">random</span> <span class="n">import</span> <span class="n">random</span> <span class="n">as</span> <span class="n">R</span>
-<span class="n">a</span><span class="err">\</span><span class="n">_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">R</span><span class="p">(),</span> <span class="n">R</span><span class="p">()]</span> <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span><span class="s">&quot;&quot;&quot; &quot;&quot;&quot;</span>
-<span class="p">[</span><span class="n">subitem</span> <span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">a</span><span class="err">\</span><span class="n">_list</span> <span class="k">for</span> <span class="n">subitem</span> <span class="n">in</span> <span class="n">item</span><span class="p">]</span><span class="s">&quot;&quot;&quot;</span>
+<span class="n">a_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">R</span><span class="p">(),</span> <span class="n">R</span><span class="p">()]</span> <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span><span class="s">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+<span class="p">[</span><span class="n">subitem</span> <span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">a_list</span> <span class="k">for</span> <span class="n">subitem</span> <span class="n">in</span> <span class="n">item</span><span class="p">]</span><span class="s">&quot;&quot;&quot;</span>
 <span class="mi">100000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="o">:</span> <span class="mi">12</span> <span class="n">usec</span> <span class="n">per</span> <span class="n">loop</span>
 <span class="err">$</span>
 </pre></div>
@@ -182,15 +182,15 @@ into a single list:</p>
 the language; compare those Python 3.3 timings with Python 2.7:</p>
 <div class="highlight"><pre><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">s</span> <span class="s">&quot;&quot;&quot;</span>
 <span class="n">from</span> <span class="n">random</span> <span class="n">import</span> <span class="n">random</span> <span class="n">as</span> <span class="n">R</span>
-<span class="n">a</span><span class="err">\</span><span class="n">_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">R</span><span class="p">(),</span> <span class="n">R</span><span class="p">()]</span> <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
-<span class="n">b</span><span class="err">\</span><span class="n">_list</span> <span class="o">=</span> <span class="p">[]</span><span class="s">&quot;&quot;&quot; &quot;&quot;&quot;</span>
-<span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">a</span><span class="err">\</span><span class="n">_list</span><span class="o">:</span>
-    <span class="n">b</span><span class="err">\</span><span class="n">_list</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="s">&quot;&quot;&quot;</span>
+<span class="n">a_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">R</span><span class="p">(),</span> <span class="n">R</span><span class="p">()]</span> <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">b_list</span> <span class="o">=</span> <span class="p">[]</span><span class="s">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">a_list</span><span class="o">:</span>
+    <span class="n">b_list</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="s">&quot;&quot;&quot;</span>
 <span class="mi">100000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="o">:</span> <span class="mi">11</span> <span class="n">usec</span> <span class="n">per</span> <span class="n">loop</span>
 <span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">timeit</span> <span class="o">-</span><span class="n">s</span> <span class="s">&quot;&quot;&quot;</span>
 <span class="n">from</span> <span class="n">random</span> <span class="n">import</span> <span class="n">random</span> <span class="n">as</span> <span class="n">R</span>
-<span class="n">a</span><span class="err">\</span><span class="n">_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">R</span><span class="p">(),</span> <span class="n">R</span><span class="p">()]</span> <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span><span class="s">&quot;&quot;&quot; &quot;&quot;&quot;</span>
-<span class="p">[</span><span class="n">subitem</span> <span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">a</span><span class="err">\</span><span class="n">_list</span> <span class="k">for</span> <span class="n">subitem</span> <span class="n">in</span> <span class="n">item</span><span class="p">]</span><span class="s">&quot;&quot;&quot;</span>
+<span class="n">a_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">R</span><span class="p">(),</span> <span class="n">R</span><span class="p">()]</span> <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span><span class="s">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+<span class="p">[</span><span class="n">subitem</span> <span class="k">for</span> <span class="n">item</span> <span class="n">in</span> <span class="n">a_list</span> <span class="k">for</span> <span class="n">subitem</span> <span class="n">in</span> <span class="n">item</span><span class="p">]</span><span class="s">&quot;&quot;&quot;</span>
 <span class="mi">100000</span> <span class="n">loops</span><span class="p">,</span> <span class="n">best</span> <span class="n">of</span> <span class="mi">3</span><span class="o">:</span> <span class="mf">13.5</span> <span class="n">usec</span> <span class="n">per</span> <span class="n">loop</span>
 </pre></div>
 
