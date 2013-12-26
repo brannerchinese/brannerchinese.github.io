@@ -150,11 +150,14 @@ by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-b
 </div>
 	<div class="summary"><p>In current Python syntax, the <code>format()</code> command for strings inserts
 data inside of curly brackets in a string:</p>
-<p><code>&gt;&gt;&gt; 'Insert five here: {}.'.format(5)</code></p>
-<p>'Insert five here: 5.'</code></p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="err">&#39;</span><span class="n">Insert</span> <span class="n">five</span> <span class="n">here</span><span class="o">:</span> <span class="p">{}.</span><span class="err">&#39;</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="err">&#39;</span><span class="n">Insert</span> <span class="n">five</span> <span class="n">here</span><span class="o">:</span> <span class="mf">5.</span><span class="err">&#39;</span>
+</pre></div>
+
+
 <p>If you want literal brackets in a string modified by <code>format()</code>, you
 have to escape the brackets by doubling them:</p>
-<p><code>&gt;&gt;&gt; 'Here is what ...</code></p> <a class="btn primary xsmall" href="http://brannerchinese.github.io/data-within-literal-curly-brackets-using-python-format.html">more…</a>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="err">&#39;</span><span class="n">Here</span> <span class="n">is</span> <span class="n">what ...</span></pre></div> <a class="btn primary xsmall" href="http://brannerchinese.github.io/data-within-literal-curly-brackets-using-python-format.html">more…</a>
 	</div>
 </div>	
 <div class='article'>
@@ -393,17 +396,20 @@ unoptimized MergeSort may be faster. And it ...</p> <a class="btn primary xsmall
 <div class='article'>
 	<h2>A question about time complexity when testing membership in a Python nested sequence</h2>
 	<div class="well small">Permalink: <a class="more" href="http://brannerchinese.github.io/a-question-about-time-complexity-when-testing-membership-in-a-python-nested-sequence.html">2013-07-22 16:22:00</a>
-by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-branner.html">David Prager Branner </a>
+by <a class="url fn" href="http://brannerchinese.github.io/author/brannerchinese.html">brannerchinese </a>
  in <a href="http://brannerchinese.github.io/category/misc.html">misc</a>
 </div>
 	<div class="summary"><p><strong>(Corrected at bottom.)</strong></p>
 <p>Python's <code>in</code> operator tests for membership in a sequence.</p>
-<p>In [1]: a = [1, 2, 3]</p>
-<p>In [2]: 1 in a</p>
-<p>Out[2]: True</code></p>
+<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span> <span class="mi">1</span> <span class="n">in</span> <span class="n">a</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span> <span class="n">True</span><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
+</pre></div>
+
+
 <p>But it does not work directly on nested sequences such as a list of
 lists or two-dimensional matrix:</p>
-<p>In [3]: a = [[1, 2 ...</p> <a class="btn primary xsmall" href="http://brannerchinese.github.io/a-question-about-time-complexity-when-testing-membership-in-a-python-nested-sequence.html">more…</a>
+<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">:</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1 ...</span></pre></div> <a class="btn primary xsmall" href="http://brannerchinese.github.io/a-question-about-time-complexity-when-testing-membership-in-a-python-nested-sequence.html">more…</a>
 	</div>
 </div>	
 <div class='article'>

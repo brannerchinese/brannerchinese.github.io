@@ -57,17 +57,26 @@ by <a class="url fn" href="http://brannerchinese.github.io/author/david-prager-b
 </div>
 		<div><p>In current Python syntax, the <code>format()</code> command for strings inserts
 data inside of curly brackets in a string:</p>
-<p><code>&gt;&gt;&gt; 'Insert five here: {}.'.format(5)</code></p>
-<p>'Insert five here: 5.'</code></p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="err">&#39;</span><span class="n">Insert</span> <span class="n">five</span> <span class="n">here</span><span class="o">:</span> <span class="p">{}.</span><span class="err">&#39;</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="err">&#39;</span><span class="n">Insert</span> <span class="n">five</span> <span class="n">here</span><span class="o">:</span> <span class="mf">5.</span><span class="err">&#39;</span>
+</pre></div>
+
+
 <p>If you want literal brackets in a string modified by <code>format()</code>, you
 have to escape the brackets by doubling them:</p>
-<p><code>&gt;&gt;&gt; 'Here is what brackets look like: {{}}.'.format()</code></p>
-<p>'Here is what brackets look like: {}.'</code></p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="err">&#39;</span><span class="n">Here</span> <span class="n">is</span> <span class="n">what</span> <span class="n">brackets</span> <span class="n">look</span> <span class="n">like</span><span class="o">:</span> <span class="p">{{}}.</span><span class="err">&#39;</span><span class="p">.</span><span class="n">format</span><span class="p">()</span>
+<span class="err">&#39;</span><span class="n">Here</span> <span class="n">is</span> <span class="n">what</span> <span class="n">brackets</span> <span class="n">look</span> <span class="n">like</span><span class="o">:</span> <span class="p">{}.</span><span class="err">&#39;</span>
+</pre></div>
+
+
 <p>To place data inside of literal brackets, you need triple brackets —
 double-escaped brackets for the literal brackets and then another pair
 of brackets as the socket for the data:</p>
-<p><code>&gt;&gt;&gt; 'Now put five inside of brackets: {{{}}}.'.format(5)</code></p>
-<p>'Now put five inside of brackets: {5}.'</code></p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="err">&#39;</span><span class="n">Now</span> <span class="n">put</span> <span class="n">five</span> <span class="n">inside</span> <span class="n">of</span> <span class="n">brackets</span><span class="o">:</span> <span class="p">{{{}}}.</span><span class="err">&#39;</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="err">&#39;</span><span class="n">Now</span> <span class="n">put</span> <span class="n">five</span> <span class="n">inside</span> <span class="n">of</span> <span class="n">brackets</span><span class="o">:</span> <span class="p">{</span><span class="mi">5</span><span class="p">}.</span><span class="err">&#39;</span>
+</pre></div>
+
+
 <p>[end]</p></div>
 		<div>
 			<h2>Comments</h2>
