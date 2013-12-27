@@ -5875,55 +5875,55 @@ Firefox. It makes the Internet a liveable place for me.&lt;/p&gt;
 &lt;p&gt;But subscribing to filters is unpleasant because it requires many
 repetitive mouse-actions. A faster way is to create a file called
 &lt;code&gt;patterns.ini&lt;/code&gt; containing only the following:&lt;/p&gt;
-&lt;p&gt;
-~~~~ {style="font-size:small;line-height:50%;"}
-[Subscription]
-url=~wl~
-title=Exception Rules
-defaults=whitelist
-[Subscription]
-url=~fl~
-title=Ad Blocking Rules
-defaults=blocking
-[Subscription]
-url=https://adversity.googlecode.com/hg/Adversity.txt
-downloadStatus=synchronize_ok
-[Subscription]
-url=http://adblockrules.org/download.php?type=all
-downloadStatus=synchronize_ok
-[Subscription]
-url=http://adblock-chinalist.googlecode.com/svn/trunk/adblock.txt
-downloadStatus=synchronize_ok
-[Subscription]
-url=https://easylist-downloads.adblockplus.org/easyprivacy.txt
-downloadStatus=synchronize_ok
-[Subscription]
-url=https://easylist-downloads.adblockplus.org/easylist.txt
-downloadStatus=synchronize_ok
-[Subscription]
-url=https://secure.fanboy.co.nz/fanboy-adblocklist-addon.txt
-downloadStatus=synchronize_ok
-[Subscription]
-url=https://adversity.googlecode.com/hg/Adversity-Tracking.txt
-downloadStatus=synchronize_ok
-[Subscription]
-url=http://fanboy-adblock-list.googlecode.com/hg/fanboy-adblocklist-current-expanded.txt
-downloadStatus=synchronize_ok
-[Subscription]
-url=http://fanboy-adblock-list.googlecode.com/hg/fanboy-adblocklist-stats.txt
-downloadStatus=synchronize_ok
-[Subscription]
-url=https://adblock-chinalist.googlecode.com/svn/trunk/adblock.txt
-downloadStatus=synchronize_ok
-[Subscription]
-url=https://secure.fanboy.co.nz/enhancedstats.txt
-downloadStatus=synchronize_ok
-
-wzxhzdk:0
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;[Subscription]&lt;/span&gt;
+&lt;span class="na"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;~wl~&lt;/span&gt;
+&lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;Exception Rules&lt;/span&gt;
+&lt;span class="na"&gt;defaults&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;whitelist&lt;/span&gt;
+&lt;span class="k"&gt;[Subscription]&lt;/span&gt;
+&lt;span class="na"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;~fl~&lt;/span&gt;
+&lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;Ad Blocking Rules&lt;/span&gt;
+&lt;span class="na"&gt;defaults&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;blocking&lt;/span&gt;
+&lt;span class="k"&gt;[Subscription]&lt;/span&gt;
+&lt;span class="na"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;https://adversity.googlecode.com/hg/Adversity.txt&lt;/span&gt;
+&lt;span class="na"&gt;downloadStatus&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;synchronize_ok&lt;/span&gt;
+&lt;span class="k"&gt;[Subscription]&lt;/span&gt;
+&lt;span class="na"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;http://adblockrules.org/download.php?type=all&lt;/span&gt;
+&lt;span class="na"&gt;downloadStatus&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;synchronize_ok&lt;/span&gt;
+&lt;span class="k"&gt;[Subscription]&lt;/span&gt;
+&lt;span class="na"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;http://adblock-chinalist.googlecode.com/svn/trunk/adblock.txt&lt;/span&gt;
+&lt;span class="na"&gt;downloadStatus&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;synchronize_ok&lt;/span&gt;
+&lt;span class="k"&gt;[Subscription]&lt;/span&gt;
+&lt;span class="na"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;https://easylist-downloads.adblockplus.org/easyprivacy.txt&lt;/span&gt;
+&lt;span class="na"&gt;downloadStatus&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;synchronize_ok&lt;/span&gt;
+&lt;span class="k"&gt;[Subscription]&lt;/span&gt;
+&lt;span class="na"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;https://easylist-downloads.adblockplus.org/easylist.txt&lt;/span&gt;
+&lt;span class="na"&gt;downloadStatus&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;synchronize_ok&lt;/span&gt;
+&lt;span class="k"&gt;[Subscription]&lt;/span&gt;
+&lt;span class="na"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;https://secure.fanboy.co.nz/fanboy-adblocklist-addon.txt&lt;/span&gt;
+&lt;span class="na"&gt;downloadStatus&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;synchronize_ok&lt;/span&gt;
+&lt;span class="k"&gt;[Subscription]&lt;/span&gt;
+&lt;span class="na"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;https://adversity.googlecode.com/hg/Adversity-Tracking.txt&lt;/span&gt;
+&lt;span class="na"&gt;downloadStatus&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;synchronize_ok&lt;/span&gt;
+&lt;span class="k"&gt;[Subscription]&lt;/span&gt;
+&lt;span class="na"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;http://fanboy-adblock-list.googlecode.com/hg/fanboy-adblocklist-current-expanded.txt&lt;/span&gt;
+&lt;span class="na"&gt;downloadStatus&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;synchronize_ok&lt;/span&gt;
+&lt;span class="k"&gt;[Subscription]&lt;/span&gt;
+&lt;span class="na"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;http://fanboy-adblock-list.googlecode.com/hg/fanboy-adblocklist-stats.txt&lt;/span&gt;
+&lt;span class="na"&gt;downloadStatus&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;synchronize_ok&lt;/span&gt;
+&lt;span class="k"&gt;[Subscription]&lt;/span&gt;
+&lt;span class="na"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;https://adblock-chinalist.googlecode.com/svn/trunk/adblock.txt&lt;/span&gt;
+&lt;span class="na"&gt;downloadStatus&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;synchronize_ok&lt;/span&gt;
+&lt;span class="k"&gt;[Subscription]&lt;/span&gt;
+&lt;span class="na"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;https://secure.fanboy.co.nz/enhancedstats.txt&lt;/span&gt;
+&lt;span class="na"&gt;downloadStatus&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;synchronize_ok&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;/p&gt;
-
+&lt;p&gt;(This is my own list, of course.) I save &lt;code&gt;patterns.ini&lt;/code&gt; to the
+adblockplus directory, which is typically at a path something like this:&lt;/p&gt;
+&lt;p&gt;~~~
+... Firefox/Profiles/&lt;hash&gt;.default/adblockplus/
+~~~~&lt;/p&gt;
 &lt;p&gt;where &lt;code&gt;&amp;lt;hash&amp;gt;&lt;/code&gt; is a random-looking eight-digit alphanumeric sequence
 that identifies a given user profile to Firefox. (Each &lt;code&gt;&amp;lt;hash&amp;gt;.default&lt;/code&gt;
 user profile needs its own set of Adblock Plus filters in the
@@ -5939,10 +5939,9 @@ installation method in order to get the filter subscriptions. I save a
 copy of the minimal &lt;code&gt;patterns.ini&lt;/code&gt; file above in a normal directory for
 fast replacement if I need a new user profile for some reason.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;/p&gt;
-The "Allow some non-intrusive advertising" option was introduced in v. 2
+&lt;p&gt;The "Allow some non-intrusive advertising" option was introduced in v. 2
 of Adblock Plus — in other words, it is recent. At the moment, only ads
-associated with two German sites, netzwelt.de and guruads.de, are
+associated with two German sites, &lt;code&gt;netzwelt.de&lt;/code&gt; and &lt;code&gt;guruads.de&lt;/code&gt;, are
 involved, but surely this is the beginning of a much more pervasive
 trend, since advertising now funds most internet content, or so it
 appears to me. When I was a boy, all television was free as long as you
