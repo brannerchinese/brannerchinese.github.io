@@ -5025,36 +5025,36 @@ server as needed.&lt;/p&gt;
 &lt;p&gt;Sometimes a normally well-behaved VM spontaneously refuses to run,
 generating the strange error &lt;code&gt;VERR_INTNET_FLT_IF_NOT_FOUND&lt;/code&gt;, which is
 undocumented in the User Manual that comes with VirtualBox.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;If running the VirtualBox GUI, the error typically looks like this,
-    for a VM named &lt;code&gt;himself&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;code style="font-size:12px;"&gt;Failed to open a session for the virtual machine himself.&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Failed to open/create the internal network
-'HostInterfaceNetworking-en2: USB Ethernet 2'
-(VERR_INTNET_FLT_IF_NOT_FOUND).&lt;/p&gt;
-&lt;p&gt;Failed to attach the network LUN
-(VERR_INTNET_FLT_IF_NOT_FOUND).&lt;/p&gt;
-&lt;p&gt;Result Code: NS_ERROR_FAILURE (0x80004005)&lt;/p&gt;
-&lt;p&gt;Component: Console&lt;/p&gt;
-&lt;p&gt;&lt;p&gt;
-Interface: IConsole {1968b7d3-e3bf-4ceb-99e0-cb7c913317bb}&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
+&lt;p&gt;If running the VirtualBox GUI, the error typically looks like this, for a VM named &lt;code&gt;himself&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Failed&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;open&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;session&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="n"&gt;machine&lt;/span&gt; &lt;span class="n"&gt;himself&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Failed&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;internal&lt;/span&gt; &lt;span class="n"&gt;network&lt;/span&gt;
+&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;HostInterfaceNetworking&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;en2&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;USB&lt;/span&gt; &lt;span class="n"&gt;Ethernet&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;VERR_INTNET_FLT_IF_NOT_FOUND&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;
+&lt;span class="n"&gt;Failed&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;attach&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;network&lt;/span&gt; &lt;span class="n"&gt;LUN&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;VERR_INTNET_FLT_IF_NOT_FOUND&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;
+&lt;span class="n"&gt;Result&lt;/span&gt; &lt;span class="n"&gt;Code&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;NS_ERROR_FAILURE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mh"&gt;0x80004005&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nl"&gt;Component:&lt;/span&gt; &lt;span class="n"&gt;Console&lt;/span&gt;
+&lt;span class="nl"&gt;Interface:&lt;/span&gt; &lt;span class="n"&gt;IConsole&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1968&lt;/span&gt;&lt;span class="n"&gt;b7d3&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;e3bf&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="n"&gt;ceb&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;99e0&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cb7c913317bb&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;At the command line, the error typically looks like this:&lt;/p&gt;
-&lt;p&gt;&lt;code style="font-size:12px;"&gt;vboxmanage: error: Failed to open/create the internal network 'HostInterfaceNetworking-en2: USB Ethernet 2' (VERR_INTNET_FLT_IF_NOT_FOUND).&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;VBoxManage: error: Failed to attach the network LUN
-(VERR_INTNET_FLT_IF_NOT_FOUND)&lt;/p&gt;
-&lt;p&gt;&lt;p&gt;
-VBoxManage: error: Details: code NS_ERROR_FAILURE (0x80004005),
-component Console, interface IConsole, callee &lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;vboxmanage&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Failed&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="kd"&gt;internal&lt;/span&gt; &lt;span class="n"&gt;network&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;HostInterfaceNetworking-en2: USB Ethernet 2&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;VERR_INTNET_FLT_IF_NOT_FOUND&lt;/span&gt;&lt;span class="o"&gt;).&lt;/span&gt;
+
+&lt;span class="n"&gt;VBoxManage&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Failed&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;attach&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;network&lt;/span&gt; &lt;span class="n"&gt;LUN&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;VERR_INTNET_FLT_IF_NOT_FOUND&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;VBoxManage&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Details&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;code&lt;/span&gt; &lt;span class="n"&gt;NS_ERROR_FAILURE&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mh"&gt;0x80004005&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt;
+&lt;span class="n"&gt;component&lt;/span&gt; &lt;span class="n"&gt;Console&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="n"&gt;IConsole&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;callee&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;hr /&gt;
 &lt;p&gt;The solution is to reset the networking settings for the VM. I use the
 following:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;vboxmanage modifyvm himself --nic1 bridged\&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;--bridgeadapter1 en1&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;vboxmanage&lt;/span&gt; &lt;span class="n"&gt;modifyvm&lt;/span&gt; &lt;span class="n"&gt;himself&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;nic1&lt;/span&gt; &lt;span class="n"&gt;bridged&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;bridgeadapter1&lt;/span&gt; &lt;span class="n"&gt;en1&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;where &lt;code&gt;nic1&lt;/code&gt; resets the &lt;strong&gt;n&lt;/strong&gt;etworking mode to "&lt;strong&gt;i&lt;/strong&gt;nternal &lt;strong&gt;c&lt;/strong&gt;ard 1"
 (the indices appended to &lt;code&gt;nic&lt;/code&gt; and other options start at 1) and
 &lt;code&gt;bridgeadapter1&lt;/code&gt; resets the first adapter to &lt;code&gt;en1&lt;/code&gt;, which is normally
@@ -5063,10 +5063,13 @@ because it is sometimes &lt;code&gt;en0&lt;/code&gt;. This Bridge Adapter settin
 sometimes seems to change without apparent actions on my part. Note that
 the &lt;code&gt;bridgeadapter1&lt;/code&gt; option has no effect without the &lt;code&gt;nic&lt;/code&gt; option.&lt;/p&gt;
 &lt;p&gt;Simple headless start-up from the command line looks like this:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;prompt$ vboxheadless -startvm himself&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Waiting for VM "himself" to power on...&lt;/p&gt;
-&lt;p&gt;VM "himself" has been successfully started.&lt;/p&gt;
-&lt;p&gt;prompt\$ &lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;prompt&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;vboxheadless&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;startvm&lt;/span&gt; &lt;span class="n"&gt;himself&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;
+&lt;span class="n"&gt;Waiting&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;VM&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;himself&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;power&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="n"&gt;VM&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;himself&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;has&lt;/span&gt; &lt;span class="n"&gt;been&lt;/span&gt; &lt;span class="n"&gt;successfully&lt;/span&gt; &lt;span class="n"&gt;started&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;prompt&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;The additional option &lt;code&gt;--vrde=off&lt;/code&gt; prevents running the standard remote
 display protocol server, which does not seem to be necessary for
 anything I do on my system.&lt;/p&gt;
@@ -5076,7 +5079,8 @@ anything I do on my system.&lt;/p&gt;
 command-line option, see the "Commands Overview" section.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;Edit&lt;/strong&gt;: I have added more information on configuring VirtualBox from
-the command line in &lt;a href="https://brannerchinese.wordpress.com/2012/05/06/identifying-the-active-bridge-adapter-for-use-with-a-headless-virtual-machine-on-virtualbox/"&gt;another post&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>Ubuntu 12.04LTS (Precise Pangolin) on VirtualBox</title><link href="http://brannerchinese.github.io/website/ubuntu-12-04lts-precise-pangolin-on-virtualbox.html" rel="alternate"></link><updated>2012-04-28T08:05:00-04:00</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io/website,2012-04-28:ubuntu-12-04lts-precise-pangolin-on-virtualbox.html</id><summary type="html">&lt;p&gt;A few notes on installing v. 12.04 on VirtualBox.&lt;/p&gt;
+the command line in &lt;a href="identifying-the-active-bridge-adapter-for-use-with-a-headless-virtual-machine-on-virtualbox.html"&gt;another post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[end]&lt;/p&gt;</summary></entry><entry><title>Ubuntu 12.04LTS (Precise Pangolin) on VirtualBox</title><link href="http://brannerchinese.github.io/website/ubuntu-12-04lts-precise-pangolin-on-virtualbox.html" rel="alternate"></link><updated>2012-04-28T08:05:00-04:00</updated><author><name>David Prager Branner</name></author><id>tag:brannerchinese.github.io/website,2012-04-28:ubuntu-12-04lts-precise-pangolin-on-virtualbox.html</id><summary type="html">&lt;p&gt;A few notes on installing v. 12.04 on VirtualBox.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;I like to have Ubuntu available to me on my laptop. Rather than
     install Ubuntu Desktop, as I have in the past, I've installed only

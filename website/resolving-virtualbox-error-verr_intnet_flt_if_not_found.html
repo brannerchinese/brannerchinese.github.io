@@ -63,36 +63,36 @@ server as needed.</p>
 <p>Sometimes a normally well-behaved VM spontaneously refuses to run,
 generating the strange error <code>VERR_INTNET_FLT_IF_NOT_FOUND</code>, which is
 undocumented in the User Manual that comes with VirtualBox.</p>
-<ul>
-<li>
-<p>If running the VirtualBox GUI, the error typically looks like this,
-    for a VM named <code>himself</code>:</p>
-<p><code style="font-size:12px;">Failed to open a session for the virtual machine himself.</code></p>
-<p>Failed to open/create the internal network
-'HostInterfaceNetworking-en2: USB Ethernet 2'
-(VERR_INTNET_FLT_IF_NOT_FOUND).</p>
-<p>Failed to attach the network LUN
-(VERR_INTNET_FLT_IF_NOT_FOUND).</p>
-<p>Result Code: NS_ERROR_FAILURE (0x80004005)</p>
-<p>Component: Console</p>
-<p><p>
-Interface: IConsole {1968b7d3-e3bf-4ceb-99e0-cb7c913317bb}</code></p>
-</li>
-<li>
+<p>If running the VirtualBox GUI, the error typically looks like this, for a VM named <code>himself</code>:</p>
+<div class="highlight"><pre><span class="n">Failed</span> <span class="n">to</span> <span class="n">open</span> <span class="n">a</span> <span class="n">session</span> <span class="k">for</span> <span class="n">the</span> <span class="n">virtual</span> <span class="n">machine</span> <span class="n">himself</span><span class="p">.</span>
+<span class="n">Failed</span> <span class="n">to</span> <span class="n">open</span><span class="o">/</span><span class="n">create</span> <span class="n">the</span> <span class="n">internal</span> <span class="n">network</span>
+<span class="err">&#39;</span><span class="n">HostInterfaceNetworking</span><span class="o">-</span><span class="n">en2</span><span class="o">:</span> <span class="n">USB</span> <span class="n">Ethernet</span> <span class="mi">2</span><span class="err">&#39;</span>
+<span class="p">(</span><span class="n">VERR_INTNET_FLT_IF_NOT_FOUND</span><span class="p">).</span>
+<span class="n">Failed</span> <span class="n">to</span> <span class="n">attach</span> <span class="n">the</span> <span class="n">network</span> <span class="n">LUN</span>
+<span class="p">(</span><span class="n">VERR_INTNET_FLT_IF_NOT_FOUND</span><span class="p">).</span>
+<span class="n">Result</span> <span class="n">Code</span><span class="o">:</span> <span class="n">NS_ERROR_FAILURE</span> <span class="p">(</span><span class="mh">0x80004005</span><span class="p">)</span>
+<span class="nl">Component:</span> <span class="n">Console</span>
+<span class="nl">Interface:</span> <span class="n">IConsole</span> <span class="p">{</span><span class="mi">1968</span><span class="n">b7d3</span><span class="o">-</span><span class="n">e3bf</span><span class="o">-</span><span class="mi">4</span><span class="n">ceb</span><span class="o">-</span><span class="mf">99e0</span><span class="o">-</span><span class="n">cb7c913317bb</span><span class="p">}</span>
+</pre></div>
+
+
 <p>At the command line, the error typically looks like this:</p>
-<p><code style="font-size:12px;">vboxmanage: error: Failed to open/create the internal network 'HostInterfaceNetworking-en2: USB Ethernet 2' (VERR_INTNET_FLT_IF_NOT_FOUND).</code></p>
-<p>VBoxManage: error: Failed to attach the network LUN
-(VERR_INTNET_FLT_IF_NOT_FOUND)</p>
-<p><p>
-VBoxManage: error: Details: code NS_ERROR_FAILURE (0x80004005),
-component Console, interface IConsole, callee </code></p>
-</li>
-</ul>
+<div class="highlight"><pre><span class="n">vboxmanage</span><span class="o">:</span> <span class="n">error</span><span class="o">:</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">open</span><span class="o">/</span><span class="n">create</span> <span class="n">the</span> <span class="kd">internal</span> <span class="n">network</span> <span class="s1">&#39;HostInterfaceNetworking-en2: USB Ethernet 2&#39;</span> <span class="o">(</span><span class="n">VERR_INTNET_FLT_IF_NOT_FOUND</span><span class="o">).</span>
+
+<span class="n">VBoxManage</span><span class="o">:</span> <span class="n">error</span><span class="o">:</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">attach</span> <span class="n">the</span> <span class="n">network</span> <span class="n">LUN</span> <span class="o">(</span><span class="n">VERR_INTNET_FLT_IF_NOT_FOUND</span><span class="o">)</span>
+
+<span class="n">VBoxManage</span><span class="o">:</span> <span class="n">error</span><span class="o">:</span> <span class="n">Details</span><span class="o">:</span> <span class="n">code</span> <span class="n">NS_ERROR_FAILURE</span> <span class="o">(</span><span class="mh">0x80004005</span><span class="o">),</span>
+<span class="n">component</span> <span class="n">Console</span><span class="o">,</span> <span class="kd">interface</span> <span class="n">IConsole</span><span class="o">,</span> <span class="n">callee</span>
+</pre></div>
+
+
 <hr />
 <p>The solution is to reset the networking settings for the VM. I use the
 following:</p>
-<p><code>vboxmanage modifyvm himself --nic1 bridged\</code></p>
-<p>--bridgeadapter1 en1</code></p>
+<div class="highlight"><pre><span class="n">vboxmanage</span> <span class="n">modifyvm</span> <span class="n">himself</span> <span class="o">--</span><span class="n">nic1</span> <span class="n">bridged</span> <span class="o">--</span><span class="n">bridgeadapter1</span> <span class="n">en1</span><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
+</pre></div>
+
+
 <p>where <code>nic1</code> resets the <strong>n</strong>etworking mode to "<strong>i</strong>nternal <strong>c</strong>ard 1"
 (the indices appended to <code>nic</code> and other options start at 1) and
 <code>bridgeadapter1</code> resets the first adapter to <code>en1</code>, which is normally
@@ -101,10 +101,13 @@ because it is sometimes <code>en0</code>. This Bridge Adapter setting is what
 sometimes seems to change without apparent actions on my part. Note that
 the <code>bridgeadapter1</code> option has no effect without the <code>nic</code> option.</p>
 <p>Simple headless start-up from the command line looks like this:</p>
-<p><code>prompt$ vboxheadless -startvm himself</code></p>
-<p>Waiting for VM "himself" to power on...</p>
-<p>VM "himself" has been successfully started.</p>
-<p>prompt\$ </code></p>
+<div class="highlight"><pre><span class="n">prompt</span><span class="err">$</span> <span class="n">vboxheadless</span> <span class="o">-</span><span class="n">startvm</span> <span class="n">himself</span><span class="err">`</span>
+<span class="n">Waiting</span> <span class="k">for</span> <span class="n">VM</span> <span class="s">&quot;himself&quot;</span> <span class="n">to</span> <span class="n">power</span> <span class="n">on</span><span class="p">...</span>
+<span class="n">VM</span> <span class="s">&quot;himself&quot;</span> <span class="n">has</span> <span class="n">been</span> <span class="n">successfully</span> <span class="n">started</span><span class="p">.</span>
+<span class="n">prompt</span><span class="err">$</span>
+</pre></div>
+
+
 <p>The additional option <code>--vrde=off</code> prevents running the standard remote
 display protocol server, which does not seem to be necessary for
 anything I do on my system.</p>
@@ -114,7 +117,8 @@ anything I do on my system.</p>
 command-line option, see the "Commands Overview" section.</p>
 <hr />
 <p><strong>Edit</strong>: I have added more information on configuring VirtualBox from
-the command line in <a href="https://brannerchinese.wordpress.com/2012/05/06/identifying-the-active-bridge-adapter-for-use-with-a-headless-virtual-machine-on-virtualbox/">another post</a>.</p></div>
+the command line in <a href="identifying-the-active-bridge-adapter-for-use-with-a-headless-virtual-machine-on-virtualbox.html">another post</a>.</p>
+<p>[end]</p></div>
 		<div>
 			<h2>Comments</h2>
 		<div>
